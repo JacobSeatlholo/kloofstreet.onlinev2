@@ -82,6 +82,26 @@ Also under **Authentication → URL Configuration**: set **Site URL** to the
 site root (e.g. `https://www.kloofstreet.online`). Password logins don't
 redirect, so no extra redirect URLs are needed.
 
+### 4b. Google sign-in (already built into the UI — just switch it on)
+
+Street Pass has a **Continue with Google** button on both the signup and
+login forms. The button is live already — until the provider is configured
+it simply returns a "provider is not enabled" style error:
+
+1. **Google Cloud Console** (console.cloud.google.com) → create or select a
+   project → **APIs & Services → OAuth consent screen**: choose *External*,
+   fill in the app name (`KloofStreet.online`) and your support email, save.
+2. **APIs & Services → Credentials → Create credentials → OAuth client ID**:
+   type **Web application**, and set the authorized redirect URI to exactly
+   `https://uzzoykmbadxriycvxycy.supabase.co/auth/v1/callback`
+3. Copy the **Client ID** and **Client secret**.
+4. **Supabase Dashboard → Authentication → Providers → Google**: enable it,
+   paste both values, Save. No redeploy needed.
+
+Google members land on Street Pass with a `pending` profile (created
+automatically), see the EFT payment details on their dashboard, and are
+activated the same way as email signups.
+
 ---
 
 ## 5. Seed the stores (partners) + merchant logins

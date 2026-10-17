@@ -1369,6 +1369,20 @@ nav{z-index:200;}
 }
 .sp-auth-name{font-size:12px;font-weight:700;color:var(--text2);}
 .sp-auth-email{font-size:10px;color:var(--muted);}
+.sp-oauth-divider{display:flex;align-items:center;gap:12px;margin:14px 0 12px;color:var(--muted);font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;}
+.sp-oauth-divider:before,.sp-oauth-divider:after{content:"";flex:1;height:1px;background:var(--bdr);}
+.sp-google-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:12px 16px;border-radius:10px;border:1px solid rgba(255,255,255,.15);background:#ffffff;color:#1f1f1f;font-size:13px;font-weight:700;font-family:inherit;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease;}
+.sp-google-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.35);}
+.sp-google-btn:disabled{opacity:.55;cursor:wait;transform:none;box-shadow:none;}
+.sp-google-btn svg{width:18px;height:18px;flex:none;}
+.pwa-install{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:9998;max-width:430px;margin:0 auto;display:none;align-items:center;gap:12px;padding:12px 14px;border-radius:16px;background:var(--bg2);border:1px solid rgba(245,197,24,.4);box-shadow:0 12px 32px rgba(0,0,0,.5);}
+.pwa-install.show{display:flex;}
+.pwa-install-icon{width:44px;height:44px;border-radius:10px;flex:none;background:#F5C518;display:flex;align-items:center;justify-content:center;font-size:22px;}
+.pwa-install-txt{flex:1;min-width:0;}
+.pwa-install-title{font-size:13px;font-weight:800;color:var(--text2);}
+.pwa-install-desc{font-size:11px;color:var(--muted);line-height:1.45;margin-top:2px;}
+.pwa-install-btn{flex:none;background:#F5C518;color:#111;border:none;border-radius:10px;padding:9px 14px;font-size:12px;font-weight:800;cursor:pointer;font-family:inherit;}
+.pwa-install-x{flex:none;background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer;padding:2px 4px;line-height:1;}
 .sp-logout{
   font-size:9px;color:var(--muted);background:none;border:1px solid rgba(255,255,255,.12);
   padding:6px 12px;border-radius:4px;cursor:pointer;font-family:inherit;
@@ -1888,6 +1902,15 @@ setTimeout(trackPageview,800);
   <link rel="preconnect" href="https://unpkg.com" crossorigin>
   <link rel="dns-prefetch" href="https://plausible-production-63a6.up.railway.app"></head>
 <body>
+<div class="pwa-install" id="pwaInstall" role="dialog" aria-label="Install the Kloof Street app">
+  <div class="pwa-install-icon">&#x1F4F1;</div>
+  <div class="pwa-install-txt">
+    <div class="pwa-install-title">Add Kloof Street to your Home Screen</div>
+    <div class="pwa-install-desc" id="pwaInstallDesc">Open in one tap, browse offline, and scan Street Pass QRs faster.</div>
+  </div>
+  <button class="pwa-install-btn" id="pwaInstallBtn">Add</button>
+  <button class="pwa-install-x" id="pwaInstallX" aria-label="Dismiss">&times;</button>
+</div>
 <div id="seo-content" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);" aria-hidden="true" tabindex="-1">
 <h1>KloofStreet.online — Kloof Street Cape Town Complete Guide 2026</h1>
 <h2>Best Restaurants on Kloof Street Cape Town 2025 2026</h2>
@@ -3964,6 +3987,8 @@ setTimeout(trackPageview,800);
         <div class="f"><label>Referral Code (optional)</label><input id="sp-referral" type="text" placeholder="ABC12345" style="text-transform:uppercase;"></div>
         <div class="sp-signup-error" id="spSignupError"></div>
         <button class="sp-signup-btn" id="spSignupBtn" onclick="spSignup()">Create Account &amp; Join</button>
+        <div class="sp-oauth-divider">or</div>
+        <button class="sp-google-btn" type="button" onclick="spGoogle(this)"><svg viewBox="0 0 18 18" aria-hidden="true"><path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.92c1.7-1.57 2.68-3.88 2.68-6.62z"/><path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.92-2.26c-.8.54-1.84.86-3.04.86-2.34 0-4.32-1.58-5.03-3.7H.96v2.32A9 9 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.97 10.72a5.41 5.41 0 0 1 0-3.44V4.96H.96a9 9 0 0 0 0 8.08l3.01-2.32z"/><path fill="#EA4335" d="M9 3.58c1.32 0 2.5.45 3.44 1.35l2.58-2.59C13.46.9 11.42 0 9 0A9 9 0 0 0 .96 4.96l3.01 2.32C4.68 5.16 6.66 3.58 9 3.58z"/></svg>Continue with Google</button>
       </div>
       <div class="sp-signup-login-link">Already a member? <a href="#" onclick="spShowLogin()">Sign in</a></div>
     </div>
@@ -3977,6 +4002,8 @@ setTimeout(trackPageview,800);
         <div class="f"><label>Password</label><input id="sp-login-pass" type="password" placeholder="Your password"></div>
         <div class="sp-signup-error" id="spLoginError"></div>
         <button class="sp-signup-btn" onclick="spLogin()">Sign In</button>
+        <div class="sp-oauth-divider">or</div>
+        <button class="sp-google-btn" type="button" onclick="spGoogle(this)"><svg viewBox="0 0 18 18" aria-hidden="true"><path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.92c1.7-1.57 2.68-3.88 2.68-6.62z"/><path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.92-2.26c-.8.54-1.84.86-3.04.86-2.34 0-4.32-1.58-5.03-3.7H.96v2.32A9 9 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.97 10.72a5.41 5.41 0 0 1 0-3.44V4.96H.96a9 9 0 0 0 0 8.08l3.01-2.32z"/><path fill="#EA4335" d="M9 3.58c1.32 0 2.5.45 3.44 1.35l2.58-2.59C13.46.9 11.42 0 9 0A9 9 0 0 0 .96 4.96l3.01 2.32C4.68 5.16 6.66 3.58 9 3.58z"/></svg>Continue with Google</button>
       </div>
       <div class="sp-signup-login-link">Not a member? <a href="#" onclick="spShowSignup()">Join Street Pass</a></div>
     </div>
@@ -4552,7 +4579,14 @@ function spGetSession() {
       if (r.data.session) {
         spAccessToken = r.data.session.access_token;
         spUser = r.data.session.user;
-        return spClient().from('profiles').select('*').eq('id', spUser.id).single();
+        return spClient().from('profiles').select('*').eq('id', spUser.id).single()
+          .then(function(pr) {
+            if ((!pr.error && pr.data) || !spUser) return pr;
+            // Profile row missing (e.g. first Google sign-in) — create it.
+            return spEnsureProfile().then(function(created) {
+              return created ? { data: created } : pr;
+            });
+          });
       }
       return { data: null };
     }).then(function(r) {
@@ -4615,6 +4649,7 @@ function spSignup() {
     }
     document.getElementById('spSignupForm').style.display = 'none';
     document.getElementById('spSignupSuccess').style.display = 'block';
+    if (window._pwaShowInstall) { try { setTimeout(window._pwaShowInstall, 1500); } catch(e){} }
   }).catch(function(e) {
     errEl.textContent = e.message || 'Signup failed. Please try again.';
     errEl.className = 'sp-signup-error show';
@@ -4631,6 +4666,36 @@ function spShowLogin() {
 function spShowSignup() {
   document.getElementById('spLoginForm').style.display = 'none';
   document.getElementById('spSignupForm').style.display = 'block';
+}
+
+// ── GOOGLE OAUTH ──
+function spEnsureProfile() {
+  if (!spUser || !spClient()) return Promise.resolve(null);
+  var meta = spUser.user_metadata || {};
+  var name = meta.display_name || meta.full_name || meta.name ||
+             (spUser.email ? spUser.email.split('@')[0] : '') || 'Member';
+  return spClient().from('profiles').upsert({ id: spUser.id, display_name: name })
+    .then(function(r) {
+      if (r.error) { console.warn('[Street Pass] ensureProfile:', r.error.message); return null; }
+      spProfile = Array.isArray(r.data) ? r.data[0] : r.data;
+      return spProfile;
+    });
+}
+
+function spGoogle(btn) {
+  var c = spClient(); if (!c) return;
+  var all = document.querySelectorAll('.sp-google-btn');
+  for (var i = 0; i < all.length; i++) all[i].disabled = true;
+  var errEl = document.getElementById('spSignupError');
+  if (document.getElementById('spLoginForm').style.display !== 'none') errEl = document.getElementById('spLoginError');
+  if (errEl) { errEl.className = 'sp-signup-error'; errEl.textContent = ''; }
+  c.auth.signInWithOAuth({
+    provider: 'google',
+    options: { redirectTo: location.origin + '/?page=streetpass' }
+  }).catch(function(e) {
+    for (var i = 0; i < all.length; i++) all[i].disabled = false;
+    if (errEl) { errEl.textContent = e.message || 'Google sign-in failed. Try again.'; errEl.className = 'sp-signup-error show'; }
+  });
 }
 
 function spLogin() {
@@ -4666,6 +4731,40 @@ function spLogout() {
   });
 }
 
+// ── PWA INSTALL PROMPT ──
+(function(){
+  try{
+    var standalone = (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true;
+    if (standalone) return;
+    var KEY = 'pwa_install_dismissed_at', DAYS = 14;
+    var last = 0; try { last = parseInt(localStorage.getItem(KEY) || '0', 10) || 0; } catch(e){}
+    if (last && (Date.now() - last) < DAYS * 864e5) return;
+    var el = document.getElementById('pwaInstall');
+    if (!el) return;
+    var desc = document.getElementById('pwaInstallDesc');
+    var btn = document.getElementById('pwaInstallBtn');
+    var deferred = null;
+    var isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    function show(){ el.className = 'pwa-install show'; }
+    function hide(){ try { localStorage.setItem(KEY, Date.now()); } catch(e){} el.className = 'pwa-install'; }
+    window.addEventListener('beforeinstallprompt', function(e){ e.preventDefault(); deferred = e; setTimeout(show, 9000); });
+    if (isIOS) { desc.innerHTML = 'In Safari: tap the <b>Share</b> icon, then <b>Add to Home Screen</b>.'; setTimeout(show, 9000); }
+    if (btn) btn.addEventListener('click', function(){
+      if (deferred) {
+        deferred.prompt();
+        deferred.userChoice.then(function(){ hide(); deferred = null; });
+      } else {
+        desc.innerHTML = isIOS
+          ? 'In Safari: tap the <b>Share</b> icon (square with arrow), then <b>Add to Home Screen</b>.'
+          : 'Open your browser menu (\u22EE) and choose <b>Install app</b> or <b>Add to Home Screen</b>.';
+      }
+    });
+    var x = document.getElementById('pwaInstallX');
+    if (x) x.addEventListener('click', hide);
+    window._pwaShowInstall = show;
+  }catch(e){}
+})();
+
 // ── DASHBOARD ──
 function spLoadDashboard() {
   var container = document.getElementById('spDashContent');
@@ -4680,9 +4779,20 @@ function spLoadDashboard() {
     }
 
     if (profile.status === 'pending') {
-      container.innerHTML = '<div class="sp-pending"><div class="sp-pending-icon">\u{23F3}</div>' +
-        '<div class="sp-pending-title">Account Pending Activation</div>' +
-        '<div class="sp-pending-desc">Your payment has been noted. We\x27ll activate your Street Pass within 24 hours.</div>' +
+      var paid = !!(profile.paid_at || profile.invoice_url);
+      var ref = 'SP-' + (profile.id || '').substring(0, 8).toUpperCase();
+      var eft = paid ? '' :
+        '<div class="sp-eft" style="text-align:left;max-width:380px;margin:20px auto 0;">' +
+        '<div class="sp-eft-title">EFT Payment Details</div>' +
+        '<div class="sp-eft-row"><span>Bank</span><span>FNB</span></div>' +
+        '<div class="sp-eft-row"><span>Account Name</span><span>Simple Eternity Holdings (Pty) Ltd</span></div>' +
+        '<div class="sp-eft-row"><span>Account Number</span><span>6292 2517 185</span></div>' +
+        '<div class="sp-eft-row"><span>Branch Code</span><span>250655</span></div>' +
+        '<div class="sp-eft-row"><span>Reference</span><span>' + escHtml(ref) + '</span></div>' +
+        '<div class="sp-eft-row"><span>Amount</span><span>R199.00</span></div></div>';
+      container.innerHTML = '<div class="sp-pending"><div class="sp-pending-icon">' + (paid ? '\u{23F3}' : '\u{1F4B3}') + '</div>' +
+        '<div class="sp-pending-title">' + (paid ? 'Account Pending Activation' : 'One step to go — pay to activate') + '</div>' +
+        '<div class="sp-pending-desc">' + (paid ? 'Your payment has been noted. We\'ll activate your Street Pass within 24 hours.' : 'Pay your first R199 membership fee to activate Street Pass. We\'ll confirm within 24 hours of payment.') + '</div>' + eft +
         '<div style="margin-top:20px;"><a class="btn btn-outline" onclick="go(\x27home\x27)" style="display:inline-block;">Back to Home</a></div></div>';
       return;
     }
