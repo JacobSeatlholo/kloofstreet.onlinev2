@@ -1,0 +1,28 @@
+# KloofStreet.online
+
+> The curated digital guide to Kloof Street, Gardens, Cape Town — voted #22 World's Coolest Street (Time Out 2025). Verified business listings, an AI concierge, and the Street Pass loyalty programme.
+
+Site: https://www.kloofstreet.online
+Owner platform: Business Hustle (businesshustle.co.za)
+Merchant backoffice: https://www.hustleportal.online/ (free account includes R99 lead credits)
+
+## Core pages
+- [Directory](https://www.kloofstreet.online/directory): 51+ verified Kloof Street businesses — curated, not crowded.
+- [AI Concierge](https://www.kloofstreet.online/ai-concierge): real-time recommendations for dining, wellness and itineraries.
+- [Street Pass](https://www.kloofstreet.online/streetpass): R199/month loyalty membership — scan QR codes, earn points, redeem rewards at partner stores.
+- [Get Listed](https://www.kloofstreet.online/get-listed): how businesses join the platform.
+- [For Business](https://www.kloofstreet.online/merchant): merchant gateway — sign in to HustlePortal for the backoffice (newsletters, contacts, pipeline, payments, AI tools).
+
+## Verified businesses on Kloof Street
+- Arnold's Restaurant (https://www.kloofstreet.online/arnolds-restaurant): fine dining — dinner, brekkie & lunch, cocktails.
+- Body Vision Studio (https://www.kloofstreet.online/body-vision-studio): GYROTONIC®, GYROKINESIS® and Classical Pilates with Kim Tucker; new-client Foundations Package (3 private sessions).
+- Ubuntu Wellness & Medi-Spa (https://www.kloofstreet.online/ubuntu-wellness): float therapy, spa, homeopathy, vegan wellness.
+- On Safari by Nigel Whitehead (https://www.kloofstreet.online/on-safari): archival wildlife fine art prints, free framing.
+- Dr Wendy Dicks (https://www.kloofstreet.online/dr-wendy-dicks): GP & weight-loss specialist (GLP-1 treatments).
+- Dr Thomas Jahn (https://www.kloofstreet.online/dr-thomas-jahn): Chinese medicine & acupuncture (Thursdays).
+- Dr Dale Geoffreys (https://www.kloofstreet.online/dr-dale-geoffreys): dental care.
+- Just Hearing (https://www.kloofstreet.online/just-hearing): audiology — hearing aids, assessments, tinnitus care.
+- Hayley Schuter Physio (https://www.kloofstreet.online/hayley-schuter-physio): physiotherapy.
+- Trudy Christians (https://www.kloofstreet.online/trudy-christians): aesthetic therapy — laser, skin, body sculpting.
+- Revive Studio (https://www.kloofstreet.online/revive-studio): holistic massage & beauty with Nadine.
+- PostNet Gardens (https://www.kloofstreet.online/postnet-gardens): printing & courier at 55 Kloof Street.

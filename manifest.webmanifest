@@ -1,0 +1,89 @@
+{
+  "name": "KloofStreet.online \u2014 Cape Town's Coolest Street Guide",
+  "short_name": "KloofStreet",
+  "description": "The curated guide to Kloof Street, Cape Town \u2014 restaurants, wellness, art, shopping and the Street Pass loyalty programme. Voted #22 world's coolest street.",
+  "id": "./",
+  "start_url": "./?source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0a0a0b",
+  "theme_color": "#F5C518",
+  "categories": [
+    "travel",
+    "food",
+    "lifestyle",
+    "shopping"
+  ],
+  "lang": "en-ZA",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Directory",
+      "short_name": "Directory",
+      "description": "All verified Kloof Street businesses",
+      "url": "./?page=directory",
+      "icons": [
+        {
+          "src": "./icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "AI Concierge",
+      "short_name": "Concierge",
+      "description": "Ask the AI about the street",
+      "url": "./?page=ai-concierge",
+      "icons": [
+        {
+          "src": "./icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Street Pass",
+      "short_name": "Street Pass",
+      "description": "Your Kloof Street loyalty membership",
+      "url": "./?page=streetpass",
+      "icons": [
+        {
+          "src": "./icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "For Business",
+      "short_name": "Business",
+      "description": "Merchant gateway to HustlePortal",
+      "url": "./?page=merchant",
+      "icons": [
+        {
+          "src": "./icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "framework": null,
+  "buildCommand": "",
+  "outputDirectory": ".",
+  "routes": [
+    {
+      "src": "/newsletter",
+      "status": 308,
+      "headers": {
+        "Location": "https://hustleportal.online/?utm_source=kloofstreet&utm_medium=redirect&utm_campaign=kloofv2"
+      }
+    },
+    {
+      "src": "/sw.js",
+      "headers": {
+        "Cache-Control": "public, max-age=0, must-revalidate",
+        "Service-Worker-Allowed": "/"
+      }
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
