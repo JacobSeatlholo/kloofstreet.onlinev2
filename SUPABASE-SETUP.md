@@ -9,17 +9,27 @@ payments) and the Merchant Workstation to a live Supabase project.
 
 ---
 
-## 1. Which Supabase project?
+## 1. Which Supabase project? → Create a new one (decided Oct 2026)
 
-Two valid paths:
+The original v1 project (`uzzoykmbadxriycvxycy`) is **not usable**: we swept
+the v1 repo's full git history and recovered two committed anon keys, but the
+live gateway rejects both (rotated after they were committed), and the
+`service_role` key — required by every `api/*` function — was never committed
+anywhere (it lived only in the old Vercel project). Without dashboard access
+there is no way to rotate or administer the old project. So:
 
-| Path | When | Result |
-|---|---|---|
-| **A. Reuse the existing KloofStreet project** *(recommended)* | You still have access to the original Supabase account (project ref starts `uzzoyk…`). | All historic members / scans / partners are preserved. The schema below just tops up anything missing. |
-| **B. Fresh project** | The original account is lost or you want a clean slate. | Zero data — run the full schema, seed stores + rewards, members sign up anew. |
+1. Log in at **supabase.com** with YOUR OWN account (this is the point — you
+   must own the dashboard).
+2. **New project** → name it `kloofstreet-v2`, pick a strong database password
+   (save it in a password manager), region closest to your users (West EU /
+   London is fine for South Africa).
+3. Wait ~2 minutes for provisioning.
 
-Either way the steps are identical; the schema (`supabase-schema.sql`) is
-idempotent and handles both cases.
+> **Key format note**: Supabase now issues two styles of keys. Either works:
+> legacy JWT keys (`anon` / `service_role`, start with `eyJ…`) or the newer
+> `sb_publishable_…` / `sb_secret_…` keys (Settings → API). The **public**
+> one goes in `streetpass-config.js`; the **secret** one goes in Vercel.
+> The secret key must NEVER be committed or shipped to the browser.
 
 ---
 
