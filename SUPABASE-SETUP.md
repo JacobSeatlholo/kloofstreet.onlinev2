@@ -9,21 +9,28 @@ payments) and the Merchant Workstation to a live Supabase project.
 
 ---
 
-## 1. Which Supabase project? → Create a new one (decided Oct 2026)
+## 1. Which Supabase project? → Reuse the original (decided Oct 2026)
 
-The original v1 project (`uzzoykmbadxriycvxycy`) is **not usable**: we swept
-the v1 repo's full git history and recovered two committed anon keys, but the
-live gateway rejects both (rotated after they were committed), and the
-`service_role` key — required by every `api/*` function — was never committed
-anywhere (it lived only in the old Vercel project). Without dashboard access
-there is no way to rotate or administer the old project. So:
+You have dashboard access to the original v1 project — the one whose
+Reference ID starts with `uzzoy…` (`uzzoykmbadxriycvxycy`). That changes the
+plan: **reuse it, don't create a new one**. Yes, the two anon keys recovered
+from the v1 repo's git history are dead (rotated after they were committed),
+but that is irrelevant now — the keys currently shown under Settings → API
+are the live ones, and you can copy them straight from the dashboard. The
+`service_role` key is on that same page too. Biggest bonus of reusing: every
+member, scan and stat recorded before v1's config file went missing is still
+in the database, and v2 speaks the same schema — nothing is lost.
 
-1. Log in at **supabase.com** with YOUR OWN account (this is the point — you
-   must own the dashboard).
-2. **New project** → name it `kloofstreet-v2`, pick a strong database password
-   (save it in a password manager), region closest to your users (West EU /
-   London is fine for South Africa).
-3. Wait ~2 minutes for provisioning.
+1. Log in at **supabase.com** → open the project whose Reference ID starts
+   with `uzzoy`.
+2. **If the project banner says "paused"** (free-tier projects auto-pause
+   after ~1 week of inactivity): click **Restore** and wait ~2 minutes.
+3. Recommended — Settings → API → **rotate the anon key** once, so every
+   copy that ever leaked into the v1 git history stays permanently useless.
+   Nothing in production currently talks to Supabase (v1's config file was
+   never deployed), so rotating is safe. The `service_role` key was never
+   committed anywhere, so rotating it is optional — do it only if you
+   suspect it was ever exposed.
 
 > **Key format note**: Supabase now issues two styles of keys. Either works:
 > legacy JWT keys (`anon` / `service_role`, start with `eyJ…`) or the newer
@@ -79,10 +86,16 @@ redirect, so no extra redirect URLs are needed.
 
 ## 5. Seed the stores (partners) + merchant logins
 
-The 12 Kloof Street directory businesses. In the **SQL Editor**:
+The 12 Kloof Street directory businesses. **Check what the original project
+already has first** (Table Editor → partners, or `SELECT id, name FROM
+partners ORDER BY name;`) — chances are some or all are already there,
+possibly under slightly different names. Then insert only the missing ones
+(this query is duplicate-safe even though `name` has no UNIQUE constraint):
 
 ```sql
-INSERT INTO partners (name, short_name, category, suburb) VALUES
+INSERT INTO partners (name, short_name, category, suburb)
+SELECT v.name, v.short_name, v.category, v.suburb
+FROM (VALUES
   ('Body Vision Studio',      'Body Vision',  'Gyrotonic / Movement', 'Gardens'),
   ('Revive Studio',           'Revive',       'Fitness / Recovery',   'Gardens'),
   ('Hayley Schuter Physio',   'Hayley',       'Physiotherapy',        'Gardens'),
@@ -95,10 +108,13 @@ INSERT INTO partners (name, short_name, category, suburb) VALUES
   ('Arnold''s Restaurant',    'Arnold''s',    'Restaurant',           'Gardens'),
   ('Ubuntu Wellness',         'Ubuntu',       'Wellness',             'Gardens'),
   ('On Safari Art Studios',   'On Safari',    'Art Studio',           'Gardens')
-ON CONFLICT DO NOTHING;
+) AS v(name, short_name, category, suburb)
+WHERE NOT EXISTS (
+  SELECT 1 FROM partners p WHERE lower(p.name) = lower(v.name)
+);
 ```
 
-Only add stores that actually join Street Pass — delete the rows you don't
+Only keep stores that actually join Street Pass — delete the rows you don't
 need. Then, **for each participating store**:
 
 1. **Authentication → Users → Add user** — the store owner's email +
