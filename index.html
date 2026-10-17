@@ -4474,7 +4474,7 @@ function submitForm() {
 
 // THEME
 (function(){
-  var t=localStorage.getItem('ks_theme')||(window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark');
+  var t=localStorage.getItem('ks_theme')||'dark';
   applyTheme(t);
 })();
 function applyTheme(t){
