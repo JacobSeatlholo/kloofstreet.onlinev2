@@ -44,8 +44,12 @@ upgraded into a real Progressive Web App and hardened by a full v1 audit.
 | `GEMINI_API_KEY` | `api/ai-chat.js` (AI concierge) |
 | `YOCO_SECRET_KEY` | `api/create-checkout.js`, `api/yoco-webhook.js` (Street Pass R199/mo signup) |
 
-3. Paste Supabase values into `streetpass-config.js` (client side) and commit.
-4. Run `merchant-schema.sql` once against Supabase (idempotent) if not already applied.
+3. Run `supabase-schema.sql` once in the Supabase SQL Editor (complete schema —
+   tables, RLS, triggers; idempotent, supersedes `merchant-schema.sql`).
+4. Paste Supabase values into `streetpass-config.js` (client side) and commit.
+
+**Full walkthrough: [`SUPABASE-SETUP.md`](./SUPABASE-SETUP.md)** — auth settings,
+store/reward seeding, QR codes, Yoco webhook, go-live checklist.
 
 ## Notes
 
@@ -70,6 +74,8 @@ icons/                generated gold-K monogram icon set
 streetpass-config.js  ⚠️ Supabase client config (fill in!)
 vercel.json           static build + clean-URL rewrites + sw.js headers
 api/                  12 serverless functions (AI, Street Pass, payments, wallet passes)
-merchant-schema.sql   Supabase migration (merchants, scans, redemptions)
+supabase-schema.sql   COMPLETE Supabase schema (tables, RLS, triggers) — run this one
+merchant-schema.sql   legacy v1 migration (kept for reference; superseded)
+SUPABASE-SETUP.md     step-by-step Supabase setup guide
 robots.txt / sitemap.xml / llms.txt / llms-full.txt   SEO + AI-crawler surface
 ```
