@@ -88,14 +88,27 @@ Street Pass has a **Continue with Google** button on both the signup and
 login forms. The button is live already — until the provider is configured
 it simply returns a "provider is not enabled" style error:
 
-1. **Google Cloud Console** (console.cloud.google.com) → create or select a
-   project → **APIs & Services → OAuth consent screen**: choose *External*,
-   fill in the app name (`KloofStreet.online`) and your support email, save.
-2. **APIs & Services → Credentials → Create credentials → OAuth client ID**:
-   type **Web application**, and set the authorized redirect URI to exactly
-   `https://uzzoykmbadxriycvxycy.supabase.co/auth/v1/callback`
-3. Copy the **Client ID** and **Client secret**.
-4. **Supabase Dashboard → Authentication → Providers → Google**: enable it,
+1. **Google Cloud Console** (console.cloud.google.com) → open your project.
+   The console's OAuth section has been redesigned — the old "OAuth consent
+   screen" / "Credentials" menus no longer exist. Use the new tabs (left
+   sidebar: Overview / Branding / Audience / Clients / Data Access /
+   Verification Center):
+   - **Branding** tab: App name `KloofStreet.online`, your support email,
+     Application homepage link `https://kloofstreetonlinev2.vercel.app`,
+     developer contact email → **Save**.
+   - **Audience** tab: User type **External**. ⚠️ **Trap**: while the app
+     sits in **Testing** status, ONLY the test users listed here can sign
+     in. Either add your own Google account under *Test users* for now, or
+     click **Publish App** → *In production* (basic email/profile scopes
+     need no Google verification) — required for real members to register.
+   - **Clients** tab → **+ Create Client** → type **Web application** →
+     under *Authorized redirect URIs* add exactly:
+     `https://uzzoykmbadxriycvxycy.supabase.co/auth/v1/callback`
+     (optionally also add `https://kloofstreetonlinev2.vercel.app` under
+     *Authorized JavaScript origins*) → **Create**.
+2. The client dialog shows the **Client ID** and **Client secret** — copy
+   both (they stay available under the Clients list).
+3. **Supabase Dashboard → Authentication → Providers → Google**: enable it,
    paste both values, Save. No redeploy needed.
 
 Google members land on Street Pass with a `pending` profile (created
