@@ -5126,6 +5126,20 @@ window.go = function(name, noPush) {
   if (name === 'streetpass-scan') setTimeout(spInitScan, 300);
   if (name === 'streetpass-redeem') setTimeout(spLoadRewards, 100);
 };
+// v2.0.3 FIX: boot routing (/?page=..., /streetpass, manifest shortcuts, QR links)
+// runs BEFORE this override is installed, so the dynamic loaders below never
+// fired on direct loads - the dashboard stayed on the eternal
+// "Loading your Street Pass" spinner. Self-heal: fire the loader for whichever
+// Street Pass view boot routing left active.
+setTimeout(function() {
+  var vis = function(id) {
+    var el = document.getElementById(id);
+    return !!(el && (' ' + el.className + ' ').indexOf(' on ') !== -1);
+  };
+  if (vis('pg-streetpass') && document.getElementById('spLoading')) setTimeout(spLoadDashboard, 150);
+  if (vis('pg-streetpass-scan')) setTimeout(spInitScan, 300);
+  if (vis('pg-streetpass-redeem')) setTimeout(spLoadRewards, 150);
+}, 0);
 
 </script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
