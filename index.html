@@ -368,6 +368,15 @@ section{padding:72px 48px;}
 .lume-draft{position:fixed;right:14px;bottom:14px;z-index:500;background:rgba(17,17,20,.95);border:1px solid rgba(216,90,48,.55);border-radius:10px;padding:10px 14px;max-width:250px;box-shadow:0 10px 34px rgba(0,0,0,.5);}
 .lume-draft b{display:flex;align-items:center;gap:6px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#e8703f;}
 .lume-draft span{display:block;font-size:10px;color:#8a8a86;line-height:1.5;margin-top:3px;}
+.lume-brand{display:inline-flex;flex-direction:column;align-items:flex-start;background:#f6f1e8;border-radius:12px;padding:18px 24px 15px;margin-bottom:12px;box-shadow:0 8px 30px rgba(0,0,0,.35);}
+.lume-brand .lume-wordmark{width:min(210px,58vw);height:auto;display:block;}
+.lume-brand-sub{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#1c1c1a;margin-top:9px;opacity:.72;}
+.lume-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:26px;}
+.lume-treats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:26px;}
+.lume-insights{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:26px;}
+.lume-quote{border-left:3px solid #d85a30;padding:4px 0 4px 18px;margin:0 0 26px;}
+@media(max-width:640px){.lume-steps{grid-template-columns:1fr;}.lume-insights{grid-template-columns:1fr;}.lume-brand{padding:14px 18px 12px;}}
+@media(max-width:420px){.lume-treats{grid-template-columns:1fr;}}
 .biz-hero-ubuntu{background:linear-gradient(135deg,#050f0a,#0d2318,#152e20);}
 .biz-hero::after{
   content:'';position:absolute;inset:0;
@@ -4267,72 +4276,93 @@ setTimeout(trackPageview,800);
   <div class="biz-hero biz-hero-lume">
     <div class="biz-hero-inner">
       <button class="biz-back" onclick="go('brands')">&#x2190; Back to Directory</button>
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap;">
         <span class="brand-tier tier-g" style="position:relative;top:auto;left:auto;">Growth Partner</span>
         <span class="open-pill" style="position:relative;top:auto;right:auto;">Online &middot; Nationwide</span>
         <span class="badge">&#x2713; Verified</span>
         <span style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:var(--text2);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border-radius:3px;">Doctor-Led Telehealth</span>
       </div>
-      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
-        <div style="width:58px;height:58px;flex-shrink:0;border-radius:14px;background:linear-gradient(135deg,#d85a30,#8a3517);display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 6px 24px rgba(216,90,48,.35);">&#x1F4A1;</div>
-        <div style="font-size:clamp(28px,4vw,50px);font-weight:900;color:#ffffff;text-transform:uppercase;line-height:.95;letter-spacing:-.02em;">Lume<span style="font-weight:200;">Life</span></div>
+      <div class="lume-brand">
+        <img src="/lumalife/lume-wordmark.svg" alt="Lume &mdash; the LumeLife practice wordmark" class="lume-wordmark">
+        <div class="lume-brand-sub">LumeLife &middot; LumeWellness (Pty) Ltd</div>
       </div>
-      <p style="font-size:15px;color:rgba(240,240,238,.72);margin-top:10px;">Care that fits your life. &middot; Doctor-led virtual consultations &middot; Scripts, delivered &middot; Medispa, 99 Kloof Street, Gardens</p>
+      <p style="font-size:16px;color:rgba(240,240,238,.85);margin-top:0;"><strong style="color:#ffffff;">Care that fits your life.</strong> &nbsp;Consultations, diagnoses, and prescriptions made simple.</p>
     </div>
   </div>
   <div class="biz-body">
     <div>
       <div class="bv-stats">
         <div style="background:var(--bg2);padding:16px;text-align:center;border:1px solid var(--bdr);"><div style="font-size:24px;font-weight:900;color:#e8703f;">R450</div><div style="font-size:10px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:4px;">GP Consult</div></div>
-        <div style="background:var(--bg2);padding:16px;text-align:center;border:1px solid var(--bdr);"><div style="font-size:24px;font-weight:900;color:#e8703f;">24h</div><div style="font-size:10px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:4px;">Script Turnaround</div></div>
+        <div style="background:var(--bg2);padding:16px;text-align:center;border:1px solid var(--bdr);"><div style="font-size:22px;font-weight:900;color:#e8703f;">Same-day</div><div style="font-size:10px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:4px;">Video Consults</div></div>
         <div style="background:var(--bg2);padding:16px;text-align:center;border:1px solid var(--bdr);"><div style="font-size:24px;font-weight:900;color:#e8703f;">9</div><div style="font-size:10px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:4px;">Care Areas</div></div>
-        <div style="background:var(--bg2);padding:16px;text-align:center;border:1px solid var(--bdr);"><div style="font-size:24px;font-weight:900;color:#e8703f;">R0</div><div style="font-size:10px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:4px;">Pharmacy Delivery</div></div>
+        <div style="background:var(--bg2);padding:16px;text-align:center;border:1px solid var(--bdr);"><div style="font-size:24px;font-weight:900;color:#e8703f;">R0</div><div style="font-size:10px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:4px;">Medication Delivery</div></div>
       </div>
 
-      <div class="sec-tag">Telehealth &middot; Kloof Street &middot; Nationwide</div>
-      <h2 style="font-size:22px;font-weight:800;color:var(--text2);margin:8px 0 16px;">Care that fits your life.</h2>
-      <p style="font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:16px;">LumeLife brings the doctor's room to you &mdash; registered GPs, real prescriptions and ongoing medical care, all through secure video consultation. No waiting rooms, no parking, no half-day leave: book a time that suits your schedule, meet your doctor online, and have treatment delivered to your door or waiting at your pharmacy of choice. Medication dispatches through their partner pharmacy with free nationwide delivery, and follow-ups, repeat scripts and pathology requests are handled in the same thread of care.</p>
-      <p style="font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:24px;">The practice is rooted on Kloof Street &mdash; consulting from the Medi-Spa at 99 Kloof Street, Gardens &mdash; while serving patients anywhere in South Africa. Every treatment area starts with a doctor's consult, because good medicine is a conversation, not a questionnaire. Care is delivered with discretion and respect, from everyday acute needs to the things people put off talking about.</p>
+      <div class="sec-tag">Telehealth &middot; Gardens &middot; Nationwide</div>
+      <h2 style="font-size:22px;font-weight:800;color:var(--text2);margin:8px 0 16px;">Healthcare that fits each individual</h2>
+      <p style="font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:16px;">LumeLife is doctor-led telehealth built on one idea: healthcare that fits each individual &mdash; with care, respect, and discretion. Consultations, diagnoses and prescriptions happen over secure video with registered GPs, so there is no waiting room, no parking and no half-day leave. Book a time that suits you, meet your doctor online, and have your treatment delivered to your door &mdash; free &mdash; or waiting at your pharmacy of choice.</p>
+      <p style="font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:24px;">The practice consults from the Medispa at 99 Kloof Street, Gardens &mdash; right here on the Kloof &mdash; while treating patients anywhere in South Africa. And care doesn&#x27;t stop at the first script: follow-ups, repeat prescriptions and treatment adjustments are easy to arrange whenever you need them, so your care continues in the same thread with a doctor who knows your history.</p>
 
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:26px;">
-        <div style="background:#111114;border:1px solid rgba(216,90,48,.3);padding:14px;border-radius:8px;text-align:center;"><div style="font-size:18px;margin-bottom:4px;">&#x1F4C5;</div><div style="font-size:10px;font-weight:700;color:#f0f0ee;">1 &middot; Book</div><div style="font-size:9px;color:#7a7a78;margin-top:2px;">Choose a time that suits you</div></div>
-        <div style="background:#111114;border:1px solid rgba(216,90,48,.3);padding:14px;border-radius:8px;text-align:center;"><div style="font-size:18px;margin-bottom:4px;">&#x1F9D1;&#x200D;&#x2695;&#xFE0F;</div><div style="font-size:10px;font-weight:700;color:#f0f0ee;">2 &middot; Consult</div><div style="font-size:9px;color:#7a7a78;margin-top:2px;">Meet the doctor online</div></div>
-        <div style="background:#111114;border:1px solid rgba(216,90,48,.3);padding:14px;border-radius:8px;text-align:center;"><div style="font-size:18px;margin-bottom:4px;">&#x1F4E6;</div><div style="font-size:10px;font-weight:700;color:#f0f0ee;">3 &middot; Get treatment</div><div style="font-size:9px;color:#7a7a78;margin-top:2px;">Free delivery or pharmacy collect</div></div>
+      <div class="sec-tag" style="margin-bottom:4px;">How It Works</div>
+      <p style="font-size:13px;color:#8a8a86;font-style:italic;margin:6px 0 12px;">Three quiet steps between you and the right treatment.</p>
+      <div class="lume-steps">
+        <div style="background:#111114;border:1px solid rgba(216,90,48,.3);padding:14px;border-radius:8px;text-align:center;"><div style="font-size:18px;margin-bottom:4px;">&#x1F4C5;</div><div style="font-size:10px;font-weight:700;color:#f0f0ee;">1 &middot; Book</div><div style="font-size:9.5px;color:#7a7a78;margin-top:5px;line-height:1.55;">Choose a time that suits you and book your online consultation with a doctor.</div></div>
+        <div style="background:#111114;border:1px solid rgba(216,90,48,.3);padding:14px;border-radius:8px;text-align:center;"><div style="font-size:18px;margin-bottom:4px;">&#x1F9D1;&#x200D;&#x2695;&#xFE0F;</div><div style="font-size:10px;font-weight:700;color:#f0f0ee;">2 &middot; Consult</div><div style="font-size:9.5px;color:#7a7a78;margin-top:5px;line-height:1.55;">Meet with your doctor online to discuss your health, symptoms and treatment options.</div></div>
+        <div style="background:#111114;border:1px solid rgba(216,90,48,.3);padding:14px;border-radius:8px;text-align:center;"><div style="font-size:18px;margin-bottom:4px;">&#x1F4E6;</div><div style="font-size:10px;font-weight:700;color:#f0f0ee;">3 &middot; Get your treatment</div><div style="font-size:9.5px;color:#7a7a78;margin-top:5px;line-height:1.55;">Collect from your preferred pharmacy, or our partner pharmacy delivers to your door for free.</div></div>
       </div>
 
-      <div class="sec-tag" style="margin-bottom:12px;">What the doctors treat</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:26px;">
-        <div style="background:var(--bg2);border:1px solid var(--bdr);padding:16px;border-radius:8px;"><div style="font-size:16px;margin-bottom:6px;">&#x1FA7A;</div><div style="font-size:12.5px;font-weight:700;color:var(--text2);">Acute &amp; Everyday Care</div><div style="font-size:11px;color:#8a8a86;font-style:italic;margin:3px 0 6px;">A registered GP, on your schedule.</div><div style="font-size:11px;color:var(--muted);line-height:1.6;">Same-day video consults, scripts on the same day, sick notes, referrals, repeat chronic scripts and pathology requests.</div></div>
-        <div style="background:var(--bg2);border:1px solid var(--bdr);padding:16px;border-radius:8px;"><div style="font-size:16px;margin-bottom:6px;">&#x2728;</div><div style="font-size:12.5px;font-weight:700;color:var(--text2);">Skin Health</div><div style="font-size:11px;color:#8a8a86;font-style:italic;margin:3px 0 6px;">Considered care for the skin you live in.</div><div style="font-size:11px;color:var(--muted);line-height:1.6;">Prescription treatment for acne, eczema, rosacea and dermatitis, retinoid treatment, pigmentation and skin-tone management.</div></div>
-        <div style="background:var(--bg2);border:1px solid var(--bdr);padding:16px;border-radius:8px;"><div style="font-size:16px;margin-bottom:6px;">&#x1F933;</div><div style="font-size:12.5px;font-weight:700;color:var(--text2);">Hair</div><div style="font-size:11px;color:#8a8a86;font-style:italic;margin:3px 0 6px;">Slow it. Hold it. Where possible, regrow it.</div><div style="font-size:11px;color:var(--muted);line-height:1.6;">Clinically appropriate prescription treatment, topical scalp therapy, microneedling and in-clinic restoration options.</div></div>
-        <div style="background:var(--bg2);border:1px solid var(--bdr);padding:16px;border-radius:8px;"><div style="font-size:16px;margin-bottom:6px;">&#x1F319;</div><div style="font-size:12.5px;font-weight:700;color:var(--text2);">Sleep</div><div style="font-size:11px;color:#8a8a86;font-style:italic;margin:3px 0 6px;">Sleep is the foundation. We treat it like one.</div><div style="font-size:11px;color:var(--muted);line-height:1.6;">Short-term sleep support where clinically appropriate, prescription options, and review of existing sleep medication.</div></div>
-        <div style="background:var(--bg2);border:1px solid var(--bdr);padding:16px;border-radius:8px;"><div style="font-size:16px;margin-bottom:6px;">&#x2696;&#xFE0F;</div><div style="font-size:12.5px;font-weight:700;color:var(--text2);">Weight &amp; Metabolic Health</div><div style="font-size:11px;color:#8a8a86;font-style:italic;margin:3px 0 6px;">Metabolic care. Built around you.</div><div style="font-size:11px;color:var(--muted);line-height:1.6;">Investigation of metabolic and hormonal factors, bloods and monitoring, GLP-1 treatment where clinically appropriate.</div></div>
-        <div style="background:var(--bg2);border:1px solid var(--bdr);padding:16px;border-radius:8px;"><div style="font-size:16px;margin-bottom:6px;">&#x1F493;</div><div style="font-size:12.5px;font-weight:700;color:var(--text2);">Sexual Health</div><div style="font-size:11px;color:#8a8a86;font-style:italic;margin:3px 0 6px;">Discreet care for things people don't talk about enough.</div><div style="font-size:11px;color:var(--muted);line-height:1.6;">Prescription treatment for ED and premature ejaculation, low-libido support, STI screening and hormonal investigation.</div></div>
-        <div style="background:var(--bg2);border:1px solid var(--bdr);padding:16px;border-radius:8px;"><div style="font-size:16px;margin-bottom:6px;">&#x1F9E0;</div><div style="font-size:12.5px;font-weight:700;color:var(--text2);">Mental Wellness</div><div style="font-size:11px;color:#8a8a86;font-style:italic;margin:3px 0 6px;">A doctor in your corner, not a chatbot.</div><div style="font-size:11px;color:var(--muted);line-height:1.6;">Prescription treatment where appropriate, medication reviews, adult ADHD continuation care and therapy referrals.</div></div>
-        <div style="background:var(--bg2);border:1px solid var(--bdr);padding:16px;border-radius:8px;"><div style="font-size:16px;margin-bottom:6px;">&#x1F337;</div><div style="font-size:12.5px;font-weight:700;color:var(--text2);">Hormone Health</div><div style="font-size:11px;color:#8a8a86;font-style:italic;margin:3px 0 6px;">Steady through the shift.</div><div style="font-size:11px;color:var(--muted);line-height:1.6;">Perimenopause and menopause care, body-identical HRT, vaginal oestrogen, and testosterone where indicated.</div></div>
-        <div style="background:var(--bg2);border:1px solid var(--bdr);padding:16px;border-radius:8px;"><div style="font-size:16px;margin-bottom:6px;">&#x26A1;</div><div style="font-size:12.5px;font-weight:700;color:var(--text2);">Energy &amp; Vitality</div><div style="font-size:11px;color:#8a8a86;font-style:italic;margin:3px 0 6px;">More than just tired. More than just coffee.</div><div style="font-size:11px;color:var(--muted);line-height:1.6;">Fatigue and focus investigations, B12, vitamin D and targeted supplementation, iron deficiency assessment.</div></div>
-        <div style="background:rgba(216,90,48,.08);border:1px solid rgba(216,90,48,.4);padding:16px;border-radius:8px;display:flex;flex-direction:column;justify-content:center;"><div style="font-size:12.5px;font-weight:700;color:#e8703f;">Not sure where to start?</div><div style="font-size:11px;color:var(--muted);line-height:1.6;margin-top:4px;">Begin with a R450 GP consult &mdash; the doctor will point you to the right care area.</div></div>
+      <div class="sec-tag" style="margin-bottom:12px;">Treatments</div>
+      <div class="lume-treats">
+        <div style="background:var(--bg2);border:1px solid var(--bdr);padding:16px;border-radius:8px;"><div style="font-size:16px;margin-bottom:6px;">&#x1FA7A;</div><div style="font-size:12.5px;font-weight:700;color:var(--text2);">GP Consults <span style="color:#e8703f;">&middot; R450</span></div><div style="font-size:11px;color:var(--muted);line-height:1.6;margin-top:4px;">Same-day video consults for everyday health, scripts, sick notes and referrals.</div></div>
+        <div style="background:var(--bg2);border:1px solid var(--bdr);padding:16px;border-radius:8px;"><div style="font-size:16px;margin-bottom:6px;">&#x2728;</div><div style="font-size:12.5px;font-weight:700;color:var(--text2);">Skin Health</div><div style="font-size:11px;color:var(--muted);line-height:1.6;margin-top:4px;">Acne, eczema, rosacea, pigmentation and long-term skin health.</div></div>
+        <div style="background:var(--bg2);border:1px solid var(--bdr);padding:16px;border-radius:8px;"><div style="font-size:16px;margin-bottom:6px;">&#x1F933;</div><div style="font-size:12.5px;font-weight:700;color:var(--text2);">Hair</div><div style="font-size:11px;color:var(--muted);line-height:1.6;margin-top:4px;">Hair loss and thinning, assessed properly and treated discreetly.</div></div>
+        <div style="background:var(--bg2);border:1px solid var(--bdr);padding:16px;border-radius:8px;"><div style="font-size:16px;margin-bottom:6px;">&#x1F319;</div><div style="font-size:12.5px;font-weight:700;color:var(--text2);">Sleep</div><div style="font-size:11px;color:var(--muted);line-height:1.6;margin-top:4px;">Insomnia and disrupted sleep, treated at the cause rather than the symptom.</div></div>
+        <div style="background:var(--bg2);border:1px solid var(--bdr);padding:16px;border-radius:8px;"><div style="font-size:16px;margin-bottom:6px;">&#x2696;&#xFE0F;</div><div style="font-size:12.5px;font-weight:700;color:var(--text2);">Weight &amp; Metabolic Health</div><div style="font-size:11px;color:var(--muted);line-height:1.6;margin-top:4px;">Doctor-led weight and metabolic care built around your history and goals.</div></div>
+        <div style="background:var(--bg2);border:1px solid var(--bdr);padding:16px;border-radius:8px;"><div style="font-size:16px;margin-bottom:6px;">&#x1F493;</div><div style="font-size:12.5px;font-weight:700;color:var(--text2);">Sexual Health</div><div style="font-size:11px;color:var(--muted);line-height:1.6;margin-top:4px;">Erectile dysfunction, libido, intimate health and STI screening, judgement-free.</div></div>
+        <div style="background:var(--bg2);border:1px solid var(--bdr);padding:16px;border-radius:8px;"><div style="font-size:16px;margin-bottom:6px;">&#x1F9E0;</div><div style="font-size:12.5px;font-weight:700;color:var(--text2);">Mental Wellness</div><div style="font-size:11px;color:var(--muted);line-height:1.6;margin-top:4px;">Anxiety, stress, low mood and burnout, with a doctor in your corner.</div></div>
+        <div style="background:var(--bg2);border:1px solid var(--bdr);padding:16px;border-radius:8px;"><div style="font-size:16px;margin-bottom:6px;">&#x1F337;</div><div style="font-size:12.5px;font-weight:700;color:var(--text2);">Hormone Health</div><div style="font-size:11px;color:var(--muted);line-height:1.6;margin-top:4px;">Perimenopause, menopause and thyroid care, with the time to be heard.</div></div>
+        <div style="background:var(--bg2);border:1px solid var(--bdr);padding:16px;border-radius:8px;"><div style="font-size:16px;margin-bottom:6px;">&#x26A1;</div><div style="font-size:12.5px;font-weight:700;color:var(--text2);">Energy &amp; Vitality</div><div style="font-size:11px;color:var(--muted);line-height:1.6;margin-top:4px;">Persistent fatigue and low focus, with the underlying causes investigated.</div></div>
+        <div style="background:rgba(216,90,48,.08);border:1px solid rgba(216,90,48,.4);padding:16px;border-radius:8px;display:flex;flex-direction:column;justify-content:center;"><div style="font-size:12.5px;font-weight:700;color:#e8703f;">Not sure where to start?</div><div style="font-size:11px;color:var(--muted);line-height:1.6;margin-top:4px;">Begin with a GP consult &mdash; the doctor will point you to the right care.</div></div>
       </div>
 
-      <div class="sec-tag" style="margin-bottom:12px;">Inside a LumeLife consult</div>
-      <div style="border:1px solid rgba(216,90,48,.35);border-radius:10px;overflow:hidden;margin-bottom:26px;position:relative;">
+      <div class="sec-tag" style="margin-bottom:12px;">Inside a LumeLife Consult</div>
+      <div style="border:1px solid rgba(216,90,48,.35);border-radius:10px;overflow:hidden;margin-bottom:22px;position:relative;">
         <img src="/lumalife/lume-consult.jpg" alt="LumeLife telehealth video consultation with a registered GP" style="width:100%;display:block;">
         <div style="padding:12px 16px;background:#111114;border-top:1px solid var(--bdr);"><div style="font-size:11px;color:var(--muted);line-height:1.6;">Real doctors, real prescriptions &mdash; a private video consult from wherever you are. <em style="color:#8a8a86;">Illustrative image &mdash; practice photography to follow.</em></div></div>
       </div>
 
+      <div class="lume-quote">
+        <div style="font-size:19px;font-weight:700;color:var(--text2);line-height:1.4;font-style:italic;">&ldquo;A doctor&#x27;s care, without the waiting room.&rdquo;</div>
+        <div style="font-size:10px;color:#8a8a86;letter-spacing:.14em;text-transform:uppercase;margin-top:7px;">LumeLife</div>
+      </div>
+
+      <div class="sec-tag" style="margin-bottom:12px;">Scripts &amp; Delivery</div>
+      <h2 style="font-size:22px;font-weight:800;color:var(--text2);margin:8px 0 16px;">From consult to doorstep</h2>
+      <p style="font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:16px;">Your LumeLife doctor sends your prescription directly to the practice&#x27;s partner pharmacy. They&#x27;ll claim from your medical aid or arrange payment if you&#x27;re a private patient, and your medication is then delivered to your door &mdash; free, nationwide &mdash; including monthly refills and once-off prescriptions.</p>
+      <p style="font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:26px;">Prefer to use your own pharmacy? Share the pharmacy details and your prescription is sent directly to them.</p>
+
+      <div class="sec-tag" style="margin-bottom:12px;">Medical Insights</div>
+      <div class="lume-insights">
+        <a href="https://lumelife.co.za" target="_blank" rel="noopener" style="text-decoration:none;background:var(--bg2);border:1px solid var(--bdr);padding:16px;border-radius:8px;display:block;"><div style="font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#e8703f;margin-bottom:6px;">Men&#x27;s Health</div><div style="font-size:12px;font-weight:700;color:var(--text2);line-height:1.45;">The Men&#x27;s Wellness Check: Why It Is Worth Your Time</div><div style="font-size:10.5px;color:#8a8a86;line-height:1.6;margin-top:5px;">A calm look at how a structured wellness check helps men know their numbers, catch early changes, and build a practical plan before problems take hold.</div></a>
+        <a href="https://lumelife.co.za" target="_blank" rel="noopener" style="text-decoration:none;background:var(--bg2);border:1px solid var(--bdr);padding:16px;border-radius:8px;display:block;"><div style="font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#e8703f;margin-bottom:6px;">Hormones</div><div style="font-size:12px;font-weight:700;color:var(--text2);line-height:1.45;">Men&#x27;s Hormone Health: Understanding Low Energy in Midlife</div><div style="font-size:10.5px;color:#8a8a86;line-height:1.6;margin-top:5px;">A calm, doctor-led look at how men&#x27;s hormones shift with age, the symptoms worth noticing, and when careful medical assessment may help.</div></a>
+        <a href="https://lumelife.co.za" target="_blank" rel="noopener" style="text-decoration:none;background:var(--bg2);border:1px solid var(--bdr);padding:16px;border-radius:8px;display:block;"><div style="font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#e8703f;margin-bottom:6px;">Sleep</div><div style="font-size:12px;font-weight:700;color:var(--text2);line-height:1.45;">Sleep in 2026: Why So Many People Feel Exhausted, and What Is Worth Looking For</div><div style="font-size:10.5px;color:#8a8a86;line-height:1.6;margin-top:5px;">Poor sleep is often a symptom of something treatable, so it deserves proper assessment rather than another cup of coffee.</div></a>
+      </div>
+
       <div class="info-card" style="background:rgba(216,90,48,.05);border-color:rgba(216,90,48,.25);">
         <h3 style="color:var(--text2);">Why patients choose LumeLife</h3>
-        <p style="font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:0;">Same-day appointments that respect your calendar. Scripts, if prescribed, within 24 hours. Free delivery from the partner pharmacy, anywhere in South Africa &mdash; or collect from your own chemist. Ongoing care through follow-ups and repeat scripts instead of one-off consultations. And a practice that treats the unglamorous, easily-postponed parts of health &mdash; sleep, stress, hormones, hair &mdash; with the same seriousness as the acute stuff.</p>
+        <p style="font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:0;">Same-day video consults that fit around your calendar. Real prescriptions &mdash; claimable through your medical aid or arranged privately &mdash; with free nationwide delivery from the partner pharmacy, monthly refills included. Follow-ups, repeat prescriptions and treatment adjustments are easy to arrange whenever you need them, so care continues in the same thread instead of starting over. And the quiet, easily-postponed parts of health &mdash; sleep, stress, hormones, hair, energy &mdash; are treated with the same seriousness as the acute stuff, always with discretion.</p>
       </div>
     </div>
     <div>
       <div class="info-card">
         <h3>Practice Details</h3>
-        <div class="info-row"><b>&#x1F4CD;</b><span>Medi-Spa, 99 Kloof Street, Gardens, Cape Town</span></div>
+        <div class="info-row"><b>&#x1F4CD;</b><span>Medispa, 99 Kloof Street, Gardens, Cape Town 8001</span></div>
+        <div class="info-row"><b>&#x1F3E5;</b><span>Practice of LumeWellness (Pty) Ltd</span></div>
         <div class="info-row"><b>&#x2709;&#xFE0F;</b><a href="mailto:admin@lumelife.co.za" style="color:var(--a);">admin@lumelife.co.za</a></div>
         <div class="info-row"><b>&#x1F310;</b><a href="https://lumelife.co.za" target="_blank" style="color:var(--a);">lumelife.co.za</a></div>
-        <div class="info-row"><b>&#x1F4A8;</b><span>Video consults &mdash; book from anywhere in SA</span></div>
+        <div class="info-row"><b>&#x1F4A8;</b><span>Same-day video consults &mdash; book from anywhere in SA</span></div>
         <div class="info-row"><b>&#x1F69B;</b><span>Free delivery via partner pharmacy, nationwide</span></div>
+        <div class="info-row"><b>&#x1F4B3;</b><span>Medical aid claimable via partner pharmacy</span></div>
       </div>
       <div class="info-card" style="background:rgba(245,197,24,.04);border-color:rgba(245,197,24,.2);">
         <h3>Street Pass Benefit</h3>
