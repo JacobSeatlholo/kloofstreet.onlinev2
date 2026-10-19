@@ -4,6 +4,12 @@
   "outputDirectory": ".",
   "routes": [
     {
+      "src": "/lumalife",
+      "headers": {
+        "X-Robots-Tag": "noindex, nofollow"
+      }
+    },
+    {
       "src": "/newsletter",
       "status": 308,
       "headers": {
