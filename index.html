@@ -1474,28 +1474,22 @@ nav{z-index:200;}
 .mch-feat p{margin:0;}
 .mch-feat-ic{font-size:22px;line-height:1;}
 /* ── BODY VISION — method diagrams ── */
-.bv-mv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px;}
-.bv-mv{background:var(--bg3);border:1px solid var(--bdr);border-radius:var(--r);padding:16px 14px;text-align:center;}
-.bv-mv-n{font-size:10px;font-weight:800;color:var(--a);letter-spacing:.24em;}
-.bv-svg{width:100%;max-width:180px;height:auto;display:block;margin:6px auto 0;}
-.bv-mv-name{font-size:14px;font-weight:800;color:var(--text2);margin:10px 0 6px;}
-.bv-mv-pos{font-size:11px;color:var(--muted);line-height:1.65;}
-.bv-attn{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px 18px;}
-.bv-attn div{font-size:12px;color:var(--muted);line-height:1.6;display:flex;gap:8px;}
-.bv-attn b{color:var(--a);font-weight:700;}
-.bv-pelvis{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px;}
-.bv-pelvis .bv-svg{max-width:130px;}
-.bv-plumb{stroke:var(--a);stroke-width:1;stroke-dasharray:3 5;opacity:.55;fill:none;}
-.bv-stool{stroke:var(--muted);stroke-width:3;stroke-linecap:round;opacity:.55;fill:none;}
-.bv-line{fill:none;stroke:var(--text);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;opacity:.88;}
-.bv-echo{fill:none;stroke:var(--text);stroke-width:3;stroke-linecap:round;opacity:.28;}
-.bv-thin{fill:none;stroke:var(--text);stroke-width:2;stroke-linecap:round;opacity:.5;}
-.bv-head{fill:var(--bg3);stroke:var(--text);stroke-width:2;}
-.bv-arrow{fill:none;stroke:var(--a);stroke-width:1.7;stroke-linecap:round;}
-.bv-arrowR{fill:none;stroke:var(--muted);stroke-width:3.4;stroke-linecap:round;opacity:.85;}
-.bv-mk{fill:var(--a);}
-.bv-mkR{fill:var(--muted);}
-@media(max-width:860px){.bv-mv-grid{grid-template-columns:1fr;}.bv-mv .bv-svg{max-width:150px;}}
+.bvm-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:18px;}
+.bvm-panel{background:var(--bg3);border:1px solid var(--bdr);border-radius:var(--r);padding:22px;display:grid;grid-template-columns:220px 1fr;gap:22px;align-items:start;}
+.bvm-plate{border:1.5px solid var(--text);border-radius:14px;padding:10px;background:var(--bg2);position:relative;}
+.bvm-plate::after{content:"";position:absolute;inset:5px;border:1px solid var(--text);border-radius:10px;pointer-events:none;opacity:.22;}
+.bvm-plate svg{display:block;width:100%;height:auto;color:var(--text);}
+.bvm-name{font-size:16px;font-weight:800;color:var(--text2);letter-spacing:.14em;text-transform:uppercase;margin:0 0 10px;}
+.bvm-copy{font-size:12.5px;color:var(--muted);line-height:1.8;margin:0 0 10px;}
+.bvm-copy:last-child{margin-bottom:0;}
+.bvm-benefits{list-style:none;margin:0 0 10px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:5px 16px;}
+.bvm-benefits li{font-size:11.5px;color:var(--muted);line-height:1.55;display:flex;gap:7px;}
+.bvm-benefits li::before{content:"\25B8";color:var(--text);opacity:.7;flex-shrink:0;}
+.bvm-kicker{font-size:9px;font-weight:700;color:var(--a);letter-spacing:.18em;text-transform:uppercase;margin:12px 0 8px;}
+.bvm-quote{border-left:2px solid var(--a);padding:4px 0 4px 14px;margin:8px 0 0;font-size:12.5px;font-style:italic;color:var(--text2);line-height:1.7;}
+.bvm-quote b{display:block;font-style:normal;font-size:10px;color:var(--muted);margin-top:5px;letter-spacing:.08em;}
+.bvm-tm{font-size:9.5px;color:var(--muted);opacity:.75;line-height:1.6;margin-top:18px;padding-top:14px;border-top:1px solid var(--bdr);}
+@media(max-width:760px){.bvm-panel{grid-template-columns:1fr;}.bvm-plate{max-width:320px;margin:0 auto;}.bvm-benefits{grid-template-columns:1fr;}}
 
 
 </style>
@@ -3771,123 +3765,124 @@ setTimeout(trackPageview,800);
       <p style="font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:16px;">Body Vision Studio is Cape Town's specialist GYROTONIC&#xAE; and GYROKINESIS&#xAE; studio, now open at the Lifestyle Centre on 50 Kloof Street. Kim Tucker — certified instructor with over 15 years of practice — offers private and semi-private sessions tailored to dancers, athletes, post-surgery recovery, seniors and anyone seeking a freer, stronger body.</p>
       <p style="font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:28px;">The GYROTONIC&#xAE; Expansion System draws from gymnastics, swimming, ballet and yoga. Unlike conventional exercise, its movements are fluid, circular and three-dimensional — simultaneously stretching and strengthening the entire body through rotating joint movement, without compression. Every session is synchronised with breathing patterns, creating a cardiovascular stimulation that can be gentle or vigorous.</p>
 
-      <!-- THE METHOD — from Kim's Gyrotonic manual -->
+      <!-- THE METHODS — from the Body Vision studio brochure (B&W plate illustrations) -->
       <div style="background:var(--bg2);border:1px solid rgba(245,197,24,.16);border-radius:var(--r);padding:26px;margin-bottom:28px;">
-        <div class="sec-tag" style="margin-bottom:10px;">The Method &middot; From Kim&rsquo;s GYROTONIC&#xAE; Manual</div>
-        <h2 style="font-size:20px;font-weight:800;color:var(--text2);margin:0 0 12px;">Essential movements for a healthy spine</h2>
-        <p style="font-size:13.5px;color:var(--muted);line-height:1.85;margin-bottom:4px;">Every GYROTONIC&#xAE; session is built on a small family of movements that keep the spine &mdash; and every structure connected to it &mdash; healthy. Drawn from Kim&rsquo;s teaching manual, these are the waves you learn to move with in the studio: arch and curl, sideways arch and spiral &mdash; each one starting from, and returning to, a balanced upright spine.</p>
+        <div class="sec-tag" style="margin-bottom:10px;">The Methods &middot; From the Studio Brochure</div>
+        <h2 style="font-size:20px;font-weight:800;color:var(--text2);margin:0 0 10px;">Three disciplines, taught the classical way</h2>
+        <p style="font-size:13.5px;color:var(--muted);line-height:1.85;">Body Vision is built on three complementary methods &mdash; the GYROTONIC&reg; Expansion System, GYROKINESIS&reg; and Classical Pilates. Each works the whole body as one system: stretched and strengthened through rhythmic, coordinated movement, synchronised with the breath.</p>
 
-        <div class="bv-mv-grid">
-          <div class="bv-mv">
-            <div class="bv-mv-n">01</div>
-            <svg class="bv-svg" viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Seated figure arching backwards over a plumb line">
-              <defs>
-                <marker id="bvA1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path class="bv-mk" d="M0,0 L10,5 L0,10 z"/></marker>
-              </defs>
-              <line class="bv-plumb" x1="112" y1="10" x2="112" y2="152"/>
-              <g class="bv-stool"><line x1="72" y1="112" x2="152" y2="112"/><line x1="84" y1="112" x2="76" y2="152"/><line x1="140" y1="112" x2="148" y2="152"/></g>
-              <path class="bv-line" d="M116,108 L150,118 L154,146"/>
-              <path class="bv-line" d="M114,110 C76,100 60,64 86,38"/>
-              <path class="bv-echo" d="M114,110 C90,100 78,72 92,50"/>
-              <circle class="bv-head" cx="90" cy="30" r="9.5"/>
-              <g class="bv-arrow"><line x1="82" y1="22" x2="62" y2="12" marker-end="url(#bvA1)"/><line x1="121" y1="115" x2="142" y2="136" marker-end="url(#bvA1)"/></g>
+        <div class="bvm-grid">
+          <div class="bvm-panel">
+            <div class="bvm-plate">
+              <svg viewBox="0 0 460 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Line drawing of a GYROTONIC Pulley Tower with stacked weights, pulleys and handle cables beside a bench">
+              <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="30" y1="344" x2="430" y2="344" stroke-width="1.2" opacity=".3"/>
+                <path d="M304,86 L304,332" stroke-width="3"/><path d="M352,86 L352,332" stroke-width="3"/>
+                <path d="M304,120 L352,120" stroke-width="1.4" opacity=".55"/><path d="M304,208 L352,208" stroke-width="1.4" opacity=".55"/><path d="M304,288 L352,288" stroke-width="1.4" opacity=".55"/>
+                <path d="M288,332 L368,332" stroke-width="3"/><path d="M296,332 L296,342 M360,332 L360,342" stroke-width="2.4"/>
+                <ellipse cx="328" cy="84" rx="34" ry="9" stroke-width="2.2"/><ellipse cx="328" cy="70" rx="30" ry="8" stroke-width="2.2"/><ellipse cx="328" cy="57" rx="26" ry="7.5" stroke-width="2.2"/>
+                <line x1="328" y1="44" x2="328" y2="49" stroke-width="2.2"/>
+                <circle cx="286" cy="98" r="11" stroke-width="2.2"/><circle cx="286" cy="98" r="3" stroke-width="1.4"/>
+                <path d="M275,100 C220,116 176,140 158,172" stroke-width="2"/>
+                <path d="M150,168 L172,176 L158,192 Z" stroke-width="2.2"/><line x1="158" y1="192" x2="158" y2="206" stroke-width="1.6" opacity=".7"/>
+                <circle cx="286" cy="180" r="10" stroke-width="2"/><circle cx="286" cy="180" r="2.8" stroke-width="1.3"/>
+                <path d="M276,183 C232,196 206,214 194,240" stroke-width="1.8" opacity=".85"/>
+                <path d="M187,236 L207,244 L194,258 Z" stroke-width="2" opacity=".85"/>
+                <path d="M52,306 L242,306" stroke-width="3"/>
+                <path d="M60,306 L60,290 Q60,282 70,282 L234,282 Q242,282 242,290 L242,306" stroke-width="2"/>
+                <path d="M74,306 L74,342 M226,306 L226,342" stroke-width="2.6"/><path d="M74,326 L226,326" stroke-width="1.2" opacity=".45"/>
+                <path d="M242,282 L258,262 L258,282" stroke-width="1.8" opacity=".8"/>
+              </g>
             </svg>
-            <div class="bv-mv-name">Arch &amp; Curl</div>
-            <div class="bv-mv-pos">The foundation wave.<br>Balanced arch &mdash; back of head over sacrum.<br>Balanced curl &mdash; throat centre over pubic bone.</div>
-          </div>
-          <div class="bv-mv">
-            <div class="bv-mv-n">02</div>
-            <svg class="bv-svg" viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Seated figure arching sideways over a plumb line">
-              <defs>
-                <marker id="bvA2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path class="bv-mk" d="M0,0 L10,5 L0,10 z"/></marker>
-              </defs>
-              <line class="bv-plumb" x1="110" y1="10" x2="110" y2="152"/>
-              <g class="bv-stool"><line x1="70" y1="112" x2="150" y2="112"/><line x1="82" y1="112" x2="78" y2="152"/><line x1="138" y1="112" x2="142" y2="152"/></g>
-              <path class="bv-line" d="M101,112 L97,150"/>
-              <path class="bv-line" d="M119,112 L123,150"/>
-              <path class="bv-line" d="M110,110 C102,84 114,58 132,44"/>
-              <path class="bv-echo" d="M110,110 C106,88 116,66 128,54"/>
-              <circle class="bv-head" cx="136" cy="37" r="9.5"/>
-              <g class="bv-arrow"><line x1="143" y1="29" x2="160" y2="17" marker-end="url(#bvA2)"/><line x1="99" y1="116" x2="82" y2="134" marker-end="url(#bvA2)"/></g>
-            </svg>
-            <div class="bv-mv-name">Sideways Arch</div>
-            <div class="bv-mv-pos">The lateral wave.<br>Balanced sideways arch &mdash; side of neck over pubic bone.</div>
-          </div>
-          <div class="bv-mv">
-            <div class="bv-mv-n">03</div>
-            <svg class="bv-svg" viewBox="0 0 220 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Seated figure with a helical spiral around an upright spine">
-              <defs>
-                <marker id="bvA3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path class="bv-mk" d="M0,0 L10,5 L0,10 z"/></marker>
-              </defs>
-              <line class="bv-plumb" x1="110" y1="10" x2="110" y2="152"/>
-              <g class="bv-stool"><line x1="70" y1="112" x2="150" y2="112"/><line x1="82" y1="112" x2="78" y2="152"/><line x1="138" y1="112" x2="142" y2="152"/></g>
-              <path class="bv-line" d="M101,112 L97,150"/>
-              <path class="bv-line" d="M119,112 L123,150"/>
-              <path class="bv-line" d="M110,110 L110,42"/>
-              <circle class="bv-head" cx="110" cy="32" r="9.5"/>
-              <path class="bv-thin" d="M110,106 C88,98 90,80 110,76 C130,72 130,58 112,52 C100,48 102,42 109,37"/>
-              <g class="bv-arrow"><path d="M92,60 A22,13 0 0 1 90,45" marker-end="url(#bvA3)"/><path d="M128,90 A22,13 0 0 0 130,105" marker-end="url(#bvA3)"/></g>
-            </svg>
-            <div class="bv-mv-name">Spiral</div>
-            <div class="bv-mv-pos">The rotational wave.<br>Balanced spiral &mdash; whole spine aligned and upright.</div>
-          </div>
-        </div>
-
-        <div style="margin-top:22px;padding-top:18px;border-top:1px solid var(--bdr);">
-          <div style="font-size:9px;font-weight:700;color:var(--a);letter-spacing:.18em;text-transform:uppercase;margin-bottom:12px;">Common attention &mdash; in every movement</div>
-          <div class="bv-attn">
-            <div><b>&mdash;</b><span>Always starting from, and returning to, upright</span></div>
-            <div><b>&mdash;</b><span>Inhale towards upright, exhale into the extremes</span></div>
-            <div><b>&mdash;</b><span>Rhythm: &ldquo;and 1, 2, 3&rdquo;</span></div>
-            <div><b>&mdash;</b><span>Craving space between the vertebrae</span></div>
-            <div><b>&mdash;</b><span>Even distribution throughout the spine</span></div>
-          </div>
-        </div>
-
-        <div style="margin-top:22px;padding-top:18px;border-top:1px solid var(--bdr);">
-          <div style="font-size:9px;font-weight:700;color:var(--a);letter-spacing:.18em;text-transform:uppercase;margin-bottom:12px;">Narrowing of the pelvis</div>
-          <p style="font-size:12.5px;color:var(--muted);line-height:1.75;margin:0;">Action gathers through the centre of the body; reaction lengthens away from it. The pelvis narrows, the spine grows tall &mdash; standing and sitting alike.</p>
-          <div class="bv-pelvis">
-            <div class="bv-mv">
-              <svg class="bv-svg" viewBox="0 0 120 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Standing figure — action converging on the pelvis, reaction lengthening up and down">
-                <defs>
-                  <marker id="bvA4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path class="bv-mk" d="M0,0 L10,5 L0,10 z"/></marker>
-                  <marker id="bvR4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="bv-mkR" d="M0,0 L10,5 L0,10 z"/></marker>
-                </defs>
-                <circle class="bv-head" cx="60" cy="26" r="8"/>
-                <path class="bv-line" d="M60,36 L60,92"/>
-                <ellipse class="bv-line" cx="60" cy="100" rx="17" ry="7"/>
-                <path class="bv-line" d="M52,103 L50,132"/>
-                <path class="bv-line" d="M68,103 L70,132"/>
-                <line class="bv-line" x1="42" y1="134" x2="78" y2="134"/>
-                <g class="bv-arrow"><line x1="26" y1="98" x2="41" y2="100" marker-end="url(#bvA4)"/><line x1="94" y1="98" x2="79" y2="100" marker-end="url(#bvA4)"/><line x1="32" y1="80" x2="46" y2="92" marker-end="url(#bvA4)"/><line x1="88" y1="80" x2="74" y2="92" marker-end="url(#bvA4)"/></g>
-                <g class="bv-arrowR"><line x1="60" y1="15" x2="60" y2="5" marker-end="url(#bvR4)"/><line x1="60" y1="109" x2="60" y2="126" marker-end="url(#bvR4)"/></g>
-              </svg>
-              <div class="bv-mv-pos" style="margin-top:8px;">Standing</div>
             </div>
-            <div class="bv-mv">
-              <svg class="bv-svg" viewBox="0 0 120 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sitting figure — action converging on the pelvis, reaction radiating outward and upward">
-                <defs>
-                  <marker id="bvA5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path class="bv-mk" d="M0,0 L10,5 L0,10 z"/></marker>
-                  <marker id="bvR5" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="bv-mkR" d="M0,0 L10,5 L0,10 z"/></marker>
-                </defs>
-                <g class="bv-stool"><line x1="40" y1="112" x2="80" y2="112"/><line x1="48" y1="112" x2="44" y2="150"/><line x1="72" y1="112" x2="76" y2="150"/></g>
-                <circle class="bv-head" cx="60" cy="48" r="8"/>
-                <path class="bv-line" d="M60,58 L60,104"/>
-                <path class="bv-line" d="M60,106 L42,122 L44,144"/>
-                <path class="bv-line" d="M60,106 L78,122 L76,144"/>
-                <g class="bv-arrow"><line x1="44" y1="100" x2="53" y2="103" marker-end="url(#bvA5)"/><line x1="76" y1="100" x2="67" y2="103" marker-end="url(#bvA5)"/></g>
-                <g class="bv-arrowR"><line x1="60" y1="38" x2="60" y2="24" marker-end="url(#bvR5)"/><line x1="40" y1="128" x2="29" y2="146" marker-end="url(#bvR5)"/><line x1="80" y1="128" x2="91" y2="146" marker-end="url(#bvR5)"/><line x1="60" y1="114" x2="60" y2="132" marker-end="url(#bvR5)"/></g>
-              </svg>
-              <div class="bv-mv-pos" style="margin-top:8px;">Sitting</div>
+            <div>
+              <div class="bvm-name">GYROTONIC&reg;</div>
+              <p class="bvm-copy">GYROTONIC&reg; methodology allows users to stretch and strengthen muscles, while simultaneously stimulating and strengthening connective tissues in and around the joints of the body. Exercises are synchronised with corresponding breathing patterns, enhancing aerobic and cardiovascular stimulation and promoting neuro-muscular rejuvenation.</p>
+              <p class="bvm-copy">Movements are performed on the Professional Pulley Tower &mdash; fully adjustable to every body type and level of strength. The even, constant resistance of the handle unit and tower eliminates the jarring of conventional equipment, while circular, spiralling and undulating movement increases the functional capacity of the spine for a spherical, three-dimensional awareness &mdash; and increased equilibrium.</p>
+              <p class="bvm-copy">From professional sportsmen to injured patients in rehabilitation &mdash; and burnt-out candidates who simply leave recharged: this is perhaps the most intelligent of all exercise forms, with the ability to change and sculpt your body to make you look and feel fantastic.</p>
+            </div>
+          </div>          <div class="bvm-panel">
+            <div class="bvm-plate">
+              <svg viewBox="0 0 460 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Seated figure ringed by seven arcing arrows - the seven natural elements of spinal movement">
+              <defs><marker id="bvmB" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+              <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="230" cy="278" rx="26" ry="12" stroke-width="2.6"/>
+                <path d="M196,296 L264,296" stroke-width="2.4"/>
+                <path d="M230,266 C214,238 246,212 230,184 C216,158 240,140 232,118" stroke-width="3"/>
+                <circle cx="230" cy="102" r="15" stroke-width="2.6"/>
+                <g stroke-width="1.6" opacity=".85">
+                  <path d="M260.5,82 A118,118 0 0 0 199.5,82" marker-end="url(#bvmB)"/>
+                  <path d="M159.9,101.1 A118,118 0 0 0 121.8,149" marker-end="url(#bvmB)"/>
+                  <path d="M112.1,191.6 A118,118 0 0 0 125.6,251.1" marker-end="url(#bvmB)"/>
+                  <path d="M153,285.4 A118,118 0 0 0 207.9,311.9" marker-end="url(#bvmB)"/>
+                  <path d="M252.1,311.9 A118,118 0 0 0 307,285.4" marker-end="url(#bvmB)"/>
+                  <path d="M334.4,251.1 A118,118 0 0 0 348,191.6" marker-end="url(#bvmB)"/>
+                  <path d="M338.2,148.8 A118,118 0 0 0 300.1,101.1" marker-end="url(#bvmB)"/>
+                </g>
+                <g font-family="Georgia,serif" font-size="13" font-style="italic" fill="currentColor" stroke="none" opacity=".8" text-anchor="middle">
+                  <text x="230" y="50">1</text><text x="118.9" y="112">2</text><text x="91.5" y="231">3</text><text x="168.3" y="329">4</text>
+                  <text x="291.7" y="329">5</text><text x="368.5" y="231">6</text><text x="341.1" y="112">7</text>
+                </g>
+              </g>
+            </svg>
+            </div>
+            <div>
+              <div class="bvm-name">GYROKINESIS&reg;</div>
+              <p class="bvm-copy">GYROKINESIS&reg; works the entire body through seven natural elements of spinal movement &mdash; forward, backward, left side, right side, left twist, right twist and circular &mdash; as well as all other joint articulation. Rhythmic, undulating movements systematically and gently work the joints and muscles, stimulating the internal organs while corresponding breathing patterns are integrated along the way.</p>
+              <p class="bvm-copy">Fluidity is the key. Postures are not held &mdash; they flow smoothly and harmoniously on the breath, feeling more like a dance than regular exercise. A typical class begins seated on low stools, mobilising the spine through arching, curling, bending, twisting and spiralling, then expands to release hips, knees and hamstrings in every direction &mdash; sitting, lying and standing alike.</p>
+              <p class="bvm-copy">All that is needed is a stool, a mat and some floor space &mdash; perfect for travellers and home practice. GYROKINESIS&reg; invigorates and re-educates the body to move with fluidity, relaxation and power.</p>
+            </div>
+          </div>          <div class="bvm-panel">
+            <div class="bvm-plate">
+              <svg viewBox="0 0 460 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Side-view line drawing of a Pilates reformer with carriage, footbar, springs and strap pulleys">
+              <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="24" y1="344" x2="436" y2="344" stroke-width="1.2" opacity=".3"/>
+                <path d="M42,262 L418,262" stroke-width="3"/><path d="M42,296 L418,296" stroke-width="3"/>
+                <path d="M42,262 L42,296 M418,262 L418,296" stroke-width="2.4"/>
+                <path d="M70,296 L70,342 M132,296 L132,342 M328,296 L328,342 M390,296 L390,342" stroke-width="2.6"/>
+                <rect x="96" y="268" width="240" height="22" rx="8" stroke-width="2.2"/>
+                <circle cx="120" cy="296" r="5" stroke-width="1.6" opacity=".7"/><circle cx="312" cy="296" r="5" stroke-width="1.6" opacity=".7"/>
+                <path d="M96,279 L336,279" stroke-width="1" opacity=".3"/>
+                <path d="M96,268 L112,252 L128,268" stroke-width="1.8" opacity=".85"/>
+                <path d="M300,268 L300,254 M312,268 L312,254" stroke-width="2" opacity=".8"/>
+                <path d="M46,272 l5,-4 5,4 5,-4 5,4 5,-4 5,4 5,-4 5,4 5,-4 5,4" stroke-width="1.4" opacity=".85"/>
+                <path d="M46,284 l5,-4 5,4 5,-4 5,4 5,-4 5,4 5,-4 5,4 5,-4 5,4" stroke-width="1.4" opacity=".85"/>
+                <path d="M430,206 L430,262" stroke-width="3.4"/><path d="M422,206 L438,206" stroke-width="2.6"/><path d="M418,262 L430,262" stroke-width="2"/>
+                <path d="M52,262 L52,180" stroke-width="2.4"/>
+                <circle cx="52" cy="172" r="8" stroke-width="2"/><circle cx="52" cy="172" r="2.4" stroke-width="1.2"/>
+                <path d="M60,176 Q96,204 112,234" stroke-width="1.7" opacity=".9"/>
+                <path d="M106,230 L122,242 L103,247 Z" stroke-width="1.8" opacity=".9"/>
+                <path d="M56,180 Q102,216 134,246" stroke-width="1.7" opacity=".65"/>
+                <path d="M128,242 L144,254 L125,258 Z" stroke-width="1.8" opacity=".65"/>
+              </g>
+            </svg>
+            </div>
+            <div>
+              <div class="bvm-name">Pilates</div>
+              <p class="bvm-copy">The Pilates Method is an exercise technique based on the philosophy and teachings of Joseph Herbertus Pilates, the legendary founder of the Pilates Studio, New York, in the early 1920s. His principles, corrective exercises and specialist equipment work the entire body, coordinating upper and lower musculature with the body&rsquo;s centre core &mdash; leaving you more relaxed, invigorated and taller, with a new sense of well-being.</p>
+              <div class="bvm-kicker">Benefits of Pilates</div>
+              <ul class="bvm-benefits">
+                <li>Builds core stability for abdominal &amp; back strength</li>
+                <li>Improves natural posture and spinal alignment</li>
+                <li>Tones and elongates muscles without adding extra bulk</li>
+                <li>Develops coordination and body awareness</li>
+                <li>Enhances mobility, flexibility and agility</li>
+                <li>Improves circulation and breathing</li>
+                <li>Alleviates pain and tension</li>
+                <li>Relieves stress and boosts energy</li>
+                <li>Prevents and aids rehabilitation of injuries</li>
+                <li>Enhances body/mind connection</li>
+                <li>Promotes better sleep</li>
+              </ul>
+              <div class="bvm-quote">&ldquo;Pilates develops the body uniformly, corrects wrong postures, restores physical vitality, invigorates the mind and elevates the spirit.&rdquo;<b>&mdash; J H Pilates</b></div>
             </div>
           </div>
-          <div style="font-size:10px;color:var(--muted);opacity:.8;margin-top:12px;">Thin arrows = action &middot; thick arrows = reaction &middot; dashed line = plumb line</div>
-          <div style="font-size:10px;color:var(--muted);opacity:.55;margin-top:5px;font-style:italic;">Diagrams adapted from the Body Vision GYROTONIC&#xAE; teaching manual.</div>
         </div>
+
+        <div class="bvm-tm">GYROTONIC&reg;, GYROKINESIS&reg; and the GYROTONIC&reg; Expansion System&reg; are registered trademarks of Gyrotonic Sales Corp and are used with their permission. Method descriptions adapted from the Body Vision Studio brochure.</div>
       </div>
 
-      <!-- Services -->
+            <!-- Services -->
       <div class="svc-grid" style="margin-bottom:28px;">
         <div class="svc"><div class="svc-icon">&#x1F9D8;</div><div class="svc-name">Private GYROTONIC&#xAE; Sessions</div><div class="svc-desc">One-on-one with Kim. Fully personalised to your body, goals and current conditioning — on specialist equipment</div></div>
         <div class="svc"><div class="svc-icon">&#x1F46F;</div><div class="svc-name">Semi-Private Sessions</div><div class="svc-desc">2–3 participants in an intimate studio setting. Shared attention, lower cost — ideal for friends or couples</div></div>
