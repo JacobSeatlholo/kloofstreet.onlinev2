@@ -1486,394 +1486,418 @@ nav{z-index:200;}
 
 </style>
 
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
+  <script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebSite",
+   "@id": "https://kloofstreet.online/#website",
+   "url": "https://kloofstreet.online/",
+   "name": "KloofStreet.online",
+   "description": "The curated guide to Kloof Street, Cape Town — voted #22 coolest street in the world by Time Out 2025.",
+   "publisher": {
+    "@id": "https://kloofstreet.online/#org"
+   },
+   "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+     "@type": "EntryPoint",
+     "urlTemplate": "https://kloofstreet.online/?s={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+   }
+  },
+  {
+   "@type": "Organization",
+   "@id": "https://kloofstreet.online/#org",
+   "name": "KloofStreet.online",
+   "url": "https://kloofstreet.online/",
+   "email": "team@businesshustle.co.za",
+   "sameAs": [
+    "https://businesshustle.co.za",
+    "https://www.hustleportal.online/"
+   ]
+  },
+  {
+   "@type": "TouristAttraction",
+   "@id": "https://kloofstreet.online/#attraction",
+   "name": "Kloof Street Cape Town",
+   "description": "Cape Town's most iconic street, voted #22 on Time Out's 31 Coolest Streets in the World 2025 and coolest street in Africa. Home to world-class restaurants, wellness spas, art studios, boutiques and nightlife framed by Table Mountain.",
+   "url": "https://kloofstreet.online/",
+   "image": "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=1200&q=85",
+   "award": "Time Out 31 Coolest Streets in the World 2025 — #22",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Kloof Street",
+    "addressLocality": "Cape Town",
+    "addressRegion": "Western Cape",
+    "postalCode": "8001",
+    "addressCountry": "ZA"
+   },
+   "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -33.9249,
+    "longitude": 18.4091
+   },
+   "hasMap": "https://maps.google.com/?q=Kloof+Street+Cape+Town"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "@id": "https://kloofstreet.online/#breadcrumb",
+   "itemListElement": [
     {
-      "@type": "WebSite",
-      "@id": "https://kloofstreet.online/#website",
-      "url": "https://kloofstreet.online/",
-      "name": "KloofStreet.online",
-      "description": "The curated guide to Kloof Street, Cape Town — voted #22 coolest street in the world by Time Out 2025.",
-      "publisher": {
-        "@id": "https://kloofstreet.online/#org"
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://kloofstreet.online/?s={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
-      }
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Cape Town",
+     "item": "https://kloofstreet.online/"
     },
     {
-      "@type": "Organization",
-      "@id": "https://kloofstreet.online/#org",
-      "name": "KloofStreet.online",
-      "url": "https://kloofstreet.online/",
-      "email": "team@businesshustle.co.za",
-      "sameAs": [
-        "https://businesshustle.co.za",
-        "https://www.hustleportal.online/"
-      ]
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Kloof Street",
+     "item": "https://kloofstreet.online/"
     },
     {
-      "@type": "TouristAttraction",
-      "@id": "https://kloofstreet.online/#attraction",
-      "name": "Kloof Street Cape Town",
-      "description": "Cape Town's most iconic street, voted #22 on Time Out's 31 Coolest Streets in the World 2025 and coolest street in Africa. Home to world-class restaurants, wellness spas, art studios, boutiques and nightlife framed by Table Mountain.",
-      "url": "https://kloofstreet.online/",
-      "image": "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=1200&q=85",
-      "award": "Time Out 31 Coolest Streets in the World 2025 — #22",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Kloof Street",
-        "addressLocality": "Cape Town",
-        "addressRegion": "Western Cape",
-        "postalCode": "8001",
-        "addressCountry": "ZA"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -33.9249,
-        "longitude": 18.4091
-      },
-      "hasMap": "https://maps.google.com/?q=Kloof+Street+Cape+Town"
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://kloofstreet.online/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Cape Town",
-          "item": "https://kloofstreet.online/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Kloof Street",
-          "item": "https://kloofstreet.online/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Restaurants, Wellness & Businesses",
-          "item": "https://kloofstreet.online/"
-        }
-      ]
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://kloofstreet.online/#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is Kloof Street famous for?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Kloof Street in Cape Town is famous for world-class restaurants, wellness spas, art studios, boutiques, cocktail bars and vibrant nightlife. In 2025 Time Out named it the 22nd coolest street in the world and coolest street in Africa."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What are the best restaurants on Kloof Street Cape Town?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Top restaurants include Arnold's Restaurant (80 Kloof St) — Cape Town's iconic heritage dining with legendary brunch and fine dinner, plus Kloof Street House, Vadivelu (Southern Indian at 151 Kloof St), Blondie (Mediterranean at 71 Kloof St), Kloof Konbini (Japanese street food at 121 Kloof St) and many more on KloofStreet.online."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Where is Kloof Street in Cape Town?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Kloof Street runs through Cape Town's City Bowl, stretching from the upper CBD towards Tamboerskloof, framed by Table Mountain. GPS: -33.9249, 18.4091. Nearby: Gardens, De Waterkant, V&A Waterfront."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What wellness and medical services are on Kloof Street?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Kloof Street is home to Ubuntu Wellness and Cape Town Medi-Spa (float therapy, spa treatments), Dr Wendy Dicks GP and weight loss specialist offering GLP-1 treatments at 99B Kloof Street, Just Hearing audiology practice, Dr Thomas Jahn Chinese medicine and acupuncture (Thursdays), and Trudy Christians aesthetic therapist."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the KloofStreet.online Street Pass?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The Kloof Street Pass is R199/month — a single, simple membership giving you discounts at every verified partner on Kloof Street, WhatsApp flash deal alerts, monthly Member Night invitations, priority booking and AI Concierge access. No lock-in, cancel anytime. Join via WhatsApp: +27744815163."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is Kloof Street safe to visit?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. Kloof Street is one of Cape Town's most popular and well-maintained streets, busy day and night with restaurants, bars and shops creating a safe and vibrant atmosphere."
-          }
-        }
-      ]
-    },
-    {
-      "@type": "ItemList",
-      "@id": "https://kloofstreet.online/#partners",
-      "name": "Kloof Street Featured Businesses",
-      "description": "Verified and curated Growth Partner businesses on Kloof Street, Cape Town",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "On Safari Fine Art Photography",
-          "url": "https://www.on-safari.co.za"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Ubuntu Wellness & Cape Town Medi-Spa",
-          "url": "http://ubuntuwellness.com/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Dr Wendy Dicks - GP & Weight Loss Specialist",
-          "url": "https://allergycapetown.co.za/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "Just Hearing - Audiology Practice",
-          "url": "https://kloofstreet.online/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 5,
-          "name": "Dr Thomas Jahn - Chinese Medicine & Acupuncture",
-          "url": "https://kloofstreet.online/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 6,
-          "name": "Trudy Christians - Aesthetic Therapist",
-          "url": "https://kloofstreet.online/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 7,
-          "name": "PostNet Gardens - Print & Courier",
-          "url": "https://www.postnet.co.za/stores/capetowngardens"
-        }
-      ]
-    },
-    {
-      "@type": "MedicalBusiness",
-      "@id": "https://kloofstreet.online/#drwendy",
-      "name": "Dr Wendy Dicks - GP & Weight Loss Specialist",
-      "url": "https://mzanzi.co/page/practitioner/dr-wendy-dicks-dicks-general-practitioner-cape-town",
-      "telephone": "+27211110572",
-      "email": "info@allergycapetown.co.za",
-      "medicalSpecialty": "GeneralPractice",
-      "description": "GP specialising in weight loss, GLP-1 treatments (semaglutide, tirzepatide), chronic conditions, paediatrics and family medicine at 99B Kloof Street, Cape Town.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "99B Kloof Street",
-        "addressLocality": "Gardens, Cape Town",
-        "addressRegion": "Western Cape",
-        "postalCode": "8001",
-        "addressCountry": "ZA"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -33.9249,
-        "longitude": 18.4091
-      },
-      "openingHours": "Mo-Fr 09:00-17:00"
-    },
-    {
-      "@type": "HealthAndBeautyBusiness",
-      "@id": "https://kloofstreet.online/#ubuntu",
-      "name": "Ubuntu Wellness & Cape Town Medi-Spa",
-      "url": "http://ubuntuwellness.com/",
-      "telephone": "+27829292544",
-      "description": "Health spa offering float therapy, spa treatments, homeopathy and vegan wellness at 99B Kloof Street, Cape Town.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "99B Kloof Street",
-        "addressLocality": "Gardens, Cape Town",
-        "addressRegion": "Western Cape",
-        "postalCode": "8001",
-        "addressCountry": "ZA"
-      },
-      "openingHours": [
-        "Mo-Fr 08:00-18:00",
-        "Sa 09:00-15:00"
-      ]
-    },
-    {
-      "@type": "Store",
-      "@id": "https://kloofstreet.online/#onsafari",
-      "name": "On Safari - Wildlife Fine Art Photography",
-      "url": "https://www.on-safari.co.za",
-      "description": "Wildlife photographic fine art prints at 99B Kloof Street, Cape Town.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "99B Kloof Street",
-        "addressLocality": "Gardens, Cape Town",
-        "addressRegion": "Western Cape",
-        "postalCode": "8001",
-        "addressCountry": "ZA"
-      },
-      "openingHours": [
-        "Mo-Th 08:00-17:00",
-        "Fr 08:00-16:00",
-        "Sa 09:00-12:00"
-      ]
-    },
-    {
-      "@type": "MedicalClinic",
-      "@id": "https://kloofstreet.online/#justhearing",
-      "name": "Just Hearing - Audiology Practice",
-      "description": "Patient-centred audiology. Hearing assessments for adults and children, hearing aids, tinnitus management.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "99B Kloof Street",
-        "addressLocality": "Gardens, Cape Town",
-        "addressRegion": "Western Cape",
-        "postalCode": "8001",
-        "addressCountry": "ZA"
-      }
-    },
-    {
-      "@type": "MedicalBusiness",
-      "@id": "https://kloofstreet.online/#drthomas",
-      "name": "Dr Thomas Jahn - Chinese Medicine & Acupuncture",
-      "telephone": "+27664904382",
-      "description": "Chinese medicine practitioner. Acupuncture, cupping, moxibustion, Tuina massage, Qigong and herbal medicine. Consulting Thursdays at 99 Kloof Street.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "99 Kloof Street",
-        "addressLocality": "Gardens, Cape Town",
-        "addressRegion": "Western Cape",
-        "postalCode": "8001",
-        "addressCountry": "ZA"
-      },
-      "openingHours": "Th 09:00-17:00"
-    },
-    {
-      "@type": "BeautySalon",
-      "@id": "https://kloofstreet.online/#trudy",
-      "name": "Trudy Christians - Aesthetic Therapist",
-      "description": "30 years aesthetic expertise. Laser hair removal, skin rejuvenation, veins removal, tattoo removal, Hollywood carbon laser, microdermabrasion, micro needling, body sculpting, red light therapy.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "99B Kloof Street",
-        "addressLocality": "Gardens, Cape Town",
-        "addressRegion": "Western Cape",
-        "postalCode": "8001",
-        "addressCountry": "ZA"
-      }
-    },
-    {
-      "@type": "CopyingService",
-      "@id": "https://kloofstreet.online/#postnet",
-      "name": "PostNet Gardens - Print & Courier",
-      "url": "https://www.postnet.co.za/stores/capetowngardens",
-      "telephone": "+27214221248",
-      "description": "Printing, domestic and international courier, digital services and stationery at 55 Kloof Street, Gardens, Cape Town.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "55 Kloof Street",
-        "addressLocality": "Gardens, Cape Town",
-        "addressRegion": "Western Cape",
-        "postalCode": "8001",
-        "addressCountry": "ZA"
-      },
-      "openingHours": [
-        "Mo-Fr 09:00-17:00",
-        "Sa 09:00-13:00"
-      ]
-    },
-    {
-      "@type": "BeautySalon",
-      "@id": "https://kloofstreet.online/#revive",
-      "name": "Revive Studio",
-      "telephone": "+27845257906",
-      "description": "Holistic massage and beauty clinic by Nadine at 99 Kloof Street. Facials, massages, manicures, pedicures, lash and brow tinting, waxing.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "99 Kloof Street",
-        "addressLocality": "Gardens, Cape Town",
-        "addressRegion": "Western Cape",
-        "postalCode": "8001",
-        "addressCountry": "ZA"
-      }
-    },
-    {
-      "@type": "Physician",
-      "@id": "https://kloofstreet.online/#drdale",
-      "name": "Dr Dale Geoffreys — Plastic & Reconstructive Surgeon",
-      "url": "https://www.drg-plasticsurgeon.co.za",
-      "telephone": "+27212035227",
-      "medicalSpecialty": "PlasticSurgery",
-      "description": "Fellowship-trained plastic and reconstructive surgeon (CMSA 2013). Botox, fillers, blepharoplasty, breast procedures, deep plane face and neck lift, abdominoplasty, liposuction. Consults at Cape Town Medi-Spa 99B Kloof Street, operates at Alchimia Clinic 39 Kloof Street.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "99B Kloof Street",
-        "addressLocality": "Gardens, Cape Town",
-        "addressRegion": "Western Cape",
-        "postalCode": "8001",
-        "addressCountry": "ZA"
-      }
-    },
-    {
-      "@type": "MedicalClinic",
-      "@id": "https://kloofstreet.online/#hayley",
-      "name": "Hayley Schuter Physiotherapy",
-      "url": "https://www.hsphysio.co.za",
-      "telephone": "+27732033726",
-      "medicalSpecialty": "Physiotherapy",
-      "description": "Qualified physiotherapist specialising in dry needling, sports massage, strapping and home visits. At 99B Kloof Street, Gardens.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "99B Kloof Street",
-        "addressLocality": "Gardens, Cape Town",
-        "addressRegion": "Western Cape",
-        "postalCode": "8001",
-        "addressCountry": "ZA"
-      }
-    },
-        {
-      "@type": "ExerciseGym",
-      "@id": "https://kloofstreet.online/#bodyvision",
-      "name": "Body Vision Studio",
-      "url": "https://www.bodyvision.online",
-      "telephone": "+27824572118",
-      "description": "GYROTONIC and GYROKINESIS private studio by certified instructor Kim Tucker at Lifestyle Centre, 50 Kloof Street. Private and semi-private movement sessions, Pilates, seniors programme and injury rehabilitation. New-client Foundations Package of three private sessions.",
-      "review": {
-        "@type": "Review",
-        "author": {
-          "@type": "Person",
-          "name": "Gerlinde Moser"
-        },
-        "reviewBody": "GYROTONIC provides me with the strength and flexibility I need to keep up with my busy work week. My weekly sessions with Kim are imperative to maintaining this schedule and my health. There is no one better skilled than Kim."
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Lifestyle Centre, Level 2, 50 Kloof Street",
-        "addressLocality": "Gardens, Cape Town",
-        "addressRegion": "Western Cape",
-        "postalCode": "8001",
-        "addressCountry": "ZA"
-      }
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Restaurants, Wellness & Businesses",
+     "item": "https://kloofstreet.online/"
     }
-  ]
-}
-</script>
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://kloofstreet.online/#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What is Kloof Street famous for?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Kloof Street in Cape Town is famous for world-class restaurants, wellness spas, art studios, boutiques, cocktail bars and vibrant nightlife. In 2025 Time Out named it the 22nd coolest street in the world and coolest street in Africa."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What are the best restaurants on Kloof Street Cape Town?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Top restaurants include Arnold's Restaurant (80 Kloof St) — Cape Town's iconic heritage dining with legendary brunch and fine dinner, plus Kloof Street House, Vadivelu (Southern Indian at 151 Kloof St), Blondie (Mediterranean at 71 Kloof St), Kloof Konbini (Japanese street food at 121 Kloof St) and many more on KloofStreet.online."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Where is Kloof Street in Cape Town?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Kloof Street runs through Cape Town's City Bowl, stretching from the upper CBD towards Tamboerskloof, framed by Table Mountain. GPS: -33.9249, 18.4091. Nearby: Gardens, De Waterkant, V&A Waterfront."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What wellness and medical services are on Kloof Street?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Kloof Street is home to Ubuntu Wellness and Cape Town Medi-Spa (float therapy, spa treatments), Dr Wendy Dicks GP and weight loss specialist offering GLP-1 treatments at 99B Kloof Street, Just Hearing audiology practice, Dr Thomas Jahn Chinese medicine and acupuncture (Thursdays), and Trudy Christians aesthetic therapist."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What is the KloofStreet.online Street Pass?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The Kloof Street Pass is R199/month — a single, simple membership giving you discounts at every verified partner on Kloof Street, WhatsApp flash deal alerts, monthly Member Night invitations, priority booking and AI Concierge access. No lock-in, cancel anytime. Join via WhatsApp: +27744815163."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is Kloof Street safe to visit?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Kloof Street is one of Cape Town's most popular and well-maintained streets, busy day and night with restaurants, bars and shops creating a safe and vibrant atmosphere."
+     }
+    }
+   ]
+  },
+  {
+   "@type": "ItemList",
+   "@id": "https://kloofstreet.online/#partners",
+   "name": "Kloof Street Featured Businesses",
+   "description": "Verified and curated Growth Partner businesses on Kloof Street, Cape Town",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "On Safari Fine Art Photography",
+     "url": "https://www.on-safari.co.za"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Ubuntu Wellness & Cape Town Medi-Spa",
+     "url": "http://ubuntuwellness.com/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Dr Wendy Dicks - GP & Weight Loss Specialist",
+     "url": "https://allergycapetown.co.za/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 4,
+     "name": "Just Hearing - Audiology Practice",
+     "url": "https://kloofstreet.online/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 5,
+     "name": "Dr Thomas Jahn - Chinese Medicine & Acupuncture",
+     "url": "https://kloofstreet.online/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 6,
+     "name": "Trudy Christians - Aesthetic Therapist",
+     "url": "https://kloofstreet.online/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 7,
+     "name": "PostNet Gardens - Print & Courier",
+     "url": "https://www.postnet.co.za/stores/capetowngardens"
+    }
+   ]
+  },
+  {
+   "@type": "MedicalBusiness",
+   "@id": "https://kloofstreet.online/#drwendy",
+   "name": "Dr Wendy Dicks - GP & Weight Loss Specialist",
+   "url": "https://mzanzi.co/page/practitioner/dr-wendy-dicks-dicks-general-practitioner-cape-town",
+   "telephone": "+27211110572",
+   "email": "info@allergycapetown.co.za",
+   "medicalSpecialty": "GeneralPractice",
+   "description": "GP specialising in weight loss, GLP-1 treatments (semaglutide, tirzepatide), chronic conditions, paediatrics and family medicine at 99B Kloof Street, Cape Town.",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "99B Kloof Street",
+    "addressLocality": "Gardens, Cape Town",
+    "addressRegion": "Western Cape",
+    "postalCode": "8001",
+    "addressCountry": "ZA"
+   },
+   "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -33.9249,
+    "longitude": 18.4091
+   },
+   "openingHours": "Mo-Fr 09:00-17:00"
+  },
+  {
+   "@type": "HealthAndBeautyBusiness",
+   "@id": "https://kloofstreet.online/#ubuntu",
+   "name": "Ubuntu Wellness & Cape Town Medi-Spa",
+   "url": "http://ubuntuwellness.com/",
+   "telephone": "+27829292544",
+   "description": "Health spa offering float therapy, spa treatments, homeopathy and vegan wellness at 99B Kloof Street, Cape Town.",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "99B Kloof Street",
+    "addressLocality": "Gardens, Cape Town",
+    "addressRegion": "Western Cape",
+    "postalCode": "8001",
+    "addressCountry": "ZA"
+   },
+   "openingHours": [
+    "Mo-Fr 08:00-18:00",
+    "Sa 09:00-15:00"
+   ]
+  },
+  {
+   "@type": "Store",
+   "@id": "https://kloofstreet.online/#onsafari",
+   "name": "On Safari - Wildlife Fine Art Photography",
+   "url": "https://www.on-safari.co.za",
+   "description": "Wildlife photographic fine art prints at 99B Kloof Street, Cape Town.",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "99B Kloof Street",
+    "addressLocality": "Gardens, Cape Town",
+    "addressRegion": "Western Cape",
+    "postalCode": "8001",
+    "addressCountry": "ZA"
+   },
+   "openingHours": [
+    "Mo-Th 08:00-17:00",
+    "Fr 08:00-16:00",
+    "Sa 09:00-12:00"
+   ]
+  },
+  {
+   "@type": "LocalBusiness",
+   "@id": "https://kloofstreet.online/#picturesque-framing",
+   "name": "Picturesque Framing Studio",
+   "description": "Custom picture framing since 2001 - rugby jerseys, certificates, original artwork, archival framing, block mounting and box framing. Large selection of wildlife photography on archival paper. In-store with On Safari Wildlife Studio, 99B Kloof Street, Gardens, Cape Town.",
+   "url": "https://kloofstreet.online/picturesque-framing",
+   "image": "https://kloofstreet.online/picturesque/picturesque-poster.jpg",
+   "logo": "https://kloofstreet.online/picturesque/picturesque-mark.png",
+   "telephone": "+27662534151",
+   "priceRange": "R150-R5000",
+   "foundingDate": "2001",
+   "slogan": "Crafted Just For You",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "99B Kloof Street",
+    "addressLocality": "Gardens, Cape Town",
+    "addressRegion": "Western Cape",
+    "postalCode": "8001",
+    "addressCountry": "ZA"
+   },
+   "geo": null,
+   "openingHoursSpecification": null,
+   "parentOrganization": {
+    "@id": "https://kloofstreet.online/#org"
+   }
+  },
+  {
+   "@type": "MedicalClinic",
+   "@id": "https://kloofstreet.online/#justhearing",
+   "name": "Just Hearing - Audiology Practice",
+   "description": "Patient-centred audiology. Hearing assessments for adults and children, hearing aids, tinnitus management.",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "99B Kloof Street",
+    "addressLocality": "Gardens, Cape Town",
+    "addressRegion": "Western Cape",
+    "postalCode": "8001",
+    "addressCountry": "ZA"
+   }
+  },
+  {
+   "@type": "MedicalBusiness",
+   "@id": "https://kloofstreet.online/#drthomas",
+   "name": "Dr Thomas Jahn - Chinese Medicine & Acupuncture",
+   "telephone": "+27664904382",
+   "description": "Chinese medicine practitioner. Acupuncture, cupping, moxibustion, Tuina massage, Qigong and herbal medicine. Consulting Thursdays at 99 Kloof Street.",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "99 Kloof Street",
+    "addressLocality": "Gardens, Cape Town",
+    "addressRegion": "Western Cape",
+    "postalCode": "8001",
+    "addressCountry": "ZA"
+   },
+   "openingHours": "Th 09:00-17:00"
+  },
+  {
+   "@type": "BeautySalon",
+   "@id": "https://kloofstreet.online/#trudy",
+   "name": "Trudy Christians - Aesthetic Therapist",
+   "description": "30 years aesthetic expertise. Laser hair removal, skin rejuvenation, veins removal, tattoo removal, Hollywood carbon laser, microdermabrasion, micro needling, body sculpting, red light therapy.",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "99B Kloof Street",
+    "addressLocality": "Gardens, Cape Town",
+    "addressRegion": "Western Cape",
+    "postalCode": "8001",
+    "addressCountry": "ZA"
+   }
+  },
+  {
+   "@type": "CopyingService",
+   "@id": "https://kloofstreet.online/#postnet",
+   "name": "PostNet Gardens - Print & Courier",
+   "url": "https://www.postnet.co.za/stores/capetowngardens",
+   "telephone": "+27214221248",
+   "description": "Printing, domestic and international courier, digital services and stationery at 55 Kloof Street, Gardens, Cape Town.",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "55 Kloof Street",
+    "addressLocality": "Gardens, Cape Town",
+    "addressRegion": "Western Cape",
+    "postalCode": "8001",
+    "addressCountry": "ZA"
+   },
+   "openingHours": [
+    "Mo-Fr 09:00-17:00",
+    "Sa 09:00-13:00"
+   ]
+  },
+  {
+   "@type": "BeautySalon",
+   "@id": "https://kloofstreet.online/#revive",
+   "name": "Revive Studio",
+   "telephone": "+27845257906",
+   "description": "Holistic massage and beauty clinic by Nadine at 99 Kloof Street. Facials, massages, manicures, pedicures, lash and brow tinting, waxing.",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "99 Kloof Street",
+    "addressLocality": "Gardens, Cape Town",
+    "addressRegion": "Western Cape",
+    "postalCode": "8001",
+    "addressCountry": "ZA"
+   }
+  },
+  {
+   "@type": "Physician",
+   "@id": "https://kloofstreet.online/#drdale",
+   "name": "Dr Dale Geoffreys — Plastic & Reconstructive Surgeon",
+   "url": "https://www.drg-plasticsurgeon.co.za",
+   "telephone": "+27212035227",
+   "medicalSpecialty": "PlasticSurgery",
+   "description": "Fellowship-trained plastic and reconstructive surgeon (CMSA 2013). Botox, fillers, blepharoplasty, breast procedures, deep plane face and neck lift, abdominoplasty, liposuction. Consults at Cape Town Medi-Spa 99B Kloof Street, operates at Alchimia Clinic 39 Kloof Street.",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "99B Kloof Street",
+    "addressLocality": "Gardens, Cape Town",
+    "addressRegion": "Western Cape",
+    "postalCode": "8001",
+    "addressCountry": "ZA"
+   }
+  },
+  {
+   "@type": "MedicalClinic",
+   "@id": "https://kloofstreet.online/#hayley",
+   "name": "Hayley Schuter Physiotherapy",
+   "url": "https://www.hsphysio.co.za",
+   "telephone": "+27732033726",
+   "medicalSpecialty": "Physiotherapy",
+   "description": "Qualified physiotherapist specialising in dry needling, sports massage, strapping and home visits. At 99B Kloof Street, Gardens.",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "99B Kloof Street",
+    "addressLocality": "Gardens, Cape Town",
+    "addressRegion": "Western Cape",
+    "postalCode": "8001",
+    "addressCountry": "ZA"
+   }
+  },
+  {
+   "@type": "ExerciseGym",
+   "@id": "https://kloofstreet.online/#bodyvision",
+   "name": "Body Vision Studio",
+   "url": "https://www.bodyvision.online",
+   "telephone": "+27824572118",
+   "description": "GYROTONIC and GYROKINESIS private studio by certified instructor Kim Tucker at Lifestyle Centre, 50 Kloof Street. Private and semi-private movement sessions, Pilates, seniors programme and injury rehabilitation. New-client Foundations Package of three private sessions.",
+   "review": {
+    "@type": "Review",
+    "author": {
+     "@type": "Person",
+     "name": "Gerlinde Moser"
+    },
+    "reviewBody": "GYROTONIC provides me with the strength and flexibility I need to keep up with my busy work week. My weekly sessions with Kim are imperative to maintaining this schedule and my health. There is no one better skilled than Kim."
+   },
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Lifestyle Centre, Level 2, 50 Kloof Street",
+    "addressLocality": "Gardens, Cape Town",
+    "addressRegion": "Western Cape",
+    "postalCode": "8001",
+    "addressCountry": "ZA"
+   }
+  }
+ ]
+}</script>
 
 
   <!-- AI Discoverability -->
@@ -1900,7 +1924,26 @@ setTimeout(trackPageview,800);
 
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="preconnect" href="https://unpkg.com" crossorigin>
-  <link rel="dns-prefetch" href="https://plausible-production-63a6.up.railway.app"></head>
+  <link rel="dns-prefetch" href="https://plausible-production-63a6.up.railway.app">  <style id="pq-styles">
+    /* ── Picturesque Framing Studio ── */
+    .biz-hero-picturesque{background:linear-gradient(rgba(11,11,15,.66),rgba(11,11,15,.82)),url('/picturesque/picturesque-poster.jpg') center/cover no-repeat;}
+    .photo-pq-1{background:linear-gradient(rgba(11,11,15,.25),rgba(11,11,15,.35)),url('/picturesque/picturesque-poster.jpg') center/cover no-repeat;}
+    .photo-pq-2{background:linear-gradient(rgba(11,11,15,.2),rgba(11,11,15,.3)),url('/picturesque/picturesque-strip.jpg') center/cover no-repeat;}
+    .photo-pq-3{background:linear-gradient(135deg,#16182a,#232d5c 60%,#2e3a7a);display:flex;align-items:center;justify-content:center;}
+    .photo-pq-3 img{width:46%;max-width:170px;border-radius:12px;box-shadow:0 10px 34px rgba(0,0,0,.55);}
+    /* double "frame-within-a-frame" motif from the brand mark */
+    .pq-frame{position:relative;border:1px solid rgba(255,255,255,.28);}
+    .pq-frame::before{content:'';position:absolute;inset:5px;border:1px solid rgba(120,134,220,.5);pointer-events:none;}
+    .pq-xbanner{display:flex;align-items:center;gap:14px;margin:4px 0 26px;padding:16px 18px;cursor:pointer;text-decoration:none;
+      background:linear-gradient(135deg,rgba(35,45,92,.35),rgba(22,24,42,.65));border-radius:var(--r);}
+    .pq-xbanner:hover{background:linear-gradient(135deg,rgba(35,45,92,.55),rgba(22,24,42,.8));}
+    .pq-xbanner .pq-xmark{width:58px;height:58px;flex-shrink:0;border-radius:10px;box-shadow:0 6px 22px rgba(0,0,0,.5);}
+    .pq-xkick{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#8ea0ff;margin-bottom:3px;}
+    .pq-xtitle{font-size:15px;font-weight:800;color:#f0f0ee;margin-bottom:3px;}
+    .pq-xdesc{font-size:11.5px;color:var(--muted);line-height:1.5;}
+    .pq-xarrow{margin-left:auto;font-size:20px;color:#8ea0ff;flex-shrink:0;}
+  </style>
+</head>
 <body>
 <div class="pwa-install" id="pwaInstall" role="dialog" aria-label="Install the Kloof Street app">
   <div class="pwa-install-icon">&#x1F4F1;</div>
@@ -2157,6 +2200,20 @@ setTimeout(trackPageview,800);
             <div class="brand-name">On Safari</div>
             <div class="brand-sub">Archival wildlife fine art prints by Nigel Whitehead. Recognised by Park West Gallery &mdash; 100+ cruise ships. 99B Kloof Street.</div>
             <div class="brand-foot"><span class="brand-tag">Fine Art &middot; Photography</span><a href="/on-safari" class="view-btn" onclick="event.stopPropagation();go('on-safari')">View Profile &#x2192;</a></div>
+          </div>
+        </div>
+
+        <div class="brand-card" onclick="go('picturesque')">
+          <div class="brand-img" style="background:linear-gradient(rgba(12,12,16,.42),rgba(12,12,16,.58)),url('/picturesque/picturesque-card.jpg') center/cover no-repeat;">
+            <div class="brand-tier tier-s">Starter Partner</div>
+            <div class="open-pill">Open</div>
+            <div class="vibe-bar">Crafted just for you &#x1F5BC;&#xFE0F;</div>
+          </div>
+          <div class="brand-body">
+            <div class="brand-cat">&#x1F5BC;&#xFE0F; Framing Studio &middot; Est. 2001</div>
+            <div class="brand-name">Picturesque Framing Studio</div>
+            <div class="brand-sub">Custom framing for rugby jerseys, certificates, original artwork &amp; more &mdash; archival, block mounting, box framing. Inside On Safari, 99B Kloof Street.</div>
+            <div class="brand-foot"><span class="brand-tag">Jerseys &middot; Art &middot; Archival</span><a href="/picturesque-framing" class="view-btn" onclick="event.stopPropagation();go('picturesque')">View Profile &#x2192;</a></div>
           </div>
         </div>
 
@@ -2469,6 +2526,15 @@ setTimeout(trackPageview,800);
         <div class="photo-cell photo-safari-2"></div>
         <div class="photo-cell photo-safari-3"></div>
       </div>
+      <a class="pq-xbanner pq-frame" href="/picturesque-framing" onclick="event.preventDefault();go('picturesque')">
+        <img class="pq-xmark" src="/picturesque/picturesque-mark.png" alt="Picturesque Framing Studio" loading="lazy">
+        <div>
+          <div class="pq-xkick">Framed in-store &middot; Est. 2001</div>
+          <div class="pq-xtitle">Picturesque Framing Studio</div>
+          <div class="pq-xdesc">Every frame in this gallery is crafted next door. Jerseys, certificates, originals &mdash; bring anything, we frame anything.</div>
+        </div>
+        <span class="pq-xarrow">&#x2192;</span>
+      </a>
       <div style="background:var(--bg2);border:1px solid var(--bdr);padding:24px;margin-bottom:28px;border-radius:var(--r);">
         <div class="sec-tag" style="margin-bottom:14px;">Collections</div>
         <div class="coll-grid">
@@ -2515,6 +2581,93 @@ setTimeout(trackPageview,800);
       <a class="btn btn-gold" href="https://wa.me/27662534151?text=Hi%20Nigel%2C%20enquiring%20about%20your%20prints." target="_blank" style="display:block;text-align:center;margin-bottom:10px;">💬 WhatsApp Nigel</a>
       <a class="btn btn-outline" href="https://www.on-safari.co.za" target="_blank" style="display:block;text-align:center;margin-bottom:10px;">View Gallery</a>
       <a class="btn btn-outline" href="tel:+27662534151" style="display:block;text-align:center;">📞 066 253 4151</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ PICTURESQUE FRAMING STUDIO ══════════ -->
+<div id="pg-picturesque" class="pg">
+  <div class="biz-hero biz-hero-picturesque">
+    <div class="biz-hero-inner">
+      <button class="biz-back" onclick="go('brands')">&#8592; Back to Directory</button>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap;justify-content:center;">
+        <span class="brand-tier tier-s" style="position:relative;top:auto;left:auto;">Starter Partner</span>
+        <span class="open-pill" style="position:relative;top:auto;right:auto;">Open</span>
+        <span class="badge">&#10003; Verified</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <img src="/picturesque/picturesque-mark.png" alt="Picturesque mark" style="width:56px;height:56px;border-radius:12px;box-shadow:0 6px 24px rgba(0,0,0,.55);">
+        <div style="font-size:clamp(30px,4.8vw,50px);font-weight:900;color:var(--text2);text-transform:uppercase;line-height:1;letter-spacing:.02em;">Picturesque <span style="font-weight:200;">Framing Studio</span></div>
+      </div>
+      <p style="font-size:14px;color:var(--muted);margin-top:10px;">Custom Picture Framing &middot; Crafted Just For You &middot; Est. 2001 &middot; Inside On Safari Wildlife Studio, 99B Kloof Street</p>
+    </div>
+  </div>
+  <div class="biz-body">
+    <div>
+      <div class="sec-tag" style="margin-bottom:8px;">Framing Studio &middot; Est. 2001</div>
+      <h2 style="font-size:22px;font-weight:800;color:var(--text2);margin-bottom:18px;">Crafted Just For You &mdash; Since 2001</h2>
+      <p style="font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:16px;">Picturesque Framing Studio has been building custom frames on Kloof Street since 2001. Rugby jerseys, certificates, original artwork, keepsakes &mdash; if it matters to you, it deserves a frame that matters. Every piece is measured, mounted and finished by hand, with archival materials that protect what you frame for decades, not months.</p>
+      <p style="font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:20px;">You'll find the studio inside On Safari Wildlife Studio at 99B Kloof Street &mdash; and throughout the gallery hangs a large selection of wildlife photography printed on archival paper, all available expertly framed in-store.</p>
+      <a class="pq-xbanner pq-frame" href="/on-safari" onclick="event.preventDefault();go('on-safari')" style="margin-bottom:24px;">
+        <span style="width:58px;height:58px;flex-shrink:0;border-radius:10px;background:linear-gradient(135deg,#0a1400,#243a10);display:flex;align-items:center;justify-content:center;font-size:26px;">&#x1F981;</span>
+        <div>
+          <div class="pq-xkick">The Wildlife Gallery &middot; In-Store</div>
+          <div class="pq-xtitle">On Safari Wildlife Studio</div>
+          <div class="pq-xdesc">Archival wildlife photography by Nigel Whitehead hangs throughout the gallery &mdash; browse the prints, then frame them right here.</div>
+        </div>
+        <span class="pq-xarrow">&#x2192;</span>
+      </a>
+      <div style="background:var(--bg2);border:1px solid var(--bdr);padding:24px;margin-bottom:24px;border-radius:var(--r);">
+        <div class="sec-tag" style="margin-bottom:14px;">What We Frame</div>
+        <div class="coll-grid">
+          <div class="coll-item">&#x1F3C9; Rugby Jerseys</div>
+          <div class="coll-item">&#x1F393; Certificates &amp; Degrees</div>
+          <div class="coll-item">&#x1F3A8; Original Artwork</div>
+          <div class="coll-item">&#x1F5C3;&#xFE0F; Archival Framing</div>
+          <div class="coll-item">&#x1F9F1; Block Mounting</div>
+          <div class="coll-item">&#x1F4E6; Box Framing &amp; 3D</div>
+          <div class="coll-item">&#x1F5BC;&#xFE0F; Wildlife Photography</div>
+          <div class="coll-item">&#x2728; Anything &mdash; bring it in</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:26px;">
+        <div style="background:#111114;border:1px solid rgba(120,134,220,.25);padding:14px;border-radius:8px;text-align:center;"><div style="font-size:18px;margin-bottom:4px;">&#x1F4AC;</div><div style="font-size:10px;font-weight:700;color:#f0f0ee;">1 &middot; Consult</div><div style="font-size:9px;color:#7a7a78;margin-top:2px;">Bring your piece in</div></div>
+        <div style="background:#111114;border:1px solid rgba(120,134,220,.25);padding:14px;border-radius:8px;text-align:center;"><div style="font-size:18px;margin-bottom:4px;">&#x1F58D;&#xFE0F;</div><div style="font-size:10px;font-weight:700;color:#f0f0ee;">2 &middot; Design</div><div style="font-size:9px;color:#7a7a78;margin-top:2px;">Frame, mount, glass</div></div>
+        <div style="background:#111114;border:1px solid rgba(120,134,220,.25);padding:14px;border-radius:8px;text-align:center;"><div style="font-size:18px;margin-bottom:4px;">&#x1F528;</div><div style="font-size:10px;font-weight:700;color:#f0f0ee;">3 &middot; Craft</div><div style="font-size:9px;color:#7a7a78;margin-top:2px;">Hand-finished in-store</div></div>
+      </div>
+      <div class="photo-grid">
+        <div class="photo-cell photo-pq-1"></div>
+        <div class="photo-cell photo-pq-2"></div>
+        <div class="photo-cell photo-pq-3"><img src="/picturesque/picturesque-mark.png" alt="Picturesque framed-P mark" loading="lazy"></div>
+      </div>
+    </div>
+    <div>
+      <div class="info-card">
+        <h3>Studio Details</h3>
+        <div class="info-row"><b>&#x1F4CD;</b><span>99B Kloof Street, Gardens &mdash; inside On Safari Wildlife Studio</span></div>
+        <div class="info-row"><b>&#x1F4DE;</b><a href="tel:+27662534151" style="color:var(--a);">066 253 4151</a></div>
+        <div class="info-row"><b>&#x1F5BC;&#xFE0F;</b><span>Custom framing &middot; Est. 2001</span></div>
+        <div class="info-row"><b>&#x1F30D;</b><span>Archival &amp; conservation materials</span></div>
+      </div>
+      <div class="info-card">
+        <h3>Opening Hours</h3>
+        <div class="info-row"><b>&#x1F4C5;</b><span>Mon&ndash;Thu: 8:00am &ndash; 5:00pm</span></div>
+        <div class="info-row"><b>&#x1F4C5;</b><span>Friday: 8:00am &ndash; 4:00pm</span></div>
+        <div class="info-row"><b>&#x1F4C5;</b><span>Saturday: 9:00am &ndash; 12:00pm</span></div>
+        <div class="info-row"><b>&#x1F4C5;</b><span>Sunday: Closed</span></div>
+      </div>
+      <div class="info-card" style="background:var(--bg2);">
+        <h3>&#x2B50; Enjoyed your visit?</h3>
+        <p style="font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:10px;">Reviews help Picturesque get discovered &mdash; on Google and by AI assistants.</p>
+        <a class="btn btn-outline" href="https://www.google.com/search?q=Picturesque+Framing+Studio+Kloof+Street+Cape+Town+reviews" target="_blank" style="display:block;text-align:center;font-size:12px;">Rate us on Google &#x2197;</a>
+      </div>
+      <div class="info-card" style="background:rgba(245,197,24,.04);border-color:rgba(245,197,24,.2);">
+        <h3>Street Pass Benefit</h3>
+        <p style="font-size:12px;color:var(--muted);line-height:1.5;">&#x1F3AB; Street Pass holders receive <strong style="color:var(--a);">free framing consultation</strong> + 10% off framing with any On Safari print.</p>
+      </div>
+      <a class="btn btn-gold" href="https://wa.me/27662534151?text=Hi%2C%20I%27d%20like%20a%20framing%20quote%20from%20Picturesque%20Framing%20Studio." target="_blank" style="display:block;text-align:center;margin-bottom:10px;">&#x1F4AC; WhatsApp the Studio</a>
+      <a class="btn btn-outline" href="/on-safari" onclick="event.preventDefault();go('on-safari')" style="display:block;text-align:center;margin-bottom:10px;">Browse the Wildlife Gallery</a>
+      <a class="btn btn-outline" href="tel:+27662534151" style="display:block;text-align:center;">&#x1F4DE; 066 253 4151</a>
     </div>
   </div>
 </div>
@@ -4128,13 +4281,13 @@ setTimeout(trackPageview,800);
 
 <script>
 // ── PAGES ──
-const PAGES = ['home','about','explore','brands','on-safari','ubuntu','dr-wendy','just-hearing','dr-thomas','trudy','postnet','revive','dr-dale','hayley','bodyvision','arnolds','ai','listed','merchant','streetpass','streetpass-signup','streetpass-scan','streetpass-redeem'];
+const PAGES = ['home','about','explore','brands','on-safari','picturesque','ubuntu','dr-wendy','just-hearing','dr-thomas','trudy','postnet','revive','dr-dale','hayley','bodyvision','arnolds','ai','listed','merchant','streetpass','streetpass-signup','streetpass-scan','streetpass-redeem'];
 const NAVLINKS = ['home','about','explore','brands','ai'];
 
 // ── URL slug map ──
 var SLUG_MAP = {
   'home':'/', 'about':'/about', 'explore':'/explore',
-  'brands':'/directory', 'on-safari':'/on-safari',
+  'brands':'/directory', 'on-safari':'/on-safari','picturesque':'/picturesque-framing',
   'ubuntu':'/ubuntu-wellness', 'dr-wendy':'/dr-wendy-dicks',
   'just-hearing':'/just-hearing', 'dr-thomas':'/dr-thomas-jahn',
   'trudy':'/trudy-christians', 'postnet':'/postnet-gardens',
@@ -4149,6 +4302,7 @@ var SLUG_MAP = {
 var SLUG_REVERSE = {};
 Object.keys(SLUG_MAP).forEach(function(k){ SLUG_REVERSE[SLUG_MAP[k]] = k; });
 SLUG_REVERSE['/art-studios'] = 'on-safari';
+SLUG_REVERSE['/picturesque'] = 'picturesque';
 SLUG_REVERSE['/hs-physio'] = 'hayley';
 
 function go(name, noPush) {
@@ -4223,6 +4377,7 @@ function routeFromPath() {
 var PAGE_META = {
   'home':       {title:'KloofStreet.online | #22 World\'s Coolest Street — Cape Town', desc:'The curated guide to Kloof Street, Cape Town — voted #22 coolest street in the world.'},
   'on-safari':  {title:'On Safari by Nigel Whitehead | KloofStreet.online', desc:'Archival wildlife fine art prints. Recognised by Park West Gallery. Free framing. 99B Kloof Street. 066 253 4151.'},
+  'picturesque':    {title:'Picturesque Framing Studio | KloofStreet.online', desc:'Custom picture framing since 2001 — rugby jerseys, certificates, original artwork, archival framing, block mounting & box framing. In-store with On Safari, 99B Kloof Street.'},
   'ubuntu':     {title:'Ubuntu Wellness & Cape Town Medi-Spa | KloofStreet.online', desc:'Float therapy, spa treatments, homeopathy and vegan wellness at 99B Kloof Street.'},
   'dr-wendy':   {title:'Dr Wendy Dicks — GP & Weight Loss Specialist | KloofStreet.online', desc:'GLP-1 treatments, weight loss, chronic conditions & family medicine at 99B Kloof Street. Book: 021 111 0572.'},
   'just-hearing':{title:'Just Hearing — Audiology Practice | KloofStreet.online', desc:'Hearing assessments, hearing aids & tinnitus management at 99B Kloof Street, Cape Town.'},
