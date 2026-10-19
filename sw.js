@@ -1,7 +1,7 @@
 /* KloofStreet.online v2 — service worker
    Shell precache + smart runtime caching. Bump VERSION on every deploy
    that changes index.html so clients pick up the new shell. */
-var VERSION = 'kloofstreet-v2.0.5';
+var VERSION = 'kloofstreet-v2.0.6';
 var SHELL = [
   './', './index.html', './manifest.webmanifest', './streetpass-config.js',
   './icons/icon-192.png', './icons/icon-512.png', './icons/maskable-512.png',
