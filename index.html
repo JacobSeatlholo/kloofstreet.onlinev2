@@ -1674,6 +1674,12 @@ nav{z-index:200;}
      "position": 7,
      "name": "PostNet Gardens - Print & Courier",
      "url": "https://www.postnet.co.za/stores/capetowngardens"
+    },
+    {
+     "@type": "ListItem",
+     "position": 8,
+     "name": "LumeLife - Doctor-Led Telehealth",
+     "url": "https://www.kloofstreet.online/lumalife"
     }
    ]
   },
@@ -1796,6 +1802,27 @@ nav{z-index:200;}
     "addressCountry": "ZA"
    },
    "openingHours": "Th 09:00-17:00"
+  },
+  {
+   "@type": "MedicalClinic",
+   "@id": "https://kloofstreet.online/#lumelife",
+   "name": "LumeLife - Doctor-Led Telehealth",
+   "url": "https://www.kloofstreet.online/lumalife",
+   "image": "https://www.kloofstreet.online/lumalife/lume-moment-calm.jpg",
+   "logo": "https://www.kloofstreet.online/lumalife/lume-wordmark.svg",
+   "email": "admin@lumelife.co.za",
+   "description": "Doctor-led telehealth from the Medispa at 99 Kloof Street. Same-day video GP consultations, diagnoses and prescriptions, with medication delivered to your door free of charge.",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "99 Kloof Street",
+    "addressLocality": "Gardens, Cape Town",
+    "addressRegion": "Western Cape",
+    "postalCode": "8001",
+    "addressCountry": "ZA"
+   },
+   "parentOrganization": {
+    "@id": "https://kloofstreet.online/#org"
+   }
   },
   {
    "@type": "BeautySalon",
@@ -2376,6 +2403,20 @@ setTimeout(trackPageview,800);
           </div>
         </div>
 
+        <div class="brand-card" onclick="go('lumelife')">
+          <div class="brand-img" style="background:linear-gradient(rgba(10,10,11,.3),rgba(10,10,11,.3)),url('/lumalife/lume-moment-calm.jpg') center/cover no-repeat;">
+            <div class="brand-tier tier-g">Growth Partner</div>
+            <div class="open-pill">Virtual Consults</div>
+            <div class="vibe-bar">Doctor-led telehealth &#x1FA7A;</div>
+          </div>
+          <div class="brand-body">
+            <div class="brand-cat">&#x1FA7A; Telehealth &middot; Virtual GP &middot; Pharmacy Delivery</div>
+            <div class="brand-name">LumeLife</div>
+            <div class="brand-sub">Doctor-led telehealth from the Medispa at 99 Kloof Street. Same-day video GP consultations, scripts, and free nationwide pharmacy delivery &mdash; care that fits your life.</div>
+            <div class="brand-foot"><span class="brand-tag">Telehealth &middot; Virtual GP &middot; Wellness</span><a href="/lumalife" class="view-btn" onclick="event.stopPropagation();go('lumelife')">View Profile &#x2192;</a></div>
+          </div>
+        </div>
+
         <div class="brand-card" onclick="go('arnolds')">
           <div class="brand-img" style="background:linear-gradient(rgba(10,10,11,.3),rgba(10,10,11,.3)),url('https://www.arnolds.co.za/wp-content/uploads/2020/10/About_us1.png') center/cover no-repeat;">
             <div class="brand-tier tier-g">Growth Partner</div>
@@ -2473,6 +2514,7 @@ setTimeout(trackPageview,800);
       <div class="lcard" data-cat="wellness" onclick="go('revive')" style="border-color:rgba(245,197,24,.2);"><div class="lcard-img" style="background:linear-gradient(rgba(10,10,11,.2),rgba(10,10,11,.2)),url('https://app.businesshustle.co.za/wp-content/uploads/2026/04/images.jpeg') center/cover no-repeat;"><div style="position:absolute;top:8px;left:8px;background:rgba(245,197,24,.15);border:1px solid rgba(245,197,24,.3);color:var(--a);font-size:8px;letter-spacing:.12em;text-transform:uppercase;padding:2px 7px;font-weight:700;border-radius:3px;">Growth</div><div style="position:absolute;top:8px;right:8px;background:rgba(30,80,50,.85);color:#4ecf87;border:1px solid rgba(78,207,135,.25);font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;font-weight:700;border-radius:3px;">Open</div></div><div class="lcard-body"><div class="lcard-name" style="color:var(--text2);">Revive Studio</div><div class="lcard-addr">99 Kloof Street</div><button class="lcard-cta" onclick="event.stopPropagation();go('revive')">View Profile &#x2192;</button></div></div>
       <div class="lcard" data-cat="wellness" onclick="go('dr-dale')" style="border-color:rgba(245,197,24,.2);"><div class="lcard-img" style="background:linear-gradient(rgba(10,10,11,.25),rgba(10,10,11,.25)),url('https://app.businesshustle.co.za/wp-content/uploads/2026/06/Screenshot-2026-06-27-at-12.43.23.png') top center/cover no-repeat;"><div style="position:absolute;top:8px;left:8px;background:rgba(245,197,24,.15);border:1px solid rgba(245,197,24,.3);color:var(--a);font-size:8px;letter-spacing:.12em;text-transform:uppercase;padding:2px 7px;font-weight:700;border-radius:3px;">Growth</div><div style="position:absolute;top:8px;right:8px;background:rgba(30,80,50,.85);color:#4ecf87;border:1px solid rgba(78,207,135,.25);font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;font-weight:700;border-radius:3px;">Open</div></div><div class="lcard-body"><div class="lcard-name" style="color:var(--text2);">Dr Dale Geoffreys</div><div class="lcard-addr">99B Kloof St &amp; 39 Kloof St</div><button class="lcard-cta" onclick="event.stopPropagation();go('dr-dale')">View Profile &#x2192;</button></div></div>
       <div class="lcard" data-cat="wellness" onclick="go('hayley')" style="border-color:rgba(245,197,24,.2);"><div class="lcard-img" style="background:linear-gradient(rgba(10,10,11,.25),rgba(10,10,11,.25)),url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1400&q=80') center/cover no-repeat;"><div style="position:absolute;top:8px;left:8px;background:rgba(245,197,24,.15);border:1px solid rgba(245,197,24,.3);color:var(--a);font-size:8px;letter-spacing:.12em;text-transform:uppercase;padding:2px 7px;font-weight:700;border-radius:3px;">Growth</div><div style="position:absolute;top:8px;right:8px;background:rgba(30,80,50,.85);color:#4ecf87;border:1px solid rgba(78,207,135,.25);font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;font-weight:700;border-radius:3px;">Open</div></div><div class="lcard-body"><div class="lcard-name" style="color:var(--text2);">Hayley Schuter Physio</div><div class="lcard-addr">99B Kloof Street, Gardens</div><button class="lcard-cta" onclick="event.stopPropagation();go('hayley')">View Profile &#x2192;</button></div></div>
+      <div class="lcard" data-cat="wellness" onclick="go('lumelife')" style="border-color:rgba(245,197,24,.2);"><div class="lcard-img" style="background:linear-gradient(rgba(10,10,11,.2),rgba(10,10,11,.2)),url('/lumalife/lume-moment-calm.jpg') center/cover no-repeat;"><div style="position:absolute;top:8px;left:8px;background:rgba(245,197,24,.15);border:1px solid rgba(245,197,24,.3);color:var(--a);font-size:8px;letter-spacing:.12em;text-transform:uppercase;padding:2px 7px;font-weight:700;border-radius:3px;">Growth</div><div style="position:absolute;top:8px;right:8px;background:rgba(30,80,50,.85);color:#4ecf87;border:1px solid rgba(78,207,135,.25);font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;font-weight:700;border-radius:3px;">Virtual</div></div><div class="lcard-body"><div class="lcard-name" style="color:var(--text2);">LumeLife Telehealth</div><div class="lcard-addr">99 Kloof Street &amp; Online</div><button class="lcard-cta" onclick="event.stopPropagation();go('lumelife')">View Profile &#x2192;</button></div></div>
       <div class="lcard" data-cat="wellness" onclick="go('listed')"><div class="lcard-img lc-wellness"><div class="lcard-lock"><span>🔒</span><small>Claim Profile</small></div></div><div class="lcard-body"><div class="lcard-name">Shanti Natural</div><div class="lcard-addr">115 Kloof Street</div><button class="lcard-cta">Get Listed →</button></div></div>
       <div class="lcard" data-cat="wellness" onclick="go('listed')"><div class="lcard-img lc-wellness"><div class="lcard-lock"><span>🔒</span><small>Claim Profile</small></div></div><div class="lcard-body"><div class="lcard-name">BOA Beauty Bar</div><div class="lcard-addr">7 Kloof Street</div><button class="lcard-cta">Get Listed →</button></div></div>
       <div class="lcard" data-cat="wellness" onclick="go('listed')"><div class="lcard-img lc-wellness"><div class="lcard-lock"><span>🔒</span><small>Claim Profile</small></div></div><div class="lcard-body"><div class="lcard-name">Skin and Sage</div><div class="lcard-addr">115 Kloof Street</div><button class="lcard-cta">Get Listed →</button></div></div>
@@ -4388,6 +4430,7 @@ setTimeout(trackPageview,800);
         <li><a href="/explore" onclick="go('explore')">By Category</a></li>
         <li><a href="/on-safari" onclick="go('on-safari')">On Safari</a></li>
         <li><a href="/ubuntu-wellness" onclick="go('ubuntu')">Ubuntu Wellness</a></li>
+        <li><a href="/lumalife" onclick="go('lumelife')">LumeLife Telehealth</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -4395,7 +4438,6 @@ setTimeout(trackPageview,800);
       <ul>
         <li><a href="/ai-concierge" onclick="go('ai')">AI Concierge</a></li>
         <li><a href="/merchant" onclick="go('merchant')">For Business</a></li>
-        <li><a href="/get-listed" onclick="go('listed')">Get Listed</a></li>
         <li><a href="/get-listed" onclick="go('listed')">Get Listed</a></li>
         <li><a href="/about" onclick="go('about')">About Us</a></li>
         <li><a href="/about" onclick="go('about')">Press &amp; Accolades</a></li>
@@ -4535,7 +4577,7 @@ var PAGE_META = {
   'arnolds':     {title:"Arnold's Restaurant | KloofStreet.online", desc:'Fine dining on Kloof Street. Classic heritage, bold flavours. Dinner, brekkie & lunch, cocktails.'},
   'dash':        {title:'For Business | KloofStreet.online', desc:'Kloof Street merchant backoffice on HustlePortal.'},
   'listed':      {title:'Get Listed | KloofStreet.online', desc:'Get your Kloof Street business on the map. Verified listings, real discovery.'},
-  'lumelife':    {title:'LumeLife — Doctor-Led Telehealth | KloofStreet.online (Preview)', desc:'Virtual GP consultations, same-day scripts and free pharmacy delivery. Care that fits your life — Medispa, 99 Kloof Street.'},
+  'lumelife':    {title:'LumeLife — Doctor-Led Telehealth | KloofStreet.online', desc:'Virtual GP consultations, same-day scripts and free pharmacy delivery. Care that fits your life — Medispa, 99 Kloof Street.'},
 };
 
 function updateMeta(name) {
@@ -4648,7 +4690,7 @@ function aiSmartReply(q) {
   var isArt = /art|gallery|exhibition|print|photo|studio/.test(lq);
   var isNight = /night|bar|club|drinks|party|cocktail/.test(lq);
   if (isDining) return "For dining on Kloof Street, Arnold's Restaurant (80 Kloof St) is the standout — Cape Town's iconic heritage restaurant since 1999. Legendary weekend brunch, elegant fine dining, curated cocktails and a carefully selected wine list. It's our verified Growth Partner on KloofStreet.online. Want me to plan a full evening? 🍽️";
-  if (isWellness) return "Ubuntu Wellness (99B Kloof St) has float therapy, spa treatments and homeopathy. Dr Wendy Dicks offers GLP-1 weight loss at 99B. Dr Thomas Jahn does acupuncture Thursdays. Trudy Christians handles aesthetics. Street Pass = 10% off at all wellness partners. 🧘";
+  if (isWellness) return "Ubuntu Wellness (99B Kloof St) has float therapy, spa treatments and homeopathy. Dr Wendy Dicks offers GLP-1 weight loss at 99B. Dr Thomas Jahn does acupuncture Thursdays. Trudy Christians handles aesthetics. Street Pass = 10% off at all wellness partners. Need a GP? LumeLife (99 Kloof St) does same-day video doctor consults with free script delivery. 🧘";
   if (isArt) return "On Safari (99B Kloof St) — wildlife photographic fine art by Nigel Whitehead. Free to browse, prints to purchase. Street Pass = 10% off. AKJP Studio (73 Kloof) is also worth a visit for contemporary design. 🎨";
   if (isNight) return "Kloof Street nightlife is iconic. Start with cocktails at Arnold's Restaurant (80 Kloof St), then explore the strip. Street Pass members get flash deal alerts via WhatsApp. Want a night out plan? 🌙";
   return "Great question! Arnold's Restaurant (80 Kloof St) is our standout dining partner, On Safari (99B) has fine art, and Ubuntu Wellness has float sessions. Tell me more about what you're after and I'll build a full plan. 😊";
