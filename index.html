@@ -446,8 +446,6 @@ section{padding:72px 48px;}
  .ws-btn{display:block;text-align:center;}
 }
 /* ══════════ /WILSCHA ══════════ */
-
-
 /* Locked card gradients by category */
 .lc-dining{background:linear-gradient(135deg,#1a0800,#2d1200);}
 .lc-wellness{background:linear-gradient(135deg,#050f0a,#0d2010);}
@@ -1586,6 +1584,72 @@ nav{z-index:200;}
 @media(max-width:760px){.bvm-panel{grid-template-columns:1fr;}.bvm-plate{max-width:320px;margin:0 auto;}.bvm-benefits{grid-template-columns:1fr;}}
 
 
+/* ══════════ ARNOLD'S RESTAURANT (elevated) ══════════ */
+.ar-hero{display:block;height:auto;min-height:0;background:radial-gradient(1100px 500px at 78% 18%,rgba(245,197,24,.07),transparent 60%),linear-gradient(180deg,rgba(10,10,11,.2),rgba(10,10,11,.65)),url('arnolds/ad1-poster.jpg') right center/cover no-repeat;}
+.ar-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 22%,rgba(10,10,11,.82) 52%,rgba(10,10,11,.38) 100%);}
+.ar-wrap{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:88px 48px 60px;}
+.ar-hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center;}
+.ar-eyebrow{font-size:10px;font-weight:700;letter-spacing:.34em;text-transform:uppercase;color:var(--a);}
+.ar-title{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(40px,5.2vw,62px);line-height:1.04;color:var(--text2);margin:14px 0 0;}
+.ar-title em{font-style:italic;color:var(--a);}
+.ar-rule{width:64px;height:1px;background:linear-gradient(90deg,var(--a),transparent);margin:22px 0 18px;}
+.ar-lede{font-size:14.5px;line-height:1.85;color:var(--muted);max-width:54ch;margin:0 0 20px;}
+.ar-pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px;}
+.ar-hero-ctas{display:flex;gap:10px;flex-wrap:wrap;}
+.ar-frame{position:relative;max-width:460px;margin-left:auto;border:1px solid rgba(245,197,24,.35);border-radius:var(--r);padding:10px;background:rgba(245,197,24,.04);box-shadow:0 30px 70px rgba(0,0,0,.45);}
+.ar-frame img{width:100%;display:block;border-radius:calc(var(--r) - 4px);aspect-ratio:4/5;max-height:480px;object-fit:cover;}
+.ar-chip{position:absolute;left:22px;bottom:22px;display:flex;flex-direction:column;align-items:flex-start;gap:3px;background:rgba(10,10,11,.84);border:1px solid rgba(245,197,24,.32);border-radius:8px;padding:10px 16px;backdrop-filter:blur(6px);}
+.ar-chip-k{font-size:9px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--a);white-space:nowrap;}
+.ar-chip-v{font-size:12px;font-weight:600;color:var(--text2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.ar-h2{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(24px,2.6vw,30px);line-height:1.2;color:var(--text2);margin:0 0 20px;}
+.ar-spec{display:grid;grid-template-columns:.94fr 1.06fr;gap:0;border:1px solid rgba(245,197,24,.22);border-top:2px solid rgba(245,197,24,.55);border-radius:var(--r);overflow:hidden;background:var(--bg2);margin-bottom:18px;}
+.ar-spec-img{position:relative;min-height:280px;}
+.ar-spec-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+.ar-spec-body{padding:28px 30px;display:flex;flex-direction:column;justify-content:center;}
+.ar-spec-tag{font-size:9.5px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--a);margin-bottom:10px;}
+.ar-spec-name{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(21px,2.2vw,26px);color:var(--text2);margin:0 0 10px;}
+.ar-spec-desc{font-size:13px;line-height:1.8;color:var(--muted);margin:0 0 18px;}
+.ar-spec-foot{display:flex;align-items:center;justify-content:space-between;gap:14px;border-top:1px solid var(--bdr);padding-top:16px;}
+.ar-price{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:30px;color:var(--a);line-height:1;}
+.ar-spec-cta{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--text2);text-decoration:none;border-bottom:1px solid rgba(245,197,24,.5);padding-bottom:2px;white-space:nowrap;}
+.ar-spec-cta:hover{color:var(--a);}
+.ar-vid-grid{display:grid;grid-template-columns:1fr .74fr 1fr;gap:16px;align-items:stretch;}
+.ar-vid{border:1px solid rgba(245,197,24,.28);border-radius:var(--r);padding:8px;background:rgba(245,197,24,.03);}
+.ar-vid video{width:100%;display:block;border-radius:calc(var(--r) - 4px);aspect-ratio:9/16;object-fit:cover;background:#000;}
+.ar-vid-cap{font-size:9.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);text-align:center;padding:9px 0 2px;}
+.ar-quote{border:1px solid var(--bdr);border-radius:var(--r);background:var(--bg2);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:26px 22px;}
+.ar-quote-mark{font-family:Georgia,'Times New Roman',serif;font-size:54px;line-height:.6;color:var(--a);margin-bottom:14px;}
+.ar-quote p{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:16px;line-height:1.7;color:var(--text2);margin:0 0 16px;}
+.ar-quote-seal{font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--a);border:1px solid rgba(245,197,24,.4);border-radius:999px;padding:7px 14px;}
+.ar-gal{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.ar-g{margin:0;position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--bdr);background:var(--bg2);}
+.ar-g img{width:100%;display:block;aspect-ratio:1/1;object-fit:cover;transition:transform .5s ease;}
+.ar-g-wide{grid-column:span 3;}
+.ar-g-wide img{aspect-ratio:21/8;}
+.ar-g figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 10px;font-size:9.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--text2);background:linear-gradient(transparent,rgba(10,10,11,.88));}
+.ar-g:hover img{transform:scale(1.04);}
+.ar-band{position:relative;border:1px solid rgba(245,197,24,.3);border-radius:var(--r);padding:34px 30px;text-align:center;margin-top:34px;overflow:hidden;background:radial-gradient(600px 220px at 50% 0%,rgba(245,197,24,.09),transparent 70%),var(--bg2);}
+.ar-band-title{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:clamp(22px,2.6vw,30px);color:var(--text2);margin-bottom:8px;}
+.ar-band p{font-size:13px;color:var(--muted);line-height:1.7;max-width:52ch;margin:0 auto 20px;}
+.ar-band-ctas{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+@media(max-width:1020px){
+  .ar-hero-grid{grid-template-columns:1fr;gap:32px;}
+  .ar-frame{max-width:440px;margin-left:0;}
+  .ar-vid-grid{grid-template-columns:1fr 1fr;}
+  .ar-quote{display:none;}
+  .ar-wrap{padding:36px 24px 44px;}
+}
+@media(max-width:700px){
+  .ar-spec{grid-template-columns:1fr;}
+  .ar-spec-img{min-height:240px;}
+  .ar-spec-img img{position:relative;aspect-ratio:16/10;}
+  .ar-vid-grid{grid-template-columns:1fr;}
+  .ar-gal{grid-template-columns:1fr 1fr;}
+  .ar-g-wide{grid-column:span 2;}
+  .ar-frame{max-width:100%;margin-left:0;}
+  .ar-chip{left:14px;bottom:14px;}
+}
+/* ══════════ /ARNOLD'S ══════════ */
 </style>
 
   <script type="application/ld+json">{
@@ -3772,54 +3836,112 @@ setTimeout(trackPageview,800);
 
 <!-- ══════════ ARNOLD'S RESTAURANT ══════════ -->
 <div id="pg-arnolds" class="pg">
-  <div class="biz-hero" style="background:linear-gradient(rgba(10,10,11,.45),rgba(10,10,11,.45)),url('https://www.arnolds.co.za/wp-content/uploads/2020/10/Gallery_Slider9.png') center/cover no-repeat;">
-    <div class="biz-hero-inner">
+  <div class="biz-hero ar-hero">
+    <div class="ar-wrap">
       <button class="biz-back" onclick="go('brands')">&#x2190; Back to Directory</button>
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap;">
-        <span class="brand-tier tier-g" style="position:relative;top:auto;left:auto;">Growth Partner</span>
-        <span class="open-pill" style="position:relative;top:auto;right:auto;">Open</span>
-        <span class="badge">&#x2713; Verified</span>
+      <div class="ar-hero-grid">
+        <div class="ar-hero-copy">
+          <div class="ar-eyebrow">Est. 1999 &middot; 80 Kloof Street &middot; Gardens</div>
+          <h1 class="ar-title">Arnold&rsquo;s <em>Restaurant</em></h1>
+          <div class="ar-rule"></div>
+          <p class="ar-lede">Cape Town&rsquo;s iconic table on Kloof Street. Behind the heritage fa&ccedil;ade, a dining room that has hosted the city for over two decades &mdash; legendary weekend brunches, refined evening dining, a curated cocktail bar and a wine list built with care.</p>
+          <div class="ar-pills">
+            <span class="brand-tier tier-g" style="position:relative;top:auto;left:auto;">Growth Partner</span>
+            <span class="badge">&#x2713; Verified</span>
+            <span class="open-pill" style="position:relative;top:auto;right:auto;">Open</span>
+          </div>
+          <div class="ar-hero-ctas">
+            <a class="btn btn-gold" href="https://www.arnolds.co.za/menu/" target="_blank">View Menu &amp; Book a Table</a>
+            <a class="btn btn-outline" href="https://wa.me/27214245748?text=Hi%2C%20I%27d%20like%20to%20make%20a%20reservation%20at%20Arnold%27s.%20Please%20let%20me%20know%20your%20availability." target="_blank">&#x1F4AC; WhatsApp Concierge</a>
+          </div>
+        </div>
+        <div class="ar-frame">
+          <img loading="eager" decoding="async" src="arnolds/hero-rump.jpg" alt="250g grilled rump with garlic herb butter, peri-peri wings, potato wedges and beer-battered onion rings">
+          <div class="ar-chip"><span class="ar-chip-k">Tonight&rsquo;s Special</span><span class="ar-chip-v">The 250g Kloof Rump &middot; R285</span></div>
+        </div>
       </div>
-      <div style="font-size:clamp(28px,4vw,52px);font-weight:900;color:var(--text2);text-transform:uppercase;line-height:1;">Arnold&rsquo;s Restaurant</div>
-      <p style="font-size:14px;color:var(--muted);margin-top:8px;">Restaurant &middot; Bar &middot; Brunch &middot; Dinner &middot; 80 Kloof Street, Gardens, Cape Town</p>
     </div>
   </div>
   <div class="biz-body">
     <div>
-      <div class="sec-tag" style="margin-bottom:8px;">Restaurant &middot; Bar &middot; Brunch &middot; Heritage Dining</div>
-      <h2 style="font-size:22px;font-weight:800;color:var(--text2);margin-bottom:18px;">Cape Town&rsquo;s Iconic Dining Destination on Kloof Street</h2>
-      <p style="font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:14px;">Arnold&rsquo;s is one of Cape Town&rsquo;s most celebrated restaurants, housed in a beautiful heritage building on Kloof Street. With a history spanning over two decades, it has earned its place as a must-visit destination for locals and visitors alike &mdash; a place where exceptional food, warm hospitality and timeless atmosphere come together.</p>
-      <p style="font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:28px;">From the legendary weekend brunch that draws queues down the block, to elegant evening dining with a menu that showcases the best of South African and international cuisine, Arnold&rsquo;s delivers an experience that is both refined and unmistakably Cape Town. The curated cocktail menu and carefully selected wine list complete the picture.</p>
-      <div class="svc-grid" style="margin-bottom:28px;">
-        <div class="svc"><div class="svc-icon">&#x1F37D;</div><div class="svc-name">Fine Dining</div><div class="svc-desc">South African and international cuisine with seasonal, locally sourced ingredients</div></div>
-        <div class="svc"><div class="svc-icon">&#x1F37A;</div><div class="svc-name">Bar &amp; Cocktails</div><div class="svc-desc">Curated cocktail menu and carefully selected wine list at the bar</div></div>
-        <div class="svc"><div class="svc-icon">&#x1F35E;</div><div class="svc-name">Weekend Brunch</div><div class="svc-desc">Cape Town&rsquo;s legendary brunch &mdash; the one everyone talks about</div></div>
-        <div class="svc"><div class="svc-icon">&#x1F3E0;</div><div class="svc-name">Heritage Venue</div><div class="svc-desc">Beautiful historic building with character, charm and timeless atmosphere</div></div>
-        <div class="svc"><div class="svc-icon">&#x1F381;</div><div class="svc-name">Private Events</div><div class="svc-desc">Venue hire for private dinners, celebrations and corporate functions</div></div>
-        <div class="svc"><div class="svc-icon">&#x1F30D;</div><div class="svc-name">Al Fresco</div><div class="svc-desc">Outdoor seating on Kloof Street &mdash; perfect for people-watching</div></div>
+      <div class="sec-tag">The House on Kloof</div>
+      <h2 class="ar-h2">An institution, not a trend</h2>
+      <p style="font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:14px;">Arnold&rsquo;s is one of Cape Town&rsquo;s most celebrated restaurants, housed in a beautiful heritage building at the foot of Table Mountain. For more than two decades it has earned its place as a must-visit destination for locals and travellers alike &mdash; a room where exceptional food, warm hospitality and timeless atmosphere come together, morning to midnight.</p>
+      <p style="font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:34px;">From the legendary weekend brunch that draws queues down the block, to elegant evening dining showcasing the best of South African and international cuisine, every plate leaves the kitchen with intent. The curated cocktail menu and carefully selected wine list complete the picture &mdash; and this week, the kitchen has two specials worth planning your visit around.</p>
+
+      <div class="sec-tag">From the Kitchen</div>
+      <h2 class="ar-h2">This Week&rsquo;s Specials</h2>
+      <div class="ar-spec">
+        <div class="ar-spec-img"><img loading="lazy" decoding="async" src="arnolds/special-rump.jpg" alt="Dinner special: 250g grilled rump steak with garlic herb butter, peri-peri chicken wings, potato wedges and beer-battered onion rings"></div>
+        <div class="ar-spec-body">
+          <div class="ar-spec-tag">Dinner Special &middot; Every Evening</div>
+          <h3 class="ar-spec-name">250g Grilled Rump Steak</h3>
+          <p class="ar-spec-desc">A full 250g of aged rump, flame-grilled to your liking and finished with garlic herb butter melting over the grill marks. Served with sticky peri-peri chicken wings, golden potato wedges and a stack of beer-battered onion rings.</p>
+          <div class="ar-spec-foot"><span class="ar-price">R285</span><a class="ar-spec-cta" href="https://www.arnolds.co.za/menu/" target="_blank">Reserve tonight &#x2192;</a></div>
+        </div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;">
-        <img loading="lazy" decoding="async" src="https://www.arnolds.co.za/wp-content/uploads/2020/10/About_us1.png" alt="Arnold's Restaurant interior" style="width:100%;border-radius:var(--r);border:1px solid var(--bdr);display:block;object-fit:cover;min-height:180px;" onerror="this.style.display='none'">
-        <img loading="lazy" decoding="async" src="https://www.arnolds.co.za/wp-content/uploads/2020/10/Gallery_Slider9.png" alt="Arnold's Restaurant food" style="width:100%;border-radius:var(--r);border:1px solid var(--bdr);display:block;object-fit:cover;min-height:180px;" onerror="this.style.display='none'">
-        <img loading="lazy" decoding="async" src="https://www.arnolds.co.za/wp-content/uploads/2020/10/cocktail_750x500.png" alt="Arnold's Cocktails" style="width:100%;border-radius:var(--r);border:1px solid var(--bdr);display:block;object-fit:cover;min-height:180px;" onerror="this.style.display='none'">
-        <img loading="lazy" decoding="async" src="https://www.arnolds.co.za/wp-content/uploads/2020/10/Gallery_Slider1.png" alt="Arnold's Restaurant ambiance" style="width:100%;border-radius:var(--r);border:1px solid var(--bdr);display:block;object-fit:cover;min-height:180px;" onerror="this.style.display='none'">
-        <img loading="lazy" decoding="async" src="https://www.arnolds.co.za/wp-content/uploads/2020/10/About_us2.png" alt="Arnold's Restaurant bar" style="width:100%;border-radius:var(--r);border:1px solid var(--bdr);display:block;object-fit:cover;min-height:180px;" onerror="this.style.display='none'">
-        <img loading="lazy" decoding="async" src="https://www.arnolds.co.za/wp-content/uploads/2020/10/Gallery_Slider3.png" alt="Arnold's Restaurant dining" style="width:100%;border-radius:var(--r);border:1px solid var(--bdr);display:block;object-fit:cover;min-height:180px;" onerror="this.style.display='none'">
+      <div class="ar-spec">
+        <div class="ar-spec-img"><img loading="lazy" decoding="async" src="arnolds/special-croissant.jpg" alt="Daily special: toasted croissant with cream cheese, rocket and capers, smoked salmon, poached egg and hollandaise"></div>
+        <div class="ar-spec-body">
+          <div class="ar-spec-tag">Daily Special &middot; Brunch &amp; Lunch</div>
+          <h3 class="ar-spec-name">Smoked Salmon Croissant</h3>
+          <p class="ar-spec-desc">A toasted croissant layered with cream cheese, rocket and capers, draped with smoked salmon and crowned with a poached egg and silky hollandaise &mdash; the plate the regulars photograph before they eat.</p>
+          <div class="ar-spec-foot"><span class="ar-price">R145</span><a class="ar-spec-cta" href="https://www.arnolds.co.za/menu/" target="_blank">Reserve a table &#x2192;</a></div>
+        </div>
       </div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;">
-        <a class="btn btn-gold" href="https://wa.me/27214245748?text=Hi%2C%20I%27d%20like%20to%20make%20a%20reservation%20at%20Arnold%27s.%20Please%20let%20me%20know%20your%20availability." target="_blank">&#x1F4AC; Book a Table</a>
-        <a class="btn btn-outline" href="https://www.arnolds.co.za/wp-content/uploads/2026/09/1-dinner-1_compressed-2.pdf" target="_blank">&#x1F4D6; Dinner Menu</a>
-        <a class="btn btn-outline" href="https://www.arnolds.co.za/wp-content/uploads/2026/09/2-brekkie-lunch-1_compressed.pdf" target="_blank">&#x1F35E; Brekkie &amp; Lunch</a>
-        <a class="btn btn-outline" href="https://arnolds.co.za" target="_blank">Visit Arnold&rsquo;s Online</a>
+
+      <div class="sec-tag" style="margin-top:34px;">In Motion</div>
+      <h2 class="ar-h2">Taste Arnold&rsquo;s</h2>
+      <div class="ar-vid-grid">
+        <div class="ar-vid">
+          <video controls playsinline preload="none" poster="arnolds/ad1-poster.jpg" aria-label="Arnold's food film one"><source src="arnolds/food-ad-1.mp4" type="video/mp4"></video>
+          <div class="ar-vid-cap">The Grill &middot; Film I</div>
+        </div>
+        <div class="ar-quote">
+          <div class="ar-quote-mark">&ldquo;</div>
+          <p>The iconic table on Kloof Street &mdash; where the city comes to eat, drink and stay a while.</p>
+          <div class="ar-quote-seal">Arnold&rsquo;s &middot; Est. 1999</div>
+        </div>
+        <div class="ar-vid">
+          <video controls playsinline preload="none" poster="arnolds/ad2-poster.jpg" aria-label="Arnold's food film two"><source src="arnolds/food-ad-2.mp4" type="video/mp4"></video>
+          <div class="ar-vid-cap">The Croissant &middot; Film II</div>
+        </div>
+      </div>
+
+      <div class="sec-tag" style="margin-top:34px;">The Room &amp; The Craft</div>
+      <h2 class="ar-h2">A Look Inside</h2>
+      <div class="ar-gal">
+        <figure class="ar-g"><img loading="lazy" decoding="async" src="arnolds/hero-sign.jpg" alt="Arnold's Restaurant signage with guests on the Kloof Street pavement tables"><figcaption>The Corner of Kloof</figcaption></figure>
+        <figure class="ar-g"><img loading="lazy" decoding="async" src="arnolds/patio.jpg" alt="Guests dining at tables on Arnold's shaded patio"><figcaption>Weekend Brunch, The Patio</figcaption></figure>
+        <figure class="ar-g"><img loading="lazy" decoding="async" src="arnolds/coffee.jpg" alt="Flat white with latte-art rosetta at Arnold's"><figcaption>Barista Craft</figcaption></figure>
+        <figure class="ar-g ar-g-wide"><img loading="lazy" decoding="async" src="arnolds/team.jpg" alt="The Arnold's front-of-house team smiling beneath the house 'a' sign"><figcaption>The People Behind the Plates</figcaption></figure>
+      </div>
+
+      <div class="ar-band">
+        <div class="ar-band-title">Your table is waiting</div>
+        <p>Browse the full menu and reserve online in under a minute &mdash; dinner, brunch and cocktails at 80 Kloof Street.</p>
+        <div class="ar-band-ctas">
+          <a class="btn btn-gold" href="https://www.arnolds.co.za/menu/" target="_blank">View Menu &amp; Book a Table</a>
+          <a class="btn btn-outline" href="https://wa.me/27214245748?text=Hi%2C%20I%27d%20like%20to%20make%20a%20reservation%20at%20Arnold%27s.%20Please%20let%20me%20know%20your%20availability." target="_blank">&#x1F4AC; Book via WhatsApp</a>
+        </div>
       </div>
     </div>
     <div>
       <div class="info-card" style="padding:0;overflow:hidden;">
-        <img loading="lazy" decoding="async" src="https://www.arnolds.co.za/wp-content/uploads/2020/10/About_us1.png" alt="Arnold's Restaurant" style="width:100%;display:block;max-height:220px;object-fit:cover;object-position:center;" onerror="this.style.display='none'">
+        <img loading="lazy" decoding="async" src="arnolds/hero-sign.jpg" alt="Arnold's Restaurant" style="width:100%;display:block;max-height:220px;object-fit:cover;object-position:center;" onerror="this.style.display='none'">
         <div style="padding:14px 18px;background:rgba(245,197,24,.04);border-top:1px solid rgba(245,197,24,.15);">
           <div style="font-size:12px;font-weight:700;color:var(--text2);">Arnold&rsquo;s Restaurant</div>
           <div style="font-size:11px;color:var(--muted);margin-top:2px;">Cape Town&rsquo;s iconic dining destination since 1999</div>
         </div>
+      </div>
+      <div class="info-card" style="background:rgba(245,197,24,.04);border-color:rgba(245,197,24,.2);">
+        <h3>&#x1F37D; Menu &amp; Bookings</h3>
+        <a class="btn btn-gold" href="https://www.arnolds.co.za/menu/" target="_blank" style="display:block;text-align:center;margin-bottom:12px;">View Menu &amp; Book a Table</a>
+        <div class="info-row"><b>&#x1F4D6;</b><a href="https://www.arnolds.co.za/wp-content/uploads/2026/09/1-dinner-1_compressed-2.pdf" target="_blank" style="color:var(--a);">Dinner Menu (PDF)</a></div>
+        <div class="info-row"><b>&#x1F35E;</b><a href="https://www.arnolds.co.za/wp-content/uploads/2026/09/2-brekkie-lunch-1_compressed.pdf" target="_blank" style="color:var(--a);">Brekkie &amp; Lunch (PDF)</a></div>
+        <div class="info-row"><b>&#x1F37A;</b><a href="https://www.arnolds.co.za/wp-content/uploads/2026/09/3-beverage-1.pdf" target="_blank" style="color:var(--a);">Beverage List (PDF)</a></div>
+        <div class="info-row"><b>&#x1F978;</b><a href="https://www.arnolds.co.za/wp-content/uploads/2026/09/4-cocktails-1.pdf" target="_blank" style="color:var(--a);">Cocktails (PDF)</a></div>
+        <div class="info-row"><b>&#x1F389;</b><a href="https://www.arnolds.co.za/wp-content/uploads/2026/09/5-happy-hour-.pdf" target="_blank" style="color:var(--a);">Happy Hour (PDF)</a></div>
       </div>
       <div class="info-card">
         <h3>Contact &amp; Location</h3>
@@ -3836,24 +3958,16 @@ setTimeout(trackPageview,800);
         <div class="info-row"><b>&#x1F4C5;</b><span>Sunday Dinner: 5:00pm &ndash; 9:30pm</span></div>
       </div>
       <div class="info-card" style="background:rgba(245,197,24,.04);border-color:rgba(245,197,24,.2);">
-        <h3>&#x1F4D6; Menus</h3>
-        <div class="info-row"><b>&#x1F37D;</b><a href="https://www.arnolds.co.za/wp-content/uploads/2026/09/1-dinner-1_compressed-2.pdf" target="_blank" style="color:var(--a);">Dinner Menu</a></div>
-        <div class="info-row"><b>&#x1F35E;</b><a href="https://www.arnolds.co.za/wp-content/uploads/2026/09/2-brekkie-lunch-1_compressed.pdf" target="_blank" style="color:var(--a);">Brekkie &amp; Lunch Menu</a></div>
-        <div class="info-row"><b>&#x1F37A;</b><a href="https://www.arnolds.co.za/wp-content/uploads/2026/09/3-beverage-1.pdf" target="_blank" style="color:var(--a);">Beverage Menu</a></div>
-        <div class="info-row"><b>&#x1F978;</b><a href="https://www.arnolds.co.za/wp-content/uploads/2026/09/4-cocktails-1.pdf" target="_blank" style="color:var(--a);">Cocktail Menu</a></div>
-        <div class="info-row"><b>&#x1F389;</b><a href="https://www.arnolds.co.za/wp-content/uploads/2026/09/5-happy-hour-.pdf" target="_blank" style="color:var(--a);">Happy Hour Menu</a></div>
+        <h3>Street Pass Benefit</h3>
+        <p style="font-size:12px;color:var(--muted);line-height:1.5;">&#x1F3AB; Street Pass holders receive <strong style="color:var(--a);">10% off brunch &amp; dinner</strong> at Arnold&rsquo;s Restaurant, 80 Kloof Street.</p>
       </div>
       <div class="info-card" style="background:var(--bg2);">
         <h3>&#x2B50; Enjoyed your visit?</h3>
         <p style="font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:10px;">Reviews help Arnold&rsquo;s get discovered by more people &mdash; on Google and by AI assistants.</p>
         <a class="btn btn-outline" href="https://www.google.com/search?q=Arnolds+Restaurant+Kloof+Street+Cape+Town+reviews" target="_blank" style="display:block;text-align:center;font-size:12px;">Rate us on Google &#x2197;</a>
       </div>
-      <div class="info-card" style="background:rgba(245,197,24,.04);border-color:rgba(245,197,24,.2);">
-        <h3>Street Pass Benefit</h3>
-        <p style="font-size:12px;color:var(--muted);line-height:1.5;">&#x1F3AB; Street Pass holders receive <strong style="color:var(--a);">10% off brunch &amp; dinner</strong> at Arnold&rsquo;s Restaurant, 80 Kloof Street.</p>
-      </div>
-      <a class="btn btn-gold" href="https://wa.me/27214245748?text=Hi%2C%20I%27d%20like%20to%20make%20a%20reservation%20at%20Arnold%27s.%20Please%20let%20me%20know%20your%20availability." target="_blank" style="display:block;text-align:center;margin-bottom:10px;">&#x1F4AC; Book a Table</a>
-      <a class="btn btn-outline" href="https://arnolds.co.za" target="_blank" style="display:block;text-align:center;">Visit Arnold&rsquo;s Online</a>
+      <a class="btn btn-gold" href="https://www.arnolds.co.za/menu/" target="_blank" style="display:block;text-align:center;margin-bottom:10px;">View Menu &amp; Book a Table</a>
+      <a class="btn btn-outline" href="https://wa.me/27214245748?text=Hi%2C%20I%27d%20like%20to%20make%20a%20reservation%20at%20Arnold%27s.%20Please%20let%20me%20know%20your%20availability." target="_blank" style="display:block;text-align:center;">&#x1F4AC; WhatsApp Concierge</a>
     </div>
   </div>
 </div>
@@ -4907,7 +5021,7 @@ var PAGE_META = {
   'streetpass-redeem': {title:'Rewards | Street Pass | KloofStreet.online', desc:'Redeem your Street Pass points for exclusive rewards.'},
   'merchant':  {title:'For Business | KloofStreet.online', desc:'Kloof Street merchant backoffice — sign in to HustlePortal for newsletters, contacts and business tools.'},
   'ai':          {title:'AI Concierge | KloofStreet.online', desc:'Your AI-powered guide to Kloof Street. Ask anything about restaurants, wellness, shopping and more.'},
-  'arnolds':     {title:"Arnold's Restaurant | KloofStreet.online", desc:'Fine dining on Kloof Street. Classic heritage, bold flavours. Dinner, brekkie & lunch, cocktails.'},
+  'arnolds':     {title:"Arnold's Restaurant | KloofStreet.online", desc:'Heritage dining on Kloof Street since 1999. Dinner special: 250g grilled rump R285. Daily special: smoked salmon croissant R145. View the menu & book online.'},
   'dash':        {title:'For Business | KloofStreet.online', desc:'Kloof Street merchant backoffice on HustlePortal.'},
   'listed':      {title:'Get Listed | KloofStreet.online', desc:'Get your Kloof Street business on the map. Verified listings, real discovery.'},
   'lumelife':    {title:'LumeLife — Doctor-Led Telehealth | KloofStreet.online', desc:'Virtual GP consultations, same-day scripts and free pharmacy delivery. Care that fits your life — Medispa, 99 Kloof Street.'},
