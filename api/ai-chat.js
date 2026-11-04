@@ -161,17 +161,22 @@ Kloof Street runs through Gardens/Tamboerskloof in Cape Town's City Bowl. It was
   };
 
   const errors = [];
+  const DEADLINE = Date.now() + 25000;  // global budget — never hang the function
+  const FETCH_TIMEOUT = 9000;           // per-attempt abort (ms)
 
   try {
     for (const version of VERSIONS) {
+      if (Date.now() > DEADLINE) break;
       for (const model of MODELS) {
+        if (Date.now() > DEADLINE) break;
         const url = `https://generativelanguage.googleapis.com/${version}/models/${model}:generateContent?key=${GEMINI_KEY}`;
         
         try {
           const response = await fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(requestBody)
+            body: JSON.stringify(requestBody),
+            signal: AbortSignal.timeout(FETCH_TIMEOUT)
           });
 
           if (response.ok) {
@@ -201,7 +206,8 @@ Kloof Street runs through Gardens/Tamboerskloof in Cape Town's City Bowl. It was
             const fb2 = await fetch(url, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(fallbackBody)
+              body: JSON.stringify(fallbackBody),
+              signal: AbortSignal.timeout(FETCH_TIMEOUT)
             });
 
             if (fb2.ok) {
