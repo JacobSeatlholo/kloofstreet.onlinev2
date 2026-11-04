@@ -79,3 +79,5 @@ merchant-schema.sql   legacy v1 migration (kept for reference; superseded)
 SUPABASE-SETUP.md     step-by-step Supabase setup guide
 robots.txt / sitemap.xml / llms.txt / llms-full.txt   SEO + AI-crawler surface
 ```
+
+<!-- deploy trigger: vercel cache-route dest fix (abdd561) -->
