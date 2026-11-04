@@ -351,7 +351,7 @@ section{padding:72px 48px;}
 .lcard-addr{font-size:10px;color:rgba(122,122,120,.5);margin-bottom:8px;}
 .lcard-cta{font-size:9px;color:var(--a);letter-spacing:.12em;text-transform:uppercase;font-weight:700;background:none;border:none;cursor:pointer;font-family:inherit;padding:0;}
 
-/* ══════════ WILSCHA SKINCARE (private preview) ══════════ */
+/* ══════════ WILSCHA SKINCARE (LIVE — client approved) ══════════ */
 .ws{background:#faf7f2;color:#23201b;}
 .ws-wrap{max-width:1080px;margin:0 auto;padding:0 22px;}
 .ws-eyebrow{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#b08d57;font-weight:700;}
@@ -1838,6 +1838,12 @@ nav{z-index:200;}
      "position": 8,
      "name": "LumeLife - Doctor-Led Telehealth",
      "url": "https://www.kloofstreet.online/lumalife"
+    },
+    {
+     "@type": "ListItem",
+     "position": 9,
+     "name": "Wilscha Skincare - Cape Town Medi Spa",
+     "url": "https://www.kloofstreet.online/wilscha"
     }
    ]
   },
@@ -1978,6 +1984,27 @@ nav{z-index:200;}
     "postalCode": "8001",
     "addressCountry": "ZA"
    },
+   "parentOrganization": {
+    "@id": "https://kloofstreet.online/#org"
+   }
+  },
+  {
+   "@type": "BeautySalon",
+   "@id": "https://kloofstreet.online/#wilscha",
+   "name": "Wilscha Skincare - Cape Town Medi Spa",
+   "url": "https://www.kloofstreet.online/wilscha",
+   "image": "https://wilschaskincare.com/wp-content/uploads/2025/11/Vitamin-c-serum.png",
+   "telephone": "+27825722011",
+   "description": "Expertly crafted skincare backed by 35 years of industry experience. Personalised treatments, the i:am and 11:11 product ranges, and the purest ingredients \u2014 from the Medi Spa at 99 Kloof Street, Gardens.",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "99 Kloof Street",
+    "addressLocality": "Gardens, Cape Town",
+    "addressRegion": "Western Cape",
+    "postalCode": "8001",
+    "addressCountry": "ZA"
+   },
+   "sameAs": "https://wilschaskincare.com",
    "parentOrganization": {
     "@id": "https://kloofstreet.online/#org"
    }
@@ -2575,6 +2602,19 @@ setTimeout(trackPageview,800);
           </div>
         </div>
 
+        <div class="brand-card" onclick="go('wilscha')">
+          <div class="brand-img" style="background:linear-gradient(rgba(35,32,27,.25),rgba(35,32,27,.4)),url('https://wilschaskincare.com/wp-content/uploads/2025/11/Vitamin-c-serum.png') center/contain no-repeat #e7dcc6;">
+            <div class="brand-tier tier-g">Growth Partner</div>
+            <div class="open-pill">Medi Spa &amp; Online</div>
+            <div class="vibe-bar">Skincare that reflects the best of you &#x2728;</div>
+          </div>
+          <div class="brand-body">
+            <div class="brand-cat">&#x1F9F4; Skincare &middot; Medi Spa &middot; i:am &amp; 11:11</div>
+            <div class="brand-name">Wilscha Skincare</div>
+            <div class="brand-sub">Expertly crafted skincare backed by 35 years of industry experience &mdash; the i:am and 11:11 ranges, personalised treatments and the purest ingredients, from the Medi Spa at 99 Kloof Street.</div>
+            <div class="brand-foot"><span class="brand-tag">Skincare &middot; Medi Spa &middot; Beauty</span><a href="/wilscha" class="view-btn" onclick="event.stopPropagation();go('wilscha')">View Profile &#x2192;</a></div>
+          </div>
+        </div>
         <div class="brand-card" onclick="go('arnolds')">
           <div class="brand-img" style="background:linear-gradient(rgba(10,10,11,.3),rgba(10,10,11,.3)),url('https://www.arnolds.co.za/wp-content/uploads/2020/10/About_us1.png') center/cover no-repeat;">
             <div class="brand-tier tier-g">Growth Partner</div>
@@ -2673,6 +2713,7 @@ setTimeout(trackPageview,800);
       <div class="lcard" data-cat="wellness" onclick="go('dr-dale')" style="border-color:rgba(245,197,24,.2);"><div class="lcard-img" style="background:linear-gradient(rgba(10,10,11,.25),rgba(10,10,11,.25)),url('https://app.businesshustle.co.za/wp-content/uploads/2026/06/Screenshot-2026-06-27-at-12.43.23.png') top center/cover no-repeat;"><div style="position:absolute;top:8px;left:8px;background:rgba(245,197,24,.15);border:1px solid rgba(245,197,24,.3);color:var(--a);font-size:8px;letter-spacing:.12em;text-transform:uppercase;padding:2px 7px;font-weight:700;border-radius:3px;">Growth</div><div style="position:absolute;top:8px;right:8px;background:rgba(30,80,50,.85);color:#4ecf87;border:1px solid rgba(78,207,135,.25);font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;font-weight:700;border-radius:3px;">Open</div></div><div class="lcard-body"><div class="lcard-name" style="color:var(--text2);">Dr Dale Geoffreys</div><div class="lcard-addr">99B Kloof St &amp; 39 Kloof St</div><button class="lcard-cta" onclick="event.stopPropagation();go('dr-dale')">View Profile &#x2192;</button></div></div>
       <div class="lcard" data-cat="wellness" onclick="go('hayley')" style="border-color:rgba(245,197,24,.2);"><div class="lcard-img" style="background:linear-gradient(rgba(10,10,11,.25),rgba(10,10,11,.25)),url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1400&q=80') center/cover no-repeat;"><div style="position:absolute;top:8px;left:8px;background:rgba(245,197,24,.15);border:1px solid rgba(245,197,24,.3);color:var(--a);font-size:8px;letter-spacing:.12em;text-transform:uppercase;padding:2px 7px;font-weight:700;border-radius:3px;">Growth</div><div style="position:absolute;top:8px;right:8px;background:rgba(30,80,50,.85);color:#4ecf87;border:1px solid rgba(78,207,135,.25);font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;font-weight:700;border-radius:3px;">Open</div></div><div class="lcard-body"><div class="lcard-name" style="color:var(--text2);">Hayley Schuter Physio</div><div class="lcard-addr">99B Kloof Street, Gardens</div><button class="lcard-cta" onclick="event.stopPropagation();go('hayley')">View Profile &#x2192;</button></div></div>
       <div class="lcard" data-cat="wellness" onclick="go('lumelife')" style="border-color:rgba(245,197,24,.2);"><div class="lcard-img" style="background:linear-gradient(rgba(10,10,11,.2),rgba(10,10,11,.2)),url('/lumalife/lume-moment-calm.jpg') center/cover no-repeat;"><div style="position:absolute;top:8px;left:8px;background:rgba(245,197,24,.15);border:1px solid rgba(245,197,24,.3);color:var(--a);font-size:8px;letter-spacing:.12em;text-transform:uppercase;padding:2px 7px;font-weight:700;border-radius:3px;">Growth</div><div style="position:absolute;top:8px;right:8px;background:rgba(30,80,50,.85);color:#4ecf87;border:1px solid rgba(78,207,135,.25);font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;font-weight:700;border-radius:3px;">Virtual</div></div><div class="lcard-body"><div class="lcard-name" style="color:var(--text2);">LumeLife Telehealth</div><div class="lcard-addr">99 Kloof Street &amp; Online</div><button class="lcard-cta" onclick="event.stopPropagation();go('lumelife')">View Profile &#x2192;</button></div></div>
+      <div class="lcard" data-cat="wellness" onclick="go('wilscha')" style="border-color:rgba(245,197,24,.2);"><div class="lcard-img" style="background:linear-gradient(rgba(35,32,27,.2),rgba(35,32,27,.32)),url('https://wilschaskincare.com/wp-content/uploads/2025/11/Vitamin-c-serum.png') center/contain no-repeat #e7dcc6;"><div style="position:absolute;top:8px;left:8px;background:rgba(245,197,24,.15);border:1px solid rgba(245,197,24,.3);color:var(--a);font-size:8px;letter-spacing:.12em;text-transform:uppercase;padding:2px 7px;font-weight:700;border-radius:3px;">Growth</div></div><div class="lcard-body"><div class="lcard-name" style="color:var(--text2);">Wilscha Skincare</div><div class="lcard-addr">Cape Town Medi Spa &middot; 99 Kloof Street</div><button class="lcard-cta" onclick="event.stopPropagation();go('wilscha')">View Profile &#x2192;</button></div></div>
       <div class="lcard" data-cat="wellness" onclick="go('listed')"><div class="lcard-img lc-wellness"><div class="lcard-lock"><span>🔒</span><small>Claim Profile</small></div></div><div class="lcard-body"><div class="lcard-name">Shanti Natural</div><div class="lcard-addr">115 Kloof Street</div><button class="lcard-cta">Get Listed →</button></div></div>
       <div class="lcard" data-cat="wellness" onclick="go('listed')"><div class="lcard-img lc-wellness"><div class="lcard-lock"><span>🔒</span><small>Claim Profile</small></div></div><div class="lcard-body"><div class="lcard-name">BOA Beauty Bar</div><div class="lcard-addr">7 Kloof Street</div><button class="lcard-cta">Get Listed →</button></div></div>
       <div class="lcard" data-cat="wellness" onclick="go('listed')"><div class="lcard-img lc-wellness"><div class="lcard-lock"><span>🔒</span><small>Claim Profile</small></div></div><div class="lcard-body"><div class="lcard-name">Skin and Sage</div><div class="lcard-addr">115 Kloof Street</div><button class="lcard-cta">Get Listed →</button></div></div>
@@ -4878,6 +4919,7 @@ setTimeout(trackPageview,800);
         <li><a href="/on-safari" onclick="go('on-safari')">On Safari</a></li>
         <li><a href="/ubuntu-wellness" onclick="go('ubuntu')">Ubuntu Wellness</a></li>
         <li><a href="/lumalife" onclick="go('lumelife')">LumeLife Telehealth</a></li>
+        <li><a href="/wilscha" onclick="go('wilscha')">Wilscha Skincare</a></li>
       </ul>
     </div>
     <div class="footer-col">

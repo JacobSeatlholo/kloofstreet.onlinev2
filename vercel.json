@@ -18,12 +18,6 @@
       }
     },
     {
-      "src": "/wilscha",
-      "headers": {
-        "X-Robots-Tag": "noindex, nofollow"
-      }
-    },
-    {
       "handle": "filesystem"
     },
     {
