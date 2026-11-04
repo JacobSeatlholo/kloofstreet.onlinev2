@@ -30,18 +30,14 @@ export default async function handler(req, res) {
           status: 'error', 
           message: `API key rejected by Google (${modelsRes.status})`, 
           keyPresent: true,
-          keyPrefix: GEMINI_KEY.substring(0, 8) + '...',
           apiResponse: errText.substring(0, 300)
         });
       }
       const modelsData = await modelsRes.json();
-      const availableModels = (modelsData.models || []).map(m => m.name).filter(n => n.includes('gemini'));
       return res.status(200).json({ 
         status: 'ok', 
         message: 'API key is valid and working',
-        keyPresent: true,
-        keyPrefix: GEMINI_KEY.substring(0, 8) + '...',
-        availableModels
+        keyPresent: true
       });
     } catch (err) {
       return res.status(200).json({ status: 'error', message: err.message, keyPresent: true });
@@ -69,8 +65,12 @@ export default async function handler(req, res) {
     { name: 'Trudy Christians', slug: '/trudy-christians', address: '99B Kloof Street (Cape Town Medi-Spa)', phone: '078 832 4501', whatsapp: 'https://wa.me/27788324501', category: 'Aesthetics & Laser', services: 'Laser hair removal, skin rejuvenation, tattoo removal, Hollywood carbon laser, microdermabrasion, micro needling, body sculpting, red light therapy, hair loss solutions', hours: 'By appointment', streetPassBenefit: 'Priority booking + additional 5% off all September promo treatments', currentPromos: 'September Specials (Sept 2026 only): Nasal Spider Veins Removal R300, Red Light Therapy 20min R200, Sun Spot Hands Removal R300, 10% off Laser Hair Removal & RF Skin Tightening', notes: '30 years aesthetic experience. September promos active now.' },
     { name: 'Just Hearing', slug: '/just-hearing', address: '99B Kloof Street', category: 'Audiology', services: 'Hearing assessments (adults & children), hearing aids, tinnitus management', hours: 'By appointment', streetPassBenefit: 'Priority booking for Street Pass holders', notes: 'Patient-centred audiology practice.' },
     { name: 'Dr Dale Geoffreys', slug: '/dr-dale-geoffreys', address: '99B Kloof Street (Cape Town Medi-Spa)', phone: '021 203 5227', category: 'Plastic & Reconstructive Surgery', services: 'Botox, fillers, blepharoplasty, breast procedures, deep plane face and neck lift, abdominoplasty, liposuction', hours: 'By appointment', streetPassBenefit: 'Priority consultation for Collector tier Street Pass holders', notes: 'Fellowship-trained (CMSA 2013). Consults at Medi-Spa 99B Kloof St.' },
-    { name: 'Hayley Schuter Physiotherapy', slug: '/hayley-schuter', address: '99B Kloof Street', phone: '073 203 3726', category: 'Physiotherapy', services: 'Dry needling, sports massage, strapping, home visits', hours: 'By appointment', streetPassBenefit: 'Priority booking for Street Pass holders', notes: 'Sports injuries and rehabilitation specialist.' },
+    { name: 'Hayley Schuter Physiotherapy', slug: '/hayley-schuter-physio', address: '99B Kloof Street', phone: '073 203 3726', category: 'Physiotherapy', services: 'Dry needling, sports massage, strapping, home visits', hours: 'By appointment', streetPassBenefit: 'Priority booking for Street Pass holders', notes: 'Sports injuries and rehabilitation specialist.' },
     { name: 'Body Vision Studio', slug: '/body-vision-studio', address: 'Lifestyle Centre, Level 2, 50 Kloof Street', phone: '082 457 2118', whatsapp: 'https://wa.me/27824572118', category: 'Movement & Pilates', services: 'Private GYROTONIC sessions, semi-private, GYROKINESIS, Classical Pilates mat, seniors programme, injury rehab, online sessions', hours: 'By appointment', streetPassBenefit: '10% off all bookings — private sessions, semi-private and Pilates mat classes', notes: 'Kim Tucker — certified GYROTONIC & Pilates instructor, 15+ years.' },
+    { name: 'Arnold\'s Restaurant', slug: '/arnolds-restaurant', address: '80 Kloof Street', whatsapp: 'https://wa.me/27744815163', category: 'Dining', services: 'Heritage dining since 1999 — all-day brunch, lunch and dinner. Dinner special: 250g grilled rump R285. Daily special: smoked salmon croissant R145. Legendary brunch and cocktails.', hours: 'Daily — see arnolds.co.za', notes: 'Iconic Kloof Street institution. Menu and online booking at arnolds.co.za/menu.' },
+    { name: 'Wilscha Skincare', slug: '/wilscha', address: '99 Kloof Street', phone: '082 572 2011', category: 'Skincare & Medi Spa', services: 'Expertly crafted skincare backed by 35 years of experience — i:am range (cleansers R340+, toners R480, creams R680, serums R325-R630) and the advanced 11:11 range. Personalised treatment plans.', hours: 'By appointment — book online at wilschaskincare.com', notes: 'Cape Town Medi Spa. Client-approved page at kloofstreet.online/wilscha with full product list and prices.' },
+    { name: 'LumeLife — Doctor-Led Telehealth', slug: '/lumalife', address: '99 Kloof Street', category: 'Telehealth', services: 'Virtual GP consultations, same-day prescriptions, free pharmacy delivery — doctor-led care from the Medi-Spa.', hours: 'Online, book at kloofstreet.online/lumalife', notes: 'Care that fits your life — telehealth anchored at the Medi-Spa on Kloof Street.' },
+    { name: 'Picturesque Framing Studio', slug: '/picturesque-framing', address: '99B Kloof Street', phone: '066 253 4151', category: 'Art & Framing', services: 'Custom picture framing since 2001 — rugby jerseys, certificates, original artwork, archival framing, block mounting, box framing.', hours: 'In-store with On Safari, 99B Kloof Street', notes: 'Framing studio with a 4.9 rating. Prices R150-R5000.' },
     { name: 'Revive Studio', slug: '/revive-studio', address: '99 Kloof Street', phone: '084 525 7906', category: 'Massage & Beauty', services: 'Facials, massages, manicures, pedicures, lash and brow tinting, waxing', hours: 'By appointment', streetPassBenefit: 'Priority booking for Street Pass holders', notes: 'Holistic massage and beauty clinic by Nadine.' }
   ];
 
@@ -81,10 +81,10 @@ export default async function handler(req, res) {
       { name: 'Collector', price: 'R999/month', benefits: 'Two included experiences per month, bespoke concierge, Dr Dale priority consultation, cruise shore excursion priority' }
     ],
     experiences: [
-      { name: 'The Wellness Morning', price: 'R1,550/person', detail: 'Float & Massage combo + brunch voucher at Arnold\'s' },
-      { name: 'The Art & Aperitivo', price: 'Street Pass Exclusive', detail: 'Free framing with each picture from On Safari Photography + discount on shipping at PostNet' },
-      { name: 'The Kloof Beauty Day', price: 'R2,850/person', detail: 'Revive Studio → Trudy Christians voucher → premium beauty experience' },
-      { name: 'The Collector\'s Tour', price: 'R1,850/person', detail: 'On Safari print → lunch at Arnold\'s → 30-min massage at Ubuntu Wellness' }
+      { name: 'The Wellness Morning', price: 'R1,800/person', detail: 'Float & Massage combo + brunch voucher at Arnold\'s' },
+      { name: 'The Art & Aperitivo', price: 'R1,250/person', detail: 'Free framing with each picture from On Safari Photography + discount on shipping at PostNet' },
+      { name: 'The Kloof Beauty Day', price: 'R2,250/person', detail: 'Revive Studio → Trudy Christians voucher → premium beauty experience' },
+      { name: 'The Collector\'s Tour', price: 'R2,100/person', detail: 'On Safari print → lunch at Arnold\'s → 30-min massage at Ubuntu Wellness' }
     ],
     whatsapp: '+27 74 481 5163'
   };
@@ -112,7 +112,7 @@ ${spStatus}
 1. You ONLY recommend businesses listed below. NEVER invent or suggest businesses, restaurants, cafes, bars, or services not in this list.
 2. If asked about something not available (e.g. restaurants, coffee shops, bars), say: "That's not currently listed on Kloof Street — our directory focuses on wellness, beauty, art, medical and movement businesses. Here's what I can help with..." and suggest relevant listed alternatives.
 3. Always be specific — mention real business names, addresses, phone numbers, and Street Pass benefits.
-4. When recommending a business, include their page link: https://kloofstreet.online${'{slug}'}
+4. When recommending a business, include their page link: https://www.kloofstreet.online${'{slug}'}
 5. For booking, suggest WhatsApp or phone call with the real number.
 6. Keep responses concise but helpful — use bullet points for lists.
 7. Use South African Rand (R) for all prices.
@@ -145,7 +145,7 @@ Kloof Street runs through Gardens/Tamboerskloof in Cape Town's City Bowl. It was
 
   // ── CALL GEMINI API ──
   // Try multiple models + API versions until one works
-  const MODELS = ['gemini-3.5-flash', 'gemini-3.5-flash-lite', 'gemini-3.6-flash', 'gemini-3.7-flash', 'gemini-3.8-flash', 'gemini-2.5-flash'];
+  const MODELS = ['gemini-2.5-flash', 'gemini-flash-latest', 'gemini-3-flash-preview', 'gemini-2.5-flash-lite'];
   const VERSIONS = ['v1beta', 'v1'];
 
   const requestBody = {

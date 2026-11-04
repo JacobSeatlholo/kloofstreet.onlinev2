@@ -1,6 +1,20 @@
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).send('Method not allowed');
 
+  // ── Shared-secret verification (harden once YOCO_WEBHOOK_SECRET is set in Vercel) ──
+  // Set the env var, then point the Yoco dashboard webhook at:
+  //   https://www.kloofstreet.online/api/yoco-webhook?secret=<YOCO_WEBHOOK_SECRET>
+  const SECRET = process.env.YOCO_WEBHOOK_SECRET;
+  if (SECRET) {
+    const given = (req.query && req.query.secret) || req.headers['x-webhook-secret'];
+    if (given !== SECRET) {
+      console.warn('Yoco webhook rejected: bad/missing secret');
+      return res.status(401).send('Unauthorized');
+    }
+  } else {
+    console.warn('Yoco webhook running WITHOUT secret verification — set YOCO_WEBHOOK_SECRET and update the Yoco dashboard URL');
+  }
+
   const event = req.body;
   console.log('Yoco webhook received:', event.type || 'unknown');
 

@@ -957,7 +957,7 @@ body{top:0!important;}
 
 /* 13. trust strip overflow on mobile */
 @media(max-width:600px){
-  .trust{padding:10px 16px;gap:18px;}
+  .trust{padding:10px 16px;gap:10px 18px;flex-wrap:wrap;justify-content:center;}
   .trust-i{font-size:9px;}
 }
 
@@ -1657,27 +1657,27 @@ nav{z-index:200;}
  "@graph": [
   {
    "@type": "WebSite",
-   "@id": "https://kloofstreet.online/#website",
-   "url": "https://kloofstreet.online/",
+   "@id": "https://www.kloofstreet.online/#website",
+   "url": "https://www.kloofstreet.online/",
    "name": "KloofStreet.online",
    "description": "The curated guide to Kloof Street, Cape Town — voted #22 coolest street in the world by Time Out 2025.",
    "publisher": {
-    "@id": "https://kloofstreet.online/#org"
+    "@id": "https://www.kloofstreet.online/#org"
    },
    "potentialAction": {
     "@type": "SearchAction",
     "target": {
      "@type": "EntryPoint",
-     "urlTemplate": "https://kloofstreet.online/?s={search_term_string}"
+     "urlTemplate": "https://www.kloofstreet.online/?s={search_term_string}"
     },
     "query-input": "required name=search_term_string"
    }
   },
   {
    "@type": "Organization",
-   "@id": "https://kloofstreet.online/#org",
+   "@id": "https://www.kloofstreet.online/#org",
    "name": "KloofStreet.online",
-   "url": "https://kloofstreet.online/",
+   "url": "https://www.kloofstreet.online/",
    "email": "team@businesshustle.co.za",
    "sameAs": [
     "https://businesshustle.co.za",
@@ -1686,10 +1686,10 @@ nav{z-index:200;}
   },
   {
    "@type": "TouristAttraction",
-   "@id": "https://kloofstreet.online/#attraction",
+   "@id": "https://www.kloofstreet.online/#attraction",
    "name": "Kloof Street Cape Town",
    "description": "Cape Town's most iconic street, voted #22 on Time Out's 31 Coolest Streets in the World 2025 and coolest street in Africa. Home to world-class restaurants, wellness spas, art studios, boutiques and nightlife framed by Table Mountain.",
-   "url": "https://kloofstreet.online/",
+   "url": "https://www.kloofstreet.online/",
    "image": "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=1200&q=85",
    "award": "Time Out 31 Coolest Streets in the World 2025 — #22",
    "address": {
@@ -1709,31 +1709,31 @@ nav{z-index:200;}
   },
   {
    "@type": "BreadcrumbList",
-   "@id": "https://kloofstreet.online/#breadcrumb",
+   "@id": "https://www.kloofstreet.online/#breadcrumb",
    "itemListElement": [
     {
      "@type": "ListItem",
      "position": 1,
      "name": "Cape Town",
-     "item": "https://kloofstreet.online/"
+     "item": "https://www.kloofstreet.online/"
     },
     {
      "@type": "ListItem",
      "position": 2,
      "name": "Kloof Street",
-     "item": "https://kloofstreet.online/"
+     "item": "https://www.kloofstreet.online/"
     },
     {
      "@type": "ListItem",
      "position": 3,
      "name": "Restaurants, Wellness & Businesses",
-     "item": "https://kloofstreet.online/"
+     "item": "https://www.kloofstreet.online/"
     }
    ]
   },
   {
    "@type": "FAQPage",
-   "@id": "https://kloofstreet.online/#faq",
+   "@id": "https://www.kloofstreet.online/#faq",
    "mainEntity": [
     {
      "@type": "Question",
@@ -1787,7 +1787,7 @@ nav{z-index:200;}
   },
   {
    "@type": "ItemList",
-   "@id": "https://kloofstreet.online/#partners",
+   "@id": "https://www.kloofstreet.online/#partners",
    "name": "Kloof Street Featured Businesses",
    "description": "Verified and curated Growth Partner businesses on Kloof Street, Cape Town",
    "itemListElement": [
@@ -1813,19 +1813,19 @@ nav{z-index:200;}
      "@type": "ListItem",
      "position": 4,
      "name": "Just Hearing - Audiology Practice",
-     "url": "https://kloofstreet.online/"
+     "url": "https://www.kloofstreet.online/"
     },
     {
      "@type": "ListItem",
      "position": 5,
      "name": "Dr Thomas Jahn - Chinese Medicine & Acupuncture",
-     "url": "https://kloofstreet.online/"
+     "url": "https://www.kloofstreet.online/"
     },
     {
      "@type": "ListItem",
      "position": 6,
      "name": "Trudy Christians - Aesthetic Therapist",
-     "url": "https://kloofstreet.online/"
+     "url": "https://www.kloofstreet.online/"
     },
     {
      "@type": "ListItem",
@@ -1849,7 +1849,7 @@ nav{z-index:200;}
   },
   {
    "@type": "MedicalBusiness",
-   "@id": "https://kloofstreet.online/#drwendy",
+   "@id": "https://www.kloofstreet.online/#drwendy",
    "name": "Dr Wendy Dicks - GP & Weight Loss Specialist",
    "url": "https://mzanzi.co/page/practitioner/dr-wendy-dicks-dicks-general-practitioner-cape-town",
    "telephone": "+27211110572",
@@ -1873,7 +1873,7 @@ nav{z-index:200;}
   },
   {
    "@type": "HealthAndBeautyBusiness",
-   "@id": "https://kloofstreet.online/#ubuntu",
+   "@id": "https://www.kloofstreet.online/#ubuntu",
    "name": "Ubuntu Wellness & Cape Town Medi-Spa",
    "url": "http://ubuntuwellness.com/",
    "telephone": "+27829292544",
@@ -1893,7 +1893,7 @@ nav{z-index:200;}
   },
   {
    "@type": "Store",
-   "@id": "https://kloofstreet.online/#onsafari",
+   "@id": "https://www.kloofstreet.online/#onsafari",
    "name": "On Safari - Wildlife Fine Art Photography",
    "url": "https://www.on-safari.co.za",
    "description": "Wildlife photographic fine art prints at 99B Kloof Street, Cape Town.",
@@ -1913,12 +1913,12 @@ nav{z-index:200;}
   },
   {
    "@type": "LocalBusiness",
-   "@id": "https://kloofstreet.online/#picturesque-framing",
+   "@id": "https://www.kloofstreet.online/#picturesque-framing",
    "name": "Picturesque Framing Studio",
    "description": "Custom picture framing since 2001 - rugby jerseys, certificates, original artwork, archival framing, block mounting and box framing. Large selection of wildlife photography on archival paper. In-store with On Safari Wildlife Studio, 99B Kloof Street, Gardens, Cape Town.",
-   "url": "https://kloofstreet.online/picturesque-framing",
-   "image": "https://kloofstreet.online/picturesque/picturesque-poster.jpg",
-   "logo": "https://kloofstreet.online/picturesque/picturesque-mark.png",
+   "url": "https://www.kloofstreet.online/picturesque-framing",
+   "image": "https://www.kloofstreet.online/picturesque/picturesque-poster.jpg",
+   "logo": "https://www.kloofstreet.online/picturesque/picturesque-mark.png",
    "telephone": "+27662534151",
    "priceRange": "R150-R5000",
    "foundingDate": "2001",
@@ -1934,12 +1934,12 @@ nav{z-index:200;}
    "geo": null,
    "openingHoursSpecification": null,
    "parentOrganization": {
-    "@id": "https://kloofstreet.online/#org"
+    "@id": "https://www.kloofstreet.online/#org"
    }
   },
   {
    "@type": "MedicalClinic",
-   "@id": "https://kloofstreet.online/#justhearing",
+   "@id": "https://www.kloofstreet.online/#justhearing",
    "name": "Just Hearing - Audiology Practice",
    "description": "Patient-centred audiology. Hearing assessments for adults and children, hearing aids, tinnitus management.",
    "address": {
@@ -1953,7 +1953,7 @@ nav{z-index:200;}
   },
   {
    "@type": "MedicalBusiness",
-   "@id": "https://kloofstreet.online/#drthomas",
+   "@id": "https://www.kloofstreet.online/#drthomas",
    "name": "Dr Thomas Jahn - Chinese Medicine & Acupuncture",
    "telephone": "+27664904382",
    "description": "Chinese medicine practitioner. Acupuncture, cupping, moxibustion, Tuina massage, Qigong and herbal medicine. Consulting Thursdays at 99 Kloof Street.",
@@ -1969,7 +1969,7 @@ nav{z-index:200;}
   },
   {
    "@type": "MedicalClinic",
-   "@id": "https://kloofstreet.online/#lumelife",
+   "@id": "https://www.kloofstreet.online/#lumelife",
    "name": "LumeLife - Doctor-Led Telehealth",
    "url": "https://www.kloofstreet.online/lumalife",
    "image": "https://www.kloofstreet.online/lumalife/lume-moment-calm.jpg",
@@ -1985,12 +1985,12 @@ nav{z-index:200;}
     "addressCountry": "ZA"
    },
    "parentOrganization": {
-    "@id": "https://kloofstreet.online/#org"
+    "@id": "https://www.kloofstreet.online/#org"
    }
   },
   {
    "@type": "BeautySalon",
-   "@id": "https://kloofstreet.online/#wilscha",
+   "@id": "https://www.kloofstreet.online/#wilscha",
    "name": "Wilscha Skincare - Cape Town Medi Spa",
    "url": "https://www.kloofstreet.online/wilscha",
    "image": "https://wilschaskincare.com/wp-content/uploads/2025/11/Vitamin-c-serum.png",
@@ -2006,12 +2006,12 @@ nav{z-index:200;}
    },
    "sameAs": "https://wilschaskincare.com",
    "parentOrganization": {
-    "@id": "https://kloofstreet.online/#org"
+    "@id": "https://www.kloofstreet.online/#org"
    }
   },
   {
    "@type": "BeautySalon",
-   "@id": "https://kloofstreet.online/#trudy",
+   "@id": "https://www.kloofstreet.online/#trudy",
    "name": "Trudy Christians - Aesthetic Therapist",
    "description": "30 years aesthetic expertise. Laser hair removal, skin rejuvenation, veins removal, tattoo removal, Hollywood carbon laser, microdermabrasion, micro needling, body sculpting, red light therapy.",
    "address": {
@@ -2025,7 +2025,7 @@ nav{z-index:200;}
   },
   {
    "@type": "CopyingService",
-   "@id": "https://kloofstreet.online/#postnet",
+   "@id": "https://www.kloofstreet.online/#postnet",
    "name": "PostNet Gardens - Print & Courier",
    "url": "https://www.postnet.co.za/stores/capetowngardens",
    "telephone": "+27214221248",
@@ -2045,7 +2045,7 @@ nav{z-index:200;}
   },
   {
    "@type": "BeautySalon",
-   "@id": "https://kloofstreet.online/#revive",
+   "@id": "https://www.kloofstreet.online/#revive",
    "name": "Revive Studio",
    "telephone": "+27845257906",
    "description": "Holistic massage and beauty clinic by Nadine at 99 Kloof Street. Facials, massages, manicures, pedicures, lash and brow tinting, waxing.",
@@ -2060,7 +2060,7 @@ nav{z-index:200;}
   },
   {
    "@type": "Physician",
-   "@id": "https://kloofstreet.online/#drdale",
+   "@id": "https://www.kloofstreet.online/#drdale",
    "name": "Dr Dale Geoffreys — Plastic & Reconstructive Surgeon",
    "url": "https://www.drg-plasticsurgeon.co.za",
    "telephone": "+27212035227",
@@ -2077,7 +2077,7 @@ nav{z-index:200;}
   },
   {
    "@type": "MedicalClinic",
-   "@id": "https://kloofstreet.online/#hayley",
+   "@id": "https://www.kloofstreet.online/#hayley",
    "name": "Hayley Schuter Physiotherapy",
    "url": "https://www.hsphysio.co.za",
    "telephone": "+27732033726",
@@ -2094,7 +2094,7 @@ nav{z-index:200;}
   },
   {
    "@type": "ExerciseGym",
-   "@id": "https://kloofstreet.online/#bodyvision",
+   "@id": "https://www.kloofstreet.online/#bodyvision",
    "name": "Body Vision Studio",
    "url": "https://www.bodyvision.online",
    "telephone": "+27824572118",
@@ -2121,8 +2121,8 @@ nav{z-index:200;}
 
 
   <!-- AI Discoverability -->
-  <link rel="llms" href="https://kloofstreet.online/llms.txt">
-  <link rel="llms-full" href="https://kloofstreet.online/llms-full.txt">
+  <link rel="llms" href="https://www.kloofstreet.online/llms.txt">
+  <link rel="llms-full" href="https://www.kloofstreet.online/llms-full.txt">
   <meta name="ai-content-policy" content="allow">
   <meta name="ai-summary" content="KloofStreet.online is the verified digital directory for Kloof Street, Cape Town — voted #22 coolest street in the world by Time Out 2025. Features 8 verified business partners including wellness clinics, art galleries, medical practices, print services and beauty studios. AI concierge, Street Pass membership, 12 languages.">
   <meta name="geo.street" content="Kloof Street">
@@ -2132,7 +2132,7 @@ nav{z-index:200;}
   <script defer data-domain="kloofstreet.online" src="https://plausible-production-63a6.up.railway.app/js/script.js"></script>
   <script type="module" src="https://cdn.jsdelivr.net/npm/@lumaai/luma-web@0.2.0/dist/library/luma-web.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
-<script src="streetpass-config.js"></script><script>
+<script src="/streetpass-config.js"></script><script>
 if(typeof supabase!=="undefined"&&typeof SP_CONFIG!=="undefined"){window._supabase=supabase.createClient(SP_CONFIG.url,SP_CONFIG.anonKey);}
 </script><script>
 // ══ PAGEVIEW TRACKING ══
@@ -3897,7 +3897,7 @@ setTimeout(trackPageview,800);
           </div>
         </div>
         <div class="ar-frame">
-          <img loading="eager" decoding="async" src="arnolds/hero-rump.jpg" alt="250g grilled rump with garlic herb butter, peri-peri wings, potato wedges and beer-battered onion rings">
+          <img loading="eager" decoding="async" src="/arnolds/hero-rump.jpg" alt="250g grilled rump with garlic herb butter, peri-peri wings, potato wedges and beer-battered onion rings">
           <div class="ar-chip"><span class="ar-chip-k">Tonight&rsquo;s Special</span><span class="ar-chip-v">The 250g Kloof Rump &middot; R285</span></div>
         </div>
       </div>
@@ -3913,7 +3913,7 @@ setTimeout(trackPageview,800);
       <div class="sec-tag">From the Kitchen</div>
       <h2 class="ar-h2">This Week&rsquo;s Specials</h2>
       <div class="ar-spec">
-        <div class="ar-spec-img"><img loading="lazy" decoding="async" src="arnolds/special-rump.jpg" alt="Dinner special: 250g grilled rump steak with garlic herb butter, peri-peri chicken wings, potato wedges and beer-battered onion rings"></div>
+        <div class="ar-spec-img"><img loading="lazy" decoding="async" src="/arnolds/special-rump.jpg" alt="Dinner special: 250g grilled rump steak with garlic herb butter, peri-peri chicken wings, potato wedges and beer-battered onion rings"></div>
         <div class="ar-spec-body">
           <div class="ar-spec-tag">Dinner Special &middot; Every Evening</div>
           <h3 class="ar-spec-name">250g Grilled Rump Steak</h3>
@@ -3922,7 +3922,7 @@ setTimeout(trackPageview,800);
         </div>
       </div>
       <div class="ar-spec">
-        <div class="ar-spec-img"><img loading="lazy" decoding="async" src="arnolds/special-croissant.jpg" alt="Daily special: toasted croissant with cream cheese, rocket and capers, smoked salmon, poached egg and hollandaise"></div>
+        <div class="ar-spec-img"><img loading="lazy" decoding="async" src="/arnolds/special-croissant.jpg" alt="Daily special: toasted croissant with cream cheese, rocket and capers, smoked salmon, poached egg and hollandaise"></div>
         <div class="ar-spec-body">
           <div class="ar-spec-tag">Daily Special &middot; Brunch &amp; Lunch</div>
           <h3 class="ar-spec-name">Smoked Salmon Croissant</h3>
@@ -3935,7 +3935,7 @@ setTimeout(trackPageview,800);
       <h2 class="ar-h2">Taste Arnold&rsquo;s</h2>
       <div class="ar-vid-grid">
         <div class="ar-vid">
-          <video controls playsinline preload="none" poster="arnolds/ad1-poster.jpg" aria-label="Arnold's food film one"><source src="arnolds/food-ad-1.mp4" type="video/mp4"></video>
+          <video controls playsinline preload="none" poster="/arnolds/ad1-poster.jpg" aria-label="Arnold's food film one"><source src="/arnolds/food-ad-1.mp4" type="video/mp4"></video>
           <div class="ar-vid-cap">The Grill &middot; Film I</div>
         </div>
         <div class="ar-quote">
@@ -3944,7 +3944,7 @@ setTimeout(trackPageview,800);
           <div class="ar-quote-seal">Arnold&rsquo;s &middot; Est. 1999</div>
         </div>
         <div class="ar-vid">
-          <video controls playsinline preload="none" poster="arnolds/ad2-poster.jpg" aria-label="Arnold's food film two"><source src="arnolds/food-ad-2.mp4" type="video/mp4"></video>
+          <video controls playsinline preload="none" poster="/arnolds/ad2-poster.jpg" aria-label="Arnold's food film two"><source src="/arnolds/food-ad-2.mp4" type="video/mp4"></video>
           <div class="ar-vid-cap">The Croissant &middot; Film II</div>
         </div>
       </div>
@@ -3952,10 +3952,10 @@ setTimeout(trackPageview,800);
       <div class="sec-tag" style="margin-top:34px;">The Room &amp; The Craft</div>
       <h2 class="ar-h2">A Look Inside</h2>
       <div class="ar-gal">
-        <figure class="ar-g"><img loading="lazy" decoding="async" src="arnolds/hero-sign.jpg" alt="Arnold's Restaurant signage with guests on the Kloof Street pavement tables"><figcaption>The Corner of Kloof</figcaption></figure>
-        <figure class="ar-g"><img loading="lazy" decoding="async" src="arnolds/patio.jpg" alt="Guests dining at tables on Arnold's shaded patio"><figcaption>Weekend Brunch, The Patio</figcaption></figure>
-        <figure class="ar-g"><img loading="lazy" decoding="async" src="arnolds/coffee.jpg" alt="Flat white with latte-art rosetta at Arnold's"><figcaption>Barista Craft</figcaption></figure>
-        <figure class="ar-g ar-g-wide"><img loading="lazy" decoding="async" src="arnolds/team.jpg" alt="The Arnold's front-of-house team smiling beneath the house 'a' sign"><figcaption>The People Behind the Plates</figcaption></figure>
+        <figure class="ar-g"><img loading="lazy" decoding="async" src="/arnolds/hero-sign.jpg" alt="Arnold's Restaurant signage with guests on the Kloof Street pavement tables"><figcaption>The Corner of Kloof</figcaption></figure>
+        <figure class="ar-g"><img loading="lazy" decoding="async" src="/arnolds/patio.jpg" alt="Guests dining at tables on Arnold's shaded patio"><figcaption>Weekend Brunch, The Patio</figcaption></figure>
+        <figure class="ar-g"><img loading="lazy" decoding="async" src="/arnolds/coffee.jpg" alt="Flat white with latte-art rosetta at Arnold's"><figcaption>Barista Craft</figcaption></figure>
+        <figure class="ar-g ar-g-wide"><img loading="lazy" decoding="async" src="/arnolds/team.jpg" alt="The Arnold's front-of-house team smiling beneath the house 'a' sign"><figcaption>The People Behind the Plates</figcaption></figure>
       </div>
 
       <div class="ar-band">
@@ -3969,7 +3969,7 @@ setTimeout(trackPageview,800);
     </div>
     <div>
       <div class="info-card" style="padding:0;overflow:hidden;">
-        <img loading="lazy" decoding="async" src="arnolds/hero-sign.jpg" alt="Arnold's Restaurant" style="width:100%;display:block;max-height:220px;object-fit:cover;object-position:center;" onerror="this.style.display='none'">
+        <img loading="lazy" decoding="async" src="/arnolds/hero-sign.jpg" alt="Arnold's Restaurant" style="width:100%;display:block;max-height:220px;object-fit:cover;object-position:center;" onerror="this.style.display='none'">
         <div style="padding:14px 18px;background:rgba(245,197,24,.04);border-top:1px solid rgba(245,197,24,.15);">
           <div style="font-size:12px;font-weight:700;color:var(--text2);">Arnold&rsquo;s Restaurant</div>
           <div style="font-size:11px;color:var(--muted);margin-top:2px;">Cape Town&rsquo;s iconic dining destination since 1999</div>
@@ -5012,6 +5012,23 @@ function go(name, noPush) {
   }
 }
 
+
+// ── SPA nav interceptor: internal <a href="/..."> routes in-app (no full reload) ──
+document.addEventListener('click', function(e) {
+  if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  var t = e.target;
+  if (!t || !t.closest) return;
+  var a = t.closest('a[href]');
+  if (!a || a.target === '_blank' || a.hasAttribute('download')) return;
+  var h = a.getAttribute('href') || '';
+  if (h === '/newsletter') return;               // keep the 308 to HustlePortal
+  if (h.charAt(0) !== '/' || h.charAt(1) === '/') return;
+  e.preventDefault();
+  var path = h.replace(/\/+$/, '') || '/';
+  var page = SLUG_REVERSE[path] || 'home';
+  go(page);
+});
+
 function mgo(name) {
   document.getElementById('mm').classList.remove('on');
   go(name);
@@ -5065,6 +5082,9 @@ var PAGE_META = {
   'dash':        {title:'For Business | KloofStreet.online', desc:'Kloof Street merchant backoffice on HustlePortal.'},
   'listed':      {title:'Get Listed | KloofStreet.online', desc:'Get your Kloof Street business on the map. Verified listings, real discovery.'},
   'lumelife':    {title:'LumeLife — Doctor-Led Telehealth | KloofStreet.online', desc:'Virtual GP consultations, same-day scripts and free pharmacy delivery. Care that fits your life — Medispa, 99 Kloof Street.'},
+  'dr-dale':     {title:'Dr Dale Geoffreys — Plastic & Reconstructive Surgeon | KloofStreet.online', desc:'Botox, fillers, blepharoplasty, deep plane face & neck lift and reconstructive surgery. Consults at Cape Town Medi-Spa, 99B Kloof Street. 021 203 5227.'},
+  'hayley':      {title:'Hayley Schuter Physiotherapy | KloofStreet.online', desc:'Dry needling, sports massage, strapping and home visits at 99B Kloof Street, Cape Town. 073 203 3726.'},
+  'bodyvision':  {title:'Body Vision Studio — GYROTONIC & Pilates | KloofStreet.online', desc:'Private GYROTONIC, GYROKINESIS and Classical Pilates with Kim Tucker. Lifestyle Centre, Level 2, 50 Kloof Street. 082 457 2118.'},
   'wilscha':     {title:'Wilscha Skincare — 99 Kloof Street | KloofStreet.online', desc:'Expertly crafted skincare backed by 35 years of expertise. Shop the i:am and 11:11 ranges — Cape Town Medi Spa, 99 Kloof Street.'},
 };
 
