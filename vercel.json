@@ -41,6 +41,13 @@
       }
     },
     {
+      "src": "/wilscha/(.*)",
+      "dest": "/wilscha/$1",
+      "headers": {
+        "Cache-Control": "public, max-age=86400"
+      }
+    },
+    {
       "src": "/newsletter",
       "status": 308,
       "headers": {

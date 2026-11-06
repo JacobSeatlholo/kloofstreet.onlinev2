@@ -365,9 +365,10 @@ section{padding:72px 48px;}
 .ws-btn-solid:hover{background:#b08d57;color:#fff;}
 .ws-btn-line{border:1px solid #cdbf9d;color:#7a6a4f;margin-left:10px;}
 .ws-btn-line:hover{border-color:#b08d57;color:#b08d57;}
-.ws-heroimg{position:relative;border-radius:215px 215px 18px 18px;background:#fff;border:1px solid #e8e1d4;display:flex;align-items:center;justify-content:center;padding:46px 36px 48px;min-height:430px;box-shadow:0 30px 60px rgba(35,32,27,.08);}
-.ws-heroimg::before{content:'';position:absolute;inset:11px;border:1px solid rgba(176,141,87,.34);border-radius:204px 204px 10px 10px;pointer-events:none;}
-.ws-heroimg img{max-width:74%;max-height:320px;object-fit:contain;}
+.ws-heroimg{position:relative;border-radius:215px 215px 18px 18px;background:#fff url('/wilscha/range-poster.jpg') center/cover no-repeat;border:1px solid #e8e1d4;display:flex;align-items:center;justify-content:center;padding:46px 36px 48px;min-height:430px;box-shadow:0 30px 60px rgba(35,32,27,.08);overflow:hidden;}
+.ws-heroimg::before{content:'';position:absolute;inset:11px;border:1px solid rgba(176,141,87,.34);border-radius:204px 204px 10px 10px;pointer-events:none;z-index:2;}
+.ws-herovid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:1;}
+@media(prefers-reduced-motion:reduce){.ws-herovid{display:none;}}
 .ws-imgfall::after{content:'W';font-family:Georgia,serif;font-size:84px;color:#cdbf9d;}
 .ws-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;border-top:1px solid #e8e1d4;border-bottom:1px solid #e8e1d4;padding:26px 0;margin:8px 0 0;}
 .ws-stat{text-align:center;padding:0 8px;}
@@ -446,7 +447,6 @@ section{padding:72px 48px;}
  .ws-btn-line{margin-left:0;margin-top:10px;display:block;text-align:center;}
  .ws-btn{display:block;text-align:center;}
  .ws-heroimg{min-height:340px;border-radius:165px 165px 14px 14px;padding:38px 24px 40px;}
- .ws-heroimg img{max-height:255px;}
 }
 /* ══════════ /WILSCHA ══════════ */
 /* Locked card gradients by category */
@@ -4679,7 +4679,7 @@ setTimeout(trackPageview,800);
           <a class="ws-btn ws-btn-solid" href="https://wilschaskincare.com/shop/" target="_blank" rel="noopener">Shop the Range &#8599;</a>
           <a class="ws-btn ws-btn-line" href="tel:+27825722011">Call the Studio</a>
         </div>
-        <div class="ws-heroimg"><img src="https://wilschaskincare.com/wp-content/uploads/2025/11/Vitamin-c-serum.png" alt="i:am Vitamin C Serum by Wilscha Skincare" loading="eager" decoding="async" onerror="this.style.display=&#x27;none&#x27;;this.parentElement.classList.add(&#x27;ws-imgfall&#x27;);"></div>
+        <div class="ws-heroimg"><video class="ws-herovid" autoplay muted loop playsinline preload="auto" poster="/wilscha/range-poster.jpg" aria-label="Wilscha Skincare 11:11 range film"><source src="/wilscha/range-loop.mp4" type="video/mp4"></video></div>
       </div>
       <div class="ws-wrap">
         <div class="ws-stats">
