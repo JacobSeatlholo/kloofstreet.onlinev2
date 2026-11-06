@@ -448,6 +448,32 @@ section{padding:72px 48px;}
 .ws-shop.ws-shopdark .ws-shopname{color:#f5efe2;}
 .ws-shop.ws-shopdark .ws-shopmeta{color:#b9ac97;}
 .ws-shop.ws-shopdark .ws-shopgo{color:#c8a76a;border-top-color:#403a31;}
+/* Referral — VIP landing + private share kit (revealed via ?ref= / ?share=) */
+.ws-vip,.ws-kit{display:none;}
+.ws-vip.on,.ws-kit.on{display:block;}
+.ws-vip.on,.ws-kit.on{padding:60px 0 62px;background:#fff;border-top:1px solid #e8e1d4;border-bottom:1px solid #e8e1d4;text-align:center;position:relative;}
+.ws-vip h2,.ws-kit h2{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(26px,3.4vw,36px);line-height:1.2;margin:14px 0;color:#23201b;}
+.ws-vlede{font-size:14px;line-height:1.8;color:#5f574b;max-width:56ch;margin:0 auto 30px;}
+.ws-vrates{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:640px;margin:0 auto 24px;}
+.ws-vrate{border:1px solid #e8e1d4;border-radius:16px;padding:22px 14px 18px;background:#fdfcf8;}
+.ws-vrate b{display:block;font-family:Georgia,serif;font-weight:400;font-size:30px;line-height:1.1;color:#23201b;}
+.ws-vrate span{display:block;margin-top:8px;font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:#8a7a5c;line-height:1.8;}
+.ws-vrate.ws-vvip{border-color:#cdbf9d;background:#fff;box-shadow:0 14px 30px rgba(35,32,27,.06);}
+.ws-vrate.ws-vvip b{color:#b08d57;}
+.ws-vsave{display:inline-block;font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;font-weight:700;color:#b08d57;border:1px solid rgba(176,141,87,.35);border-radius:999px;padding:9px 20px;margin-bottom:30px;}
+.ws-vmail{display:block;margin-top:16px;font-size:11px;color:#8a8375;}
+.ws-vmail a{color:#8a7a5c;text-decoration:none;border-bottom:1px solid #d9cdb4;}
+.ws-vmail a:hover{color:#b08d57;border-color:#b08d57;}
+.ws-kmsg{max-width:620px;margin:0 auto 26px;background:#fdfcf8;border:1px solid #e8e1d4;border-left:2px solid #b08d57;border-radius:14px;padding:24px 28px;text-align:left;font-size:13.5px;line-height:1.9;color:#4a443b;white-space:pre-line;word-break:break-word;}
+.ws-kbtns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.ws-kit .ws-btn{font-family:inherit;cursor:pointer;}
+.ws-kit button.ws-btn-line{background:transparent;}
+@media(max-width:760px){
+ .ws-vip.on,.ws-kit.on{padding:46px 0 50px;}
+ .ws-vrates{grid-template-columns:1fr;max-width:330px;}
+ .ws-kbtns{flex-direction:column;align-items:stretch;max-width:340px;margin:0 auto;}
+ .ws-kmsg{padding:20px 18px;}
+}
 @media(max-width:900px){
  .ws-hero-grid{grid-template-columns:1fr;gap:26px;}
  .ws-stats{grid-template-columns:repeat(2,1fr);row-gap:22px;}
@@ -4711,6 +4737,42 @@ setTimeout(trackPageview,800);
       </div>
     </div>
 
+    <!-- VIP REFERRAL — revealed when opened with ?ref=wilscha -->
+    <div id="ws-vip" class="ws-vip">
+      <div class="ws-wrap">
+        <div class="ws-eyebrow">Wilscha&rsquo;s Circle &middot; VIP Referral Rate</div>
+        <h2>A personal invitation, from Wilscha</h2>
+        <p class="ws-vlede">You&rsquo;ve arrived through Wilscha &mdash; businesses in her circle are listed on
+        KloofStreet.online at the VIP Referral Rate: your own digital page on the curated Kloof Street directory,
+        R375 a month, billed once a year. The full listing, at nearly half the standard rate.</p>
+        <div class="ws-vrates">
+          <div class="ws-vrate ws-vvip"><b>R375</b><span>VIP Monthly<br>Billed Yearly</span></div>
+          <div class="ws-vrate"><b>R4,500</b><span>Per Year<br>One Invoice</span></div>
+          <div class="ws-vrate"><b>R700</b><span>Standard<br>Monthly Rate</span></div>
+        </div>
+        <div class="ws-vsave">Save R3,900 a year &mdash; 46% off, only through Wilscha</div>
+        <div><a class="ws-btn ws-btn-solid" href="https://wa.me/27744815163?text=Hi%20Business%20Hustle%20%E2%80%94%20Wilscha%20referred%20me.%20I%27d%20like%20to%20claim%20her%20VIP%20Referral%20Rate%20%28R375%2Fmonth%2C%20R4%2C500%2Fyear%29%20and%20list%20my%20business%20on%20KloofStreet.online." target="_blank" rel="noopener">Claim your VIP listing on WhatsApp &#8599;</a></div>
+        <span class="ws-vmail">Prefer email? <a href="mailto:team@businesshustle.co.za?subject=VIP%20listing%20claim%20%E2%80%94%20referred%20by%20Wilscha">team@businesshustle.co.za</a></span>
+      </div>
+    </div>
+
+    <!-- PRIVATE SHARE KIT — revealed when opened with ?share=wilscha -->
+    <div id="ws-kit" class="ws-kit">
+      <div class="ws-wrap">
+        <div class="ws-eyebrow">Private &middot; Wilscha&rsquo;s Referral Kit</div>
+        <h2>Invite your circle to KloofStreet</h2>
+        <p class="ws-vlede">Your prewritten invite is ready &mdash; one tap opens WhatsApp with the message in
+        place. Every business that joins through your link arrives as your referral and is offered the VIP rate.</p>
+        <div class="ws-kmsg" id="wsKitMsg"></div>
+        <div class="ws-kbtns">
+          <a class="ws-btn ws-btn-solid" id="wsKitWa" href="https://wa.me/" target="_blank" rel="noopener">Send on WhatsApp &#8599;</a>
+          <button class="ws-btn ws-btn-line" id="wsKitCopyMsg" type="button">Copy message</button>
+          <button class="ws-btn ws-btn-line" id="wsKitCopyLink" type="button">Copy link</button>
+        </div>
+        <span class="ws-vmail">VIP Referral Rate &mdash; R375/month (R4,500 a year) &middot; standard R700/month &middot; for businesses you refer</span>
+      </div>
+    </div>
+
     <!-- TWO RANGES -->
     <div class="ws-sec">
       <div class="ws-wrap">
@@ -5193,6 +5255,43 @@ function updateMeta(name) {
   if (page !== 'home') { go(page, true); }
   // Set canonical state for home
   history.replaceState({page: page}, '', window.location.pathname + window.location.search);
+})();
+
+// ── WILSCHA REFERRAL: VIP landing (?ref=wilscha) + private share kit (?share=wilscha) ──
+// Edit WS_INVITE below to tweak Wilscha's prewritten WhatsApp message (one source of truth).
+var WS_REF_LINK = 'https://www.kloofstreet.online/wilscha?ref=wilscha';
+var WS_INVITE = "Hey! I've just gone live with my own digital page & Street Pass on KloofStreet.online \u2014 take a look:\n\n" + WS_REF_LINK + "\n\nJacob has set up a VIP Referral Rate for businesses in my circle: R375 a month (R4,500 for the year instead of the usual R700 a month) to get your business listed with its own digital page.\n\nIf you'd like yours on the directory, claim it through that link \u2728";
+(function() {
+  try {
+    var q = new URLSearchParams(window.location.search);
+    var ref = (q.get('ref') || '').toLowerCase();
+    var share = (q.get('share') || '').toLowerCase();
+    var vip = document.getElementById('ws-vip');
+    if (vip && ref === 'wilscha') vip.classList.add('on');
+    var kit = document.getElementById('ws-kit');
+    if (kit && share === 'wilscha') kit.classList.add('on');
+    var msgEl = document.getElementById('wsKitMsg');
+    if (msgEl) msgEl.textContent = WS_INVITE;
+    var wa = document.getElementById('wsKitWa');
+    if (wa) wa.href = 'https://wa.me/?text=' + encodeURIComponent(WS_INVITE);
+    function wsCopy(text, btn) {
+      var old = btn.textContent;
+      function ok() { btn.textContent = 'Copied \u2713'; setTimeout(function() { btn.textContent = old; }, 1800); }
+      function legacy() {
+        var ta = document.createElement('textarea');
+        ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); ok(); } catch (e) {}
+        document.body.removeChild(ta);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(ok, legacy);
+      else legacy();
+    }
+    var cm = document.getElementById('wsKitCopyMsg');
+    if (cm) cm.addEventListener('click', function() { wsCopy(WS_INVITE, cm); });
+    var cl = document.getElementById('wsKitCopyLink');
+    if (cl) cl.addEventListener('click', function() { wsCopy(WS_REF_LINK, cl); });
+  } catch (e) {}
 })();
 
 
