@@ -434,12 +434,27 @@ section{padding:72px 48px;}
 .ws-cta-band{padding:56px 0 70px;text-align:center;}
 .ws-cta-band h2{font-family:Georgia,serif;font-weight:400;font-size:clamp(28px,3.8vw,42px);color:#23201b;margin:0 0 14px;}
 .ws-cta-band p{font-size:14px;color:#6f675c;margin:0 0 30px;}
+/* Shop Directory */
+.ws-shops{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.ws-shop{background:#fff;border:1px solid #e8e1d4;border-radius:16px;padding:22px 20px 16px;text-decoration:none;display:flex;flex-direction:column;transition:box-shadow .25s,transform .25s,border-color .25s;position:relative;}
+.ws-shop:hover{box-shadow:0 18px 40px rgba(35,32,27,.1);transform:translateY(-3px);border-color:#d9cdb4;}
+.ws-shopnum{font-family:Georgia,serif;font-style:italic;font-size:15px;color:#cdbf9d;}
+.ws-shopname{font-family:Georgia,serif;font-weight:400;font-size:19px;color:#23201b;line-height:1.25;margin-top:10px;}
+.ws-shopmeta{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#8a7a5c;margin-top:7px;line-height:1.7;}
+.ws-shopgo{margin-top:auto;padding-top:12px;border-top:1px solid #efe8da;font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#b08d57;transition:letter-spacing .25s;}
+.ws-shop:hover .ws-shopgo{letter-spacing:.26em;}
+.ws-shop.ws-shopdark{background:#23201b;border-color:#23201b;}
+.ws-shop.ws-shopdark .ws-shopnum{color:#c8a76a;}
+.ws-shop.ws-shopdark .ws-shopname{color:#f5efe2;}
+.ws-shop.ws-shopdark .ws-shopmeta{color:#b9ac97;}
+.ws-shop.ws-shopdark .ws-shopgo{color:#c8a76a;border-top-color:#403a31;}
 @media(max-width:900px){
  .ws-hero-grid{grid-template-columns:1fr;gap:26px;}
  .ws-stats{grid-template-columns:repeat(2,1fr);row-gap:22px;}
  .ws-ranges,.ws-catcols,.ws-vgrid{grid-template-columns:1fr;}
  .ws-prods{grid-template-columns:repeat(2,1fr);}
  .ws-11grid,.ws-steps{grid-template-columns:1fr;gap:14px;}
+ .ws-shops{grid-template-columns:repeat(2,1fr);gap:12px;}
 }
 @media(max-width:560px){
  .ws-hero{padding:44px 0 30px;}
@@ -447,7 +462,12 @@ section{padding:72px 48px;}
  .ws-btn-line{margin-left:0;margin-top:10px;display:block;text-align:center;}
  .ws-btn{display:block;text-align:center;}
  .ws-heroimg{min-height:340px;border-radius:165px 165px 14px 14px;padding:38px 24px 40px;}
+ .ws-shops{gap:10px;}
+ .ws-shop{padding:16px 14px 12px;}
+ .ws-shopname{font-size:16px;}
+ .ws-shopgo{margin-top:14px;}
 }
+
 /* ══════════ /WILSCHA ══════════ */
 /* Locked card gradients by category */
 .lc-dining{background:linear-gradient(135deg,#1a0800,#2d1200);}
@@ -4817,6 +4837,68 @@ setTimeout(trackPageview,800);
               <div class="ws-crow"><a href="https://wilschaskincare.com/product/niacinamidegel-serum-5-concentratedvit-b3/" target="_blank" rel="noopener">Niacinamide Gel Serum 5% Vit B3</a><span class="ws-cp">R325</span></div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+<!-- SHOP DIRECTORY -->
+    <div class="ws-sec" style="padding-top:10px;">
+      <div class="ws-wrap">
+        <div class="ws-sechead">
+          <div class="ws-eyebrow">The Shop Directory</div>
+          <h2>Eight doors into the range</h2>
+          <p>Browse the collection the way you&rsquo;d wander the Medispa shelves &mdash; every door opens
+          straight into the official Wilscha store.</p>
+        </div>
+        <div class="ws-shops">
+          <a class="ws-shop" href="https://wilschaskincare.com/product-category/bestseller/" target="_blank" rel="noopener">
+            <span class="ws-shopnum">01</span>
+            <span class="ws-shopname">Bestsellers</span>
+            <span class="ws-shopmeta">3 Products &middot; Most Loved</span>
+            <span class="ws-shopgo">Explore &#8599;</span>
+          </a>
+          <a class="ws-shop" href="https://wilschaskincare.com/product-category/iam-skincare/" target="_blank" rel="noopener">
+            <span class="ws-shopnum">02</span>
+            <span class="ws-shopname">i:am Skincare</span>
+            <span class="ws-shopmeta">3 Products &middot; The Daily Ritual</span>
+            <span class="ws-shopgo">Explore &#8599;</span>
+          </a>
+          <a class="ws-shop ws-shopdark" href="https://wilschaskincare.com/product-category/1111/" target="_blank" rel="noopener">
+            <span class="ws-shopnum">03</span>
+            <span class="ws-shopname">11:11 Skincare</span>
+            <span class="ws-shopmeta">5 Products &middot; The Advanced Range</span>
+            <span class="ws-shopgo">Explore &#8599;</span>
+          </a>
+          <a class="ws-shop" href="https://wilschaskincare.com/product-category/1111-serum/" target="_blank" rel="noopener">
+            <span class="ws-shopnum">04</span>
+            <span class="ws-shopname">11:11 Serum</span>
+            <span class="ws-shopmeta">4 Products &middot; Clinical Concentrates</span>
+            <span class="ws-shopgo">Explore &#8599;</span>
+          </a>
+          <a class="ws-shop" href="https://wilschaskincare.com/product-category/range/" target="_blank" rel="noopener">
+            <span class="ws-shopnum">05</span>
+            <span class="ws-shopname">The Ranges</span>
+            <span class="ws-shopmeta">7 Products &middot; Curated Collections</span>
+            <span class="ws-shopgo">Explore &#8599;</span>
+          </a>
+          <a class="ws-shop" href="https://wilschaskincare.com/product-category/skin-type/" target="_blank" rel="noopener">
+            <span class="ws-shopnum">06</span>
+            <span class="ws-shopname">By Skin Type</span>
+            <span class="ws-shopmeta">25 Products &middot; Find Your Match</span>
+            <span class="ws-shopgo">Explore &#8599;</span>
+          </a>
+          <a class="ws-shop" href="https://wilschaskincare.com/product-category/mature-skin/" target="_blank" rel="noopener">
+            <span class="ws-shopnum">07</span>
+            <span class="ws-shopname">Mature Skin</span>
+            <span class="ws-shopmeta">1 Product &middot; Timeless Care</span>
+            <span class="ws-shopgo">Explore &#8599;</span>
+          </a>
+          <a class="ws-shop" href="https://wilschaskincare.com/product-category/products/" target="_blank" rel="noopener">
+            <span class="ws-shopnum">08</span>
+            <span class="ws-shopname">All Products</span>
+            <span class="ws-shopmeta">27 Products &middot; Everything In Store</span>
+            <span class="ws-shopgo">Explore &#8599;</span>
+          </a>
         </div>
       </div>
     </div>
