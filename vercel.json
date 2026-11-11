@@ -41,7 +41,13 @@
       }
     },
     {
-      "src": "/yindees(/.*)?",
+      "src": "/yindees",
+      "headers": {
+        "X-Robots-Tag": "noindex, nofollow"
+      }
+    },
+    {
+      "src": "/yindees/(.*)",
       "headers": {
         "X-Robots-Tag": "noindex, nofollow"
       }
