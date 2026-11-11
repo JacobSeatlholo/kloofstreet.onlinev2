@@ -41,6 +41,12 @@
       }
     },
     {
+      "src": "/yindees(/.*)?",
+      "headers": {
+        "X-Robots-Tag": "noindex, nofollow"
+      }
+    },
+    {
       "src": "/wilscha/(.*)",
       "dest": "/wilscha/$1",
       "headers": {
