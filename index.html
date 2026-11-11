@@ -5539,6 +5539,16 @@ function updateMeta(name) {
   history.replaceState({page: page}, '', window.location.pathname + window.location.search);
 })();
 
+// ── Yindee's demo: keep private — JS meta robots (Vercel legacy-route X-Robots-Tag headers unreliable) ──
+try {
+  if ((window.location.pathname.replace(/\/+$/, '') || '/') === '/yindees') {
+    var yyMeta = document.createElement('meta');
+    yyMeta.name = 'robots';
+    yyMeta.content = 'noindex, nofollow';
+    document.head.appendChild(yyMeta);
+  }
+} catch (e) {}
+
 // ── WILSCHA REFERRAL: VIP landing (?ref=wilscha) + private share kit (?share=wilscha) ──
 // Edit WS_INVITE below to tweak Wilscha's prewritten WhatsApp message (one source of truth).
 var WS_REF_LINK = 'https://www.kloofstreet.online/wilscha?ref=wilscha';
