@@ -53,6 +53,18 @@
       }
     },
     {
+      "src": "/urban-connect",
+      "headers": {
+        "X-Robots-Tag": "noindex, nofollow"
+      }
+    },
+    {
+      "src": "/urban-connect/(.*)",
+      "headers": {
+        "X-Robots-Tag": "noindex, nofollow"
+      }
+    },
+    {
       "src": "/wilscha/(.*)",
       "dest": "/wilscha/$1",
       "headers": {
