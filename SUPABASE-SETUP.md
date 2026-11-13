@@ -213,7 +213,7 @@ Production + Preview):
 |---|---|---|
 | `SUPABASE_URL` | Project URL | all `api/*` |
 | `SUPABASE_SERVICE_ROLE_KEY` | service_role key | member/scan/redeem, merchant/*, pass/*, yoco-webhook |
-| `GEMINI_API_KEY` | Google AI Studio key | `api/ai-chat.js` (AI Concierge) |
+| `ZAI_API_KEY` | Z.ai Open Platform key | `api/ai-chat.js` (AI Concierge) |
 | `YOCO_SECRET_KEY` | Yoco secret key | `api/create-checkout.js` (R199/mo Street Pass checkout) |
 
 Redeploy after adding them (Deployments → latest → Redeploy).

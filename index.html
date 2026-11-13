@@ -793,7 +793,7 @@ section{padding:72px 48px;}
 .chat-name{font-size:12px;font-weight:700;color:var(--text2);}
 .chat-status{font-size:10px;color:var(--muted);}
 .chat-msgs{flex:1;padding:14px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;}
-.msg{max-width:86%;font-size:12px;line-height:1.6;padding:10px 13px;border-radius:var(--r);}
+.msg{max-width:86%;font-size:12px;line-height:1.6;padding:10px 13px;border-radius:var(--r);white-space:pre-line;}
 .msg-ai{background:var(--bg3);color:rgba(232,232,230,.85);align-self:flex-start;border-left:2px solid var(--a);}
 .msg-user{background:rgba(245,197,24,.1);border:1px solid rgba(245,197,24,.2);color:var(--text2);align-self:flex-end;}
 .chat-prompts{display:flex;flex-direction:column;gap:5px;}
@@ -5842,10 +5842,13 @@ function aiSmartReply(q) {
   return "Great question! Arnold's Restaurant (80 Kloof St) is our standout dining partner, On Safari (99B) has fine art, and Ubuntu Wellness has float sessions. Tell me more about what you're after and I'll build a full plan. 😊";
 }
 
+var chatHist = [];
+
 function sendChat(preset) {
   var input = document.getElementById('chatIn');
   var text = preset || input.value.trim();
-  if (!text) return;
+  if (!text || sendChat.busy) return;
+  sendChat.busy = true;
   input.value = '';
   var msgs = document.getElementById('chatMsgs');
   var prompts = msgs.querySelector('.chat-prompts');
@@ -5862,14 +5865,32 @@ function sendChat(preset) {
   msgs.appendChild(typing);
   msgs.scrollTop = msgs.scrollHeight;
 
-  setTimeout(function() {
+  function finish(replyText) {
     typing.remove();
     var ab = document.createElement('div');
     ab.className = 'msg msg-ai';
-    ab.textContent = replies[text] || aiSmartReply(text);
+    ab.textContent = replyText;
     msgs.appendChild(ab);
     msgs.scrollTop = msgs.scrollHeight;
-  }, 1200);
+    sendChat.busy = false;
+  }
+
+  fetch('/api/ai-chat', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ message: text, history: chatHist.slice(-8) })
+  }).then(function(r) { return r.json(); }).then(function(d) {
+    if (d && d.reply) {
+      chatHist.push({ role: 'user', content: text });
+      chatHist.push({ role: 'assistant', content: d.reply });
+      if (chatHist.length > 12) chatHist = chatHist.slice(-12);
+      finish(d.reply);
+    } else {
+      finish(replies[text] || aiSmartReply(text));
+    }
+  }).catch(function() {
+    finish(replies[text] || aiSmartReply(text));
+  });
 }
 
 // ── FORM ──

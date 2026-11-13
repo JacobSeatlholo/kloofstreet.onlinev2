@@ -41,7 +41,7 @@ upgraded into a real Progressive Web App and hardened by a full v1 audit.
 |---|---|
 | `SUPABASE_URL` / `VITE_SUPABASE_URL` | `api/*` |
 | `SUPABASE_SERVICE_KEY` / `SUPABASE_SERVICE_ROLE_KEY` | `api/member.js`, `api/scan.js`, `api/redeem.js`, `api/merchant/*`, `api/pass/*` |
-| `GEMINI_API_KEY` | `api/ai-chat.js` (AI concierge) |
+| `ZAI_API_KEY` | `api/ai-chat.js` (AI concierge — Z.ai GLM) |
 | `YOCO_SECRET_KEY` | `api/create-checkout.js`, `api/yoco-webhook.js` (Street Pass R199/mo signup) |
 
 3. Run `supabase-schema.sql` once in the Supabase SQL Editor (complete schema —

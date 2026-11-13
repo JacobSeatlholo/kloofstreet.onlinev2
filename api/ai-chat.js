@@ -1,9 +1,9 @@
 /**
- * AI Concierge — Gemini-powered, locked to Kloof Street businesses only.
- * Free tier: Google Gemini 1.5 Flash (no credit card required).
- * 
- * Env var required: GEMINI_API_KEY
- * Set in Vercel dashboard → Settings → Environment Variables
+ * AI Concierge — Z.ai GLM-powered, locked to Kloof Street businesses only.
+ * Env var required: ZAI_API_KEY
+ * Get a key: https://z.ai → Open Platform → API Keys
+ * Set in Vercel dashboard → Settings → Environment Variables → Redeploy.
+ * Diagnostic: GET /api/ai-chat?debug=1  (tiny live completion to validate the key)
  */
 
 export default async function handler(req, res) {
@@ -14,40 +14,46 @@ export default async function handler(req, res) {
 
   if (req.method === 'OPTIONS') return res.status(200).end();
 
-  const GEMINI_KEY = process.env.GEMINI_API_KEY;
+  const ZAI_KEY = process.env.ZAI_API_KEY || process.env.Z_AI_API_KEY || '';
+  const BASES = ['https://api.z.ai/api/paas/v4', 'https://api.z.ai/api/coding/paas/v4'];
 
   // ── DIAGNOSTIC: GET /api/ai-chat?debug=1 ──
   if (req.method === 'GET' && req.query?.debug === '1') {
-    if (!GEMINI_KEY) {
-      return res.status(200).json({ status: 'error', message: 'GEMINI_API_KEY not set in Vercel env vars', keyPresent: false });
+    if (!ZAI_KEY) {
+      return res.status(200).json({ status: 'error', message: 'ZAI_API_KEY not set in Vercel env vars — add it, then Redeploy', keyPresent: false });
     }
-    try {
-      const modelsUrl = `https://generativelanguage.googleapis.com/v1beta/models?key=${GEMINI_KEY}`;
-      const modelsRes = await fetch(modelsUrl);
-      if (!modelsRes.ok) {
-        const errText = await modelsRes.text();
-        return res.status(200).json({ 
-          status: 'error', 
-          message: `API key rejected by Google (${modelsRes.status})`, 
-          keyPresent: true,
-          apiResponse: errText.substring(0, 300)
+    for (const base of BASES) {
+      try {
+        const r = await fetch(base + '/chat/completions', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + ZAI_KEY },
+          body: JSON.stringify({ model: 'glm-4.5-flash', messages: [{ role: 'user', content: 'Reply with the single word: ready' }], max_tokens: 16, thinking: { type: 'disabled' } }),
+          signal: AbortSignal.timeout(8000)
         });
+        if (r.ok) {
+          const d = await r.json();
+          const txt = d?.choices?.[0]?.message?.content || '';
+          return res.status(200).json({ status: 'ok', message: 'Z.ai key is valid and working', keyPresent: true, endpoint: base, model: d?.model || 'glm-4.5-flash', sample: String(txt).substring(0, 40) });
+        }
+        const errText = await r.text();
+        if (r.status === 401 || r.status === 403) {
+          return res.status(200).json({ status: 'error', message: 'Key rejected by Z.ai (' + r.status + ') — make sure you copied the full ZAI_API_KEY and it is active', keyPresent: true, apiResponse: errText.substring(0, 300) });
+        }
+        if (base === BASES[BASES.length - 1]) {
+          return res.status(200).json({ status: 'error', message: 'Z.ai endpoint error (' + r.status + ')', keyPresent: true, apiResponse: errText.substring(0, 300) });
+        }
+      } catch (err) {
+        if (base === BASES[BASES.length - 1]) {
+          return res.status(200).json({ status: 'error', message: err.message, keyPresent: true });
+        }
       }
-      const modelsData = await modelsRes.json();
-      return res.status(200).json({ 
-        status: 'ok', 
-        message: 'API key is valid and working',
-        keyPresent: true
-      });
-    } catch (err) {
-      return res.status(200).json({ status: 'error', message: err.message, keyPresent: true });
     }
   }
 
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  if (!GEMINI_KEY) {
-    return res.status(500).json({ error: 'GEMINI_API_KEY not set. Add it in Vercel env vars.' });
+  if (!ZAI_KEY) {
+    return res.status(500).json({ error: 'ZAI_API_KEY not set. Add it in Vercel → Settings → Environment Variables, then Redeploy.' });
   }
 
   const { message, history = [], isStreetPassHolder = false } = req.body || {};
@@ -71,7 +77,8 @@ export default async function handler(req, res) {
     { name: 'Wilscha Skincare', slug: '/wilscha', address: '99 Kloof Street', phone: '082 572 2011', category: 'Skincare & Medi Spa', services: 'Expertly crafted skincare backed by 35 years of experience — i:am range (cleansers R340+, toners R480, creams R680, serums R325-R630) and the advanced 11:11 range. Personalised treatment plans.', hours: 'By appointment — book online at wilschaskincare.com', notes: 'Cape Town Medi Spa. Client-approved page at kloofstreet.online/wilscha with full product list and prices.' },
     { name: 'LumeLife — Doctor-Led Telehealth', slug: '/lumalife', address: '99 Kloof Street', category: 'Telehealth', services: 'Virtual GP consultations, same-day prescriptions, free pharmacy delivery — doctor-led care from the Medi-Spa.', hours: 'Online, book at kloofstreet.online/lumalife', notes: 'Care that fits your life — telehealth anchored at the Medi-Spa on Kloof Street.' },
     { name: 'Picturesque Framing Studio', slug: '/picturesque-framing', address: '99B Kloof Street', phone: '066 253 4151', category: 'Art & Framing', services: 'Custom picture framing since 2001 — rugby jerseys, certificates, original artwork, archival framing, block mounting, box framing.', hours: 'In-store with On Safari, 99B Kloof Street', notes: 'Framing studio with a 4.9 rating. Prices R150-R5000.' },
-    { name: 'Revive Studio', slug: '/revive-studio', address: '99 Kloof Street', phone: '084 525 7906', category: 'Massage & Beauty', services: 'Facials, massages, manicures, pedicures, lash and brow tinting, waxing', hours: 'By appointment', streetPassBenefit: 'Priority booking for Street Pass holders', notes: 'Holistic massage and beauty clinic by Nadine.' }
+    { name: 'Revive Studio', slug: '/revive-studio', address: '99 Kloof Street', phone: '084 525 7906', category: 'Massage & Beauty', services: 'Facials, massages, manicures, pedicures, lash and brow tinting, waxing', hours: 'By appointment', streetPassBenefit: 'Priority booking for Street Pass holders', notes: 'Holistic massage and beauty clinic by Nadine.' },
+    { name: 'Urban Connect', slug: '/urban-connect', address: 'Private demo preview — kloofstreet.online/urban-connect', whatsapp: 'https://wa.me/27746730006', category: 'Cellular & Electronics', services: 'Cellular accessories and pre-owned devices — NeePho/NeelPro tripods (R450-R750), colourful covers (R80-R199), power banks & solar lighting (R450-R1,300), iPhone chargers & cables (R80-R289), wireless chargers (R229-R250), keyboard & mouse (R799), Nesty speaker (R450-R599), pre-owned iPhones (R13,000-R25,000), pre-owned Mac & accessories, pre-owned Oppo, Samsung A06/A17. WhatsApp 074 673 0006 to order.', hours: 'WhatsApp ordering — while stock lasts', notes: 'Also known as Bargain Brands on Facebook (facebook.com/Bargainbrands.bb). Private demo page — not yet in the public directory.' }
   ];
 
   const streetPassInfo = {
@@ -90,12 +97,13 @@ export default async function handler(req, res) {
   };
 
   // ── BUILD SYSTEM PROMPT ──
-  const spStatus = isStreetPassHolder 
-    ? 'The user IS a Street Pass holder. Always mention their exclusive benefits when relevant.' 
+  const spStatus = isStreetPassHolder
+    ? 'The user IS a Street Pass holder. Always mention their exclusive benefits when relevant.'
     : 'The user is NOT a Street Pass holder. Mention Street Pass benefits as an upsell when relevant.';
 
   const businessList = businesses.map(b => {
-    let info = `- **${b.name}** (${b.category}) — ${b.address}\n  Services: ${b.services}\n  Hours: ${b.hours}\n  Street Pass: ${b.streetPassBenefit}`;
+    let info = `- **${b.name}** (${b.category}) — ${b.address}\n  Services: ${b.services}\n  Hours: ${b.hours}`;
+    if (b.streetPassBenefit) info += `\n  Street Pass: ${b.streetPassBenefit}`;
     if (b.phone) info += `\n  Phone: ${b.phone}`;
     if (b.currentPromos) info += `\n  CURRENT PROMOS: ${b.currentPromos}`;
     if (b.notes) info += `\n  Notes: ${b.notes}`;
@@ -114,8 +122,9 @@ ${spStatus}
 3. Always be specific — mention real business names, addresses, phone numbers, and Street Pass benefits.
 4. When recommending a business, include their page link: https://www.kloofstreet.online${'{slug}'}
 5. For booking, suggest WhatsApp or phone call with the real number.
-6. Keep responses concise but helpful — use bullet points for lists.
+6. Keep responses concise but helpful — under 180 words where possible.
 7. Use South African Rand (R) for all prices.
+8. Format in PLAIN TEXT only — no markdown symbols (never use asterisks, hashes, backticks or underscores for emphasis). Use simple dashes for bullets and blank lines for structure. Emojis are welcome, sparingly.
 
 ## LISTED BUSINESSES (ONLY THESE):
 ${businessList}
@@ -132,113 +141,95 @@ Join Street Pass: https://kloofstreet.online/streetpass/join
 WhatsApp to join: ${streetPassInfo.whatsapp}
 
 ## ABOUT KLOOF STREET:
-Kloof Street runs through Gardens/Tamboerskloof in Cape Town's City Bowl. It was voted #22 Coolest Street in the World by Time Out 2025. The directory at kloofstreet.online lists verified businesses — currently focused on wellness, medical, beauty, art and movement. Restaurants and bars exist on the street but are not yet in our directory.`;
+Kloof Street runs through Gardens/Tamboerskloof in Cape Town's City Bowl. It was voted #22 Coolest Street in the World by Time Out 2025. The directory at kloofstreet.online lists verified businesses — currently focused on wellness, medical, beauty, art, movement and dining. Other restaurants and bars exist on the street but are not yet in our directory.`;
 
-  // ── BUILD CONVERSATION CONTENTS ──
-  const contents = [];
-  for (const msg of history) {
-    if (msg.role === 'user' || msg.role === 'model') {
-      contents.push({ role: msg.role, parts: [{ text: msg.content }] });
-    }
+  // ── BUILD OPENAI-COMPATIBLE MESSAGES ──
+  const messages = [{ role: 'system', content: systemPrompt }];
+  for (const msg of (Array.isArray(history) ? history : [])) {
+    if (!msg || typeof msg.content !== 'string' || !msg.content.trim()) continue;
+    const role = (msg.role === 'assistant' || msg.role === 'model') ? 'assistant' : (msg.role === 'user' ? 'user' : null);
+    if (role) messages.push({ role, content: msg.content.substring(0, 1500) });
   }
-  contents.push({ role: 'user', parts: [{ text: message }] });
+  messages.push({ role: 'user', content: message });
 
-  // ── CALL GEMINI API ──
-  // Try multiple models + API versions until one works
-  const MODELS = ['gemini-2.5-flash', 'gemini-flash-latest', 'gemini-3-flash-preview', 'gemini-2.5-flash-lite'];
-  const VERSIONS = ['v1beta', 'v1'];
-
-  const requestBody = {
-    system_instruction: { parts: [{ text: systemPrompt }] },
-    contents,
-    generationConfig: { temperature: 0.7, maxOutputTokens: 800, topP: 0.9, topK: 40 },
-    safetySettings: [
-      { category: 'HARM_CATEGORY_HARASSMENT', threshold: 'BLOCK_ONLY_HIGH' },
-      { category: 'HARM_CATEGORY_HATE_SPEECH', threshold: 'BLOCK_ONLY_HIGH' },
-      { category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT', threshold: 'BLOCK_ONLY_HIGH' },
-      { category: 'HARM_CATEGORY_DANGEROUS_CONTENT', threshold: 'BLOCK_ONLY_HIGH' }
-    ]
-  };
+  // ── CALL Z.AI (GLM) ──
+  // OpenAI-compatible chat completions. Primary: standard API base; fallback: coding-plan base.
+  const MODELS = ['glm-4.6', 'glm-4.5-flash'];
 
   const errors = [];
   const DEADLINE = Date.now() + 25000;  // global budget — never hang the function
-  const FETCH_TIMEOUT = 9000;           // per-attempt abort (ms)
+  const FETCH_TIMEOUT = 10000;          // per-attempt abort (ms)
 
   try {
-    for (const version of VERSIONS) {
-      if (Date.now() > DEADLINE) break;
+    outer:
+    for (const base of BASES) {
       for (const model of MODELS) {
-        if (Date.now() > DEADLINE) break;
-        const url = `https://generativelanguage.googleapis.com/${version}/models/${model}:generateContent?key=${GEMINI_KEY}`;
-        
+        if (Date.now() > DEADLINE) break outer;
+
+        const body = {
+          model,
+          messages,
+          temperature: 0.7,
+          max_tokens: 900,
+          thinking: { type: 'disabled' }
+        };
+
         try {
-          const response = await fetch(url, {
+          let response = await fetch(base + '/chat/completions', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(requestBody),
+            headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + ZAI_KEY },
+            body: JSON.stringify(body),
             signal: AbortSignal.timeout(FETCH_TIMEOUT)
           });
 
+          // 400 → maybe the thinking param or payload detail is unsupported: retry once without it
+          if (response.status === 400) {
+            const b2 = JSON.parse(JSON.stringify(body));
+            delete b2.thinking;
+            response = await fetch(base + '/chat/completions', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + ZAI_KEY },
+              body: JSON.stringify(b2),
+              signal: AbortSignal.timeout(FETCH_TIMEOUT)
+            });
+          }
+
           if (response.ok) {
             const data = await response.json();
-            const aiText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-            if (aiText) {
-              return res.status(200).json({ reply: aiText });
+            const aiText = data?.choices?.[0]?.message?.content;
+            if (aiText && aiText.trim()) {
+              return res.status(200).json({ reply: aiText.trim() });
             }
-            // Response came back empty
-            errors.push(`${version}/${model}: empty response`);
+            errors.push({ model: base + ' / ' + model, error: 'empty response' });
             continue;
           }
 
           const errText = await response.text();
-          const errObj = { model: `${version}/${model}`, status: response.status };
-          try { const parsed = JSON.parse(errText); errObj.message = parsed?.error?.message || errText.substring(0, 150); } 
-          catch(e) { errObj.message = errText.substring(0, 150); }
+          const errObj = { model: base + ' / ' + model, status: response.status };
+          try { errObj.message = JSON.parse(errText)?.error?.message || errText.substring(0, 150); }
+          catch (e) { errObj.message = errText.substring(0, 150); }
           errors.push(errObj);
 
-          // If it's a 400 error, the model exists but request is bad — try without system_instruction
-          if (response.status === 400) {
-            const fallbackBody = { contents, generationConfig: requestBody.generationConfig, safetySettings: requestBody.safetySettings };
-            // Prepend system prompt as first user message instead
-            fallbackBody.contents.unshift({ role: 'user', parts: [{ text: systemPrompt }] });
-            fallbackBody.contents.splice(1, 0, { role: 'model', parts: [{ text: 'Understood. I will only recommend businesses listed in the Kloof Street directory.' }] });
-
-            const fb2 = await fetch(url, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(fallbackBody),
-              signal: AbortSignal.timeout(FETCH_TIMEOUT)
-            });
-
-            if (fb2.ok) {
-              const fb2Data = await fb2.json();
-              const fb2Text = fb2Data?.candidates?.[0]?.content?.parts?.[0]?.text;
-              if (fb2Text) {
-                return res.status(200).json({ reply: fb2Text });
-              }
-            }
-          }
-
-          // If 403 (API key issue) or 401, no point trying other models
-          if (response.status === 403 || response.status === 401) {
-            return res.status(502).json({ 
-              error: 'API key issue', 
-              detail: 'Your GEMINI_API_KEY was rejected. Go to aistudio.google.com → Get API Key → make sure you copied the full key. Then update it in Vercel env vars and redeploy.',
-              errors 
+          // Key rejected → no point trying other models
+          if (response.status === 401 || response.status === 403) {
+            return res.status(502).json({
+              error: 'API key issue',
+              detail: 'Your ZAI_API_KEY was rejected by Z.ai. Verify the key at z.ai (Open Platform → API Keys), update it in Vercel env vars and Redeploy.',
+              errors
             });
           }
 
         } catch (fetchErr) {
-          errors.push({ model: `${version}/${model}`, error: fetchErr.message });
+          errors.push({ model: base + ' / ' + model, error: fetchErr.message });
         }
       }
     }
 
     // All models failed
-    return res.status(502).json({ 
-      error: 'All Gemini models failed', 
-      detail: 'Could not reach any Gemini model. Check your API key and that the Gemini API is enabled at aistudio.google.com',
-      errors 
+    return res.status(502).json({
+      error: 'All Z.ai models failed',
+      detail: 'Could not reach any GLM model. Check ZAI_API_KEY in Vercel env vars and that your z.ai account is active.',
+      errors
     });
 
   } catch (err) {
